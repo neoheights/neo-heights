@@ -1,0 +1,136 @@
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 80px 0 20px;
+    font-size: 0.9rem;
+}
+
+.topSection {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.logoCol {
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        display: inline-block;
+        border: 2px solid #fff;
+        padding: 8px 16px;
+    }
+
+    .subLogos {
+        display: flex;
+        gap: 16px;
+        color: #888;
+        font-size: 0.8rem;
+    }
+}
+
+.addressCol {
+    h4 {
+        color: var(--primary-orange);
+        margin-bottom: 4px;
+        font-size: 1rem;
+    }
+    
+    p {
+        margin-bottom: 8px;
+        color: #aaa;
+    }
+
+    address {
+        font-style: normal;
+        line-height: 1.6;
+        color: #ccc;
+        margin-bottom: 12px;
+    }
+}
+
+.divider {
+    height: 1px;
+    background: #222;
+    margin: 40px 0;
+}
+
+.bottomSection {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.linksCol {
+    h4 {
+        color: #666;
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        margin-bottom: 12px;
+    }
+
+    a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.2s;
+
+        &:hover {
+            color: var(--primary-orange);
+        }
+    }
+}
+
+.socialCol {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.subscribeBtn {
+    background-color: var(--primary-orange);
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    
+    &:hover {
+        background-color: darken(#ff6b00, 5%);
+    }
+}
+
+.socialIcons {
+    display: flex;
+    gap: 16px;
+
+    a {
+        color: #888;
+        transition: color 0.2s;
+        
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+
+.copyright {
+    margin-top: 60px;
+    text-align: center;
+    color: #444;
+    font-size: 0.8rem;
+}

@@ -1,0 +1,163 @@
+"use client";
+
+import React, { useState } from 'react';
+import SectionText from '../SectionText/SectionText';
+import { ArrowRight } from 'lucide-react';
+import styles from './Projects.module.scss';
+
+const Projects = () => {
+    const [activeStatus, setActiveStatus] = useState('Completed');
+    const [activeCategory, setActiveCategory] = useState('All');
+
+    const statuses = ['Ongoing', 'Completed'];
+    const categories = ['Civil, PEB, Interior & MEP Works', 'EPC Contracts', 'Civil Engineering', 'EPC Pre-Engineered Building', 'MEP'];
+
+    // Dummy data for projects
+    const projects = [
+        {
+            title: "SHIMIZU - SAKATA",
+            location: "GIDC, AHMADABAD",
+            image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            size: "large"
+        },
+        {
+            title: "Foxconn-Cinda",
+            location: "CHENNAI",
+            image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            size: "small"
+        },
+        {
+            title: "Schaeffler India Limited",
+            location: "SAVLI, VADODARA",
+            description: "Construction of 18000 boundary wall including civil foundation, RCC, fencing.",
+            image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            size: "medium-text", // Special type for text + image split
+            isFeatured: true
+        },
+        {
+            title: "SCHAEFFLER INDIA LIMITED",
+            location: "TAMIL NADU",
+            image: "https://images.unsplash.com/photo-1581094794329-cd1096a7a2e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            size: "large-wide"
+        },
+        {
+            title: "PEB WORKS FAIVELEY",
+            location: "HOSUR",
+            image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            size: "small"
+        },
+        {
+            title: "PEB WORKS VOLVO",
+            location: "KANCHEEPURAM",
+            image: "https://images.unsplash.com/photo-1590059296537-8f5370d5a37e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            size: "small"
+        }
+    ];
+
+    const Filters = () => (
+        <div className={styles.filtersWrapper}>
+            <div className={styles.statusFilters}>
+                {statuses.map(status => (
+                    <button 
+                        key={status} 
+                        className={`${styles.filterBtn} ${activeStatus === status ? styles.active : ''}`}
+                        onClick={() => setActiveStatus(status)}
+                    >
+                        {status}
+                    </button>
+                ))}
+            </div>
+            <div className={styles.categoryFilters}>
+                {categories.map(cat => (
+                    <button 
+                        key={cat} 
+                        className={`${styles.categoryBtn} ${activeCategory === cat ? styles.active : ''}`}
+                        onClick={() => setActiveCategory(cat)}
+                    >
+                        {cat}
+                    </button>
+                ))}
+            </div>
+        </div>
+    );
+
+    return (
+        <section className={styles.projectsSection}>
+            <div className={`container ${styles.container}`}>
+                <SectionText 
+                    smallTitle="PROJECTS"
+                    title="Innovative Projects That Push Boundaries and Surpass Goals"
+                    buttonLabel="Explore All Projects"
+                    onButtonClick={() => {}}
+                    align="left"
+                    customChildren={<Filters />}
+                />
+
+                <div className={styles.projectsGrid}>
+                    {/* Top Row */}
+                    <div className={`${styles.projectCard} ${styles.span2}`}>
+                         <img src={projects[0].image} alt={projects[0].title} className={styles.projectImage} />
+                         <div className={styles.overlay}>
+                             <h3>{projects[0].title}</h3>
+                             <span>{projects[0].location}</span>
+                         </div>
+                    </div>
+                    <div className={`${styles.projectCard} ${styles.span1}`}>
+                         <img src={projects[1].image} alt={projects[1].title} className={styles.projectImage} />
+                         <div className={styles.overlay}>
+                             <h3>{projects[1].title}</h3>
+                             <span>{projects[1].location}</span>
+                         </div>
+                    </div>
+
+                    {/* Middle Row - Featured Text Card */}
+                    <div className={`${styles.textCard} ${styles.span1}`}>
+                        <div className={styles.textCardContent}>
+                            <div className={styles.textHeader}>
+                                <h3>{projects[2].title}</h3>
+                                <span className={styles.statusBadge}>EPC PROJECTS</span>
+                            </div>
+                            <p>{projects[2].description}</p>
+                            <button className={styles.viewMoreBtn}>
+                                View More <ArrowRight size={14} />
+                            </button>
+                        </div>
+                    </div>
+                    <div className={`${styles.projectCard} ${styles.span2}`}>
+                         <img src={projects[3].image} alt={projects[3].title} className={styles.projectImage} />
+                         <div className={styles.overlay}>
+                             <h3>{projects[3].title}</h3>
+                             <span>{projects[3].location}</span>
+                         </div>
+                    </div>
+
+                    {/* Bottom Row */}
+                    <div className={`${styles.projectCard} ${styles.span1}`}>
+                         <img src={projects[4].image} alt={projects[4].title} className={styles.projectImage} />
+                         <div className={styles.overlay}>
+                             <h3>{projects[4].title}</h3>
+                             <span>{projects[4].location}</span>
+                         </div>
+                    </div>
+                    <div className={`${styles.projectCard} ${styles.span1}`}>
+                         <img src={projects[5].image} alt={projects[5].title} className={styles.projectImage} />
+                         <div className={styles.overlay}>
+                             <h3>{projects[5].title}</h3>
+                             <span>{projects[5].location}</span>
+                         </div>
+                    </div>
+                    <div className={`${styles.textCard} ${styles.span1} ${styles.darkTextCard}`}>
+                         <p className={styles.finalCardText}>
+                             Executed as a turnkey EPC project, this facility integrates civil, structural, PEB, and MEP works to deliver a seamless, efficient, and future-ready industrial space tailored to client requirements.
+                         </p>
+                         <button className={styles.viewMoreBtn}>
+                            Learn More <ArrowRight size={14} />
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default Projects;

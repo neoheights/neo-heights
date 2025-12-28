@@ -1,0 +1,55 @@
+.aboutSection {
+  position: relative;
+  padding: 100px 0;
+  background-color: #0a0a0a; // Match dark theme
+  overflow: hidden; // Hide scrollbar if content overflows viewport width
+}
+
+.absoluteBgColor {
+  height: 500px;
+  width: 800px;
+  border-radius: 50%;
+
+  background-color: var(--primary-orange);
+
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 140, 0, 0.35) 0%,
+    rgba(255, 140, 0, 0.2) 30%,
+    rgba(255, 140, 0, 0.05) 55%,
+    transparent 70%
+  );
+
+  filter: blur(50px);
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.cardsContainer {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 40px; // Space for scrollbar or shadow
+  
+  // Hide scrollbar but keep functionality
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.cardsScroll {
+  display: flex;
+  gap: 20px;
+  padding: 0 40px; // Side padding
+  width: max-content; // Allow content to stretch
+  
+  // Center if content is smaller than viewport
+  @media (min-width: 1400px) {
+    margin: 0 auto;
+  }
+}

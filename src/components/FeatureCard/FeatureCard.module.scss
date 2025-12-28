@@ -1,0 +1,137 @@
+.card {
+  position: relative;
+  width: 290px;
+  height: 360px;
+  background-color: #1a1a1a;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #333;
+  transition: border-color 0.3s ease;
+  flex-shrink: 0;
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--primary-orange);
+
+    .defaultContent {
+      opacity: 0; // Hide default content
+      transform: translateY(-20px);
+    }
+
+    .hoverContent {
+      opacity: 1; // Show hover content
+      transform: translateY(0);
+    }
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.defaultContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.top {
+  .stat {
+    font-size: 3.2rem;
+    font-weight: 900;
+    // margin-bottom: 12px;
+    color: #fff;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--grey-color);
+  }
+}
+
+.divider {
+  height: 1px;
+  background-color: #FFFFFF5e;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.bottom {
+  .category {
+    color: var(--primary-orange);
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  
+  .subItems {
+    list-style: none;
+    
+    li {
+      padding: 0 0 3px;
+      font-size: 0.75rem;
+      // margin-bottom: 4px;
+    }
+  }
+}
+
+.hoverContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  opacity: 0;
+  
+  transform: translateY(20px);
+  transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
+  pointer-events: none; // Let clicks pass through if needed, or remove if button is clickable
+}
+
+.hoverTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+
+.bgImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 1;
+}
+
+.knowMoreBtn {
+  background: transparent;
+  border: none;
+  color: var(--primary-orange);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  pointer-events: auto; // Re-enable pointer events for the button
+}
