@@ -53,15 +53,14 @@ const Journey = () => {
         <div className={styles.rightPane}>
           <div className={styles.videoShell}>
             <video
-              className={styles.video}
-              controls
-              poster="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
-            >
-              <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
-            </video>
-            <div className={styles.videoOverlayTitle}>
-              THE JOURNEY OF<br />ARUL GROUP
-            </div>
+              src="/videos/intro.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls={false}
+              style={{ width: "100%", height: '100%' }}
+            />
           </div>
         </div>
       </div>

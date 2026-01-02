@@ -22,7 +22,7 @@ export default function Home() {
       <TrustedBy />
       <AboutUs />
       <Services />
-      {/* <Projects /> */}
+      <Projects />
       <Clients />
       <Sustainability />
       <Legacy />

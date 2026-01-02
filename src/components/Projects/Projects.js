@@ -9,8 +9,8 @@ const Projects = () => {
     const [activeStatus, setActiveStatus] = useState('Completed');
     const [activeCategory, setActiveCategory] = useState('All');
 
-    const statuses = ['Ongoing', 'Completed'];
-    const categories = ['Civil, PEB, Interior & MEP Works', 'EPC Contracts', 'Civil Engineering', 'EPC Pre-Engineered Building', 'MEP'];
+    const statuses = [];
+    const categories = ['Ongoing', 'Completed', 'Civil, PEB, Interior & MEP Works', 'EPC Contracts', 'Civil Engineering', 'EPC Pre-Engineered Building', 'MEP'];
 
     // Dummy data for projects
     const projects = [
@@ -56,7 +56,7 @@ const Projects = () => {
 
     const Filters = () => (
         <div className={styles.filtersWrapper}>
-            <div className={styles.statusFilters}>
+            {/* <div className={styles.statusFilters}>
                 {statuses.map(status => (
                     <button 
                         key={status} 
@@ -66,7 +66,7 @@ const Projects = () => {
                         {status}
                     </button>
                 ))}
-            </div>
+            </div> */}
             <div className={styles.categoryFilters}>
                 {categories.map(cat => (
                     <button 
