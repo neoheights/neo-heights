@@ -4,12 +4,13 @@ import React from 'react';
 import SectionText from '../SectionText/SectionText';
 import { ArrowUpRight, ArrowRight } from 'lucide-react';
 import styles from './Team.module.scss';
+import Image from 'next/image';
 
 const Team = () => {
     const teamMembers = [
         {
             role: "MD",
-            image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            image: require('@/assets/images/experts/arul.png'),
             bgColor: "#fff"
         },
         {
@@ -71,7 +72,7 @@ const Team = () => {
                         <div key={index} className={styles.teamCard}>
                             <div className={styles.cardVisual} style={{ backgroundColor: member.bgColor }}>
                                 {member.image && (
-                                    <img src={member.image} alt={member.role} className={styles.memberImage} />
+                                    <Image width={1000} height={1000} src={member.image} alt={member.role} className={styles.memberImage} />
                                 )}
                             </div>
                             <div className={styles.cardFooter}>

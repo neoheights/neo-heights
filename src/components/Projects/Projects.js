@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import SectionText from '../SectionText/SectionText';
 import { ArrowRight } from 'lucide-react';
 import styles from './Projects.module.scss';
+import Image from 'next/image';
 
 const Projects = () => {
     const [activeStatus, setActiveStatus] = useState('Completed');
@@ -17,39 +18,39 @@ const Projects = () => {
         {
             title: "SHIMIZU - SAKATA",
             location: "GIDC, AHMADABAD",
-            image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            image: require('@/assets/images/projects/sakata.png'),
             size: "large"
         },
         {
-            title: "Foxconn-Cinda",
-            location: "CHENNAI",
-            image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            title: "HINDUSTAN FOODS LTD",
+            location: "COIMBATORE",
+            image: require('@/assets/images/projects/hindustan.png'),
             size: "small"
         },
         {
             title: "Schaeffler India Limited",
             location: "SAVLI, VADODARA",
             description: "Construction of 18000 boundary wall including civil foundation, RCC, fencing.",
-            image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            image: require('@/assets/images/projects/sakata.png'),
             size: "medium-text", // Special type for text + image split
             isFeatured: true
         },
         {
             title: "SCHAEFFLER INDIA LIMITED",
             location: "TAMIL NADU",
-            image: "https://images.unsplash.com/photo-1581094794329-cd1096a7a2e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            image: require('@/assets/images/projects/india.png'),
             size: "large-wide"
         },
         {
             title: "PEB WORKS FAIVELEY",
             location: "HOSUR",
-            image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            image: require('@/assets/images/projects/peb.png'),
             size: "small"
         },
         {
             title: "PEB WORKS VOLVO",
             location: "KANCHEEPURAM",
-            image: "https://images.unsplash.com/photo-1590059296537-8f5370d5a37e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            image: require('@/assets/images/projects/volvo.png'),
             size: "small"
         }
     ];
@@ -96,14 +97,14 @@ const Projects = () => {
                 <div className={styles.projectsGrid}>
                     {/* Top Row */}
                     <div className={`${styles.projectCard} ${styles.span2}`}>
-                         <img src={projects[0].image} alt={projects[0].title} className={styles.projectImage} />
+                         <Image src={projects[0].image} alt={projects[0].title} className={styles.projectImage} width={1000} height={1000} />
                          <div className={styles.overlay}>
                              <h3>{projects[0].title}</h3>
                              <span>{projects[0].location}</span>
                          </div>
                     </div>
                     <div className={`${styles.projectCard} ${styles.span1}`}>
-                         <img src={projects[1].image} alt={projects[1].title} className={styles.projectImage} />
+                         <Image src={projects[1].image} alt={projects[1].title} className={styles.projectImage} width={1000} height={1000} />
                          <div className={styles.overlay}>
                              <h3>{projects[1].title}</h3>
                              <span>{projects[1].location}</span>
@@ -115,7 +116,7 @@ const Projects = () => {
                         <div className={styles.textCardContent}>
                             <div className={styles.textHeader}>
                                 <h3>{projects[2].title}</h3>
-                                <span className={styles.statusBadge}>EPC PROJECTS</span>
+                                <span className={styles.statusBadge}>Area - 14,500 sq. m</span>
                             </div>
                             <p>{projects[2].description}</p>
                             <button className={styles.viewMoreBtn}>
@@ -124,7 +125,7 @@ const Projects = () => {
                         </div>
                     </div>
                     <div className={`${styles.projectCard} ${styles.span2}`}>
-                         <img src={projects[3].image} alt={projects[3].title} className={styles.projectImage} />
+                         <Image src={projects[3].image} alt={projects[3].title} className={styles.projectImage} width={1000} height={1000} />
                          <div className={styles.overlay}>
                              <h3>{projects[3].title}</h3>
                              <span>{projects[3].location}</span>
@@ -133,14 +134,14 @@ const Projects = () => {
 
                     {/* Bottom Row */}
                     <div className={`${styles.projectCard} ${styles.span1}`}>
-                         <img src={projects[4].image} alt={projects[4].title} className={styles.projectImage} />
+                         <Image src={projects[4].image} alt={projects[4].title} className={styles.projectImage} width={1000} height={1000} />
                          <div className={styles.overlay}>
                              <h3>{projects[4].title}</h3>
                              <span>{projects[4].location}</span>
                          </div>
                     </div>
                     <div className={`${styles.projectCard} ${styles.span1}`}>
-                         <img src={projects[5].image} alt={projects[5].title} className={styles.projectImage} />
+                         <Image src={projects[5].image} alt={projects[5].title} className={styles.projectImage} width={1000} height={1000} />
                          <div className={styles.overlay}>
                              <h3>{projects[5].title}</h3>
                              <span>{projects[5].location}</span>

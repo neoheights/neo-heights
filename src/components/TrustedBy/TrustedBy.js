@@ -8,6 +8,11 @@ import logo4 from "@/assets/images/trustedPartners/img4.png";
 import logo5 from "@/assets/images/trustedPartners/img5.png";
 import logo6 from "@/assets/images/trustedPartners/img6.png";
 import logo7 from "@/assets/images/trustedPartners/img7.png";
+import logo8 from "@/assets/images/trustedPartners/img8.png";
+import logo9 from "@/assets/images/trustedPartners/img9.png";
+import logo10 from "@/assets/images/trustedPartners/img10.png";
+import logo11 from "@/assets/images/trustedPartners/img11.png";
+import logo12 from "@/assets/images/trustedPartners/img12.png";
 
 const TrustedBy = () => {
   const logos = [
@@ -18,6 +23,11 @@ const TrustedBy = () => {
     { src: logo5, alt: "TVS" },
     { src: logo6, alt: "Faiveley" },
     { src: logo7, alt: "Ashok Leyland" },
+    { src: logo8, alt: "Ashok Leyland" },
+    { src: logo9, alt: "Ashok Leyland" },
+    { src: logo10, alt: "Ashok Leyland" },
+    { src: logo11, alt: "Ashok Leyland" },
+    { src: logo12, alt: "Ashok Leyland" },
   ];
 
   return (
@@ -26,7 +36,7 @@ const TrustedBy = () => {
 
       <div className={styles.slider}>
         <div className={styles.slideTrack}>
-          {[...logos, ...logos, ...logos].map((logo, index) => (
+          {[...logos, ...logos].map((logo, index) => (
             <div key={index} className={styles.slide}>
               <Image
                 src={logo.src}

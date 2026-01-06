@@ -3,37 +3,38 @@
 import React from 'react';
 import SectionText from '../SectionText/SectionText';
 import styles from './Services.module.scss';
+import Image from 'next/image';
 
 const Services = () => {
     // Extended list of services for the infinite scroll
     const services = [
         {
             title: "Civil Engineering",
-            image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: require('@/assets/images/services/civil.jpg'),
         },
         {
             title: "Pre-Engineering Building",
-            image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: require('@/assets/images/services/epc.png'),
         },
         {
             title: "Commercial Interiors",
-            image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: require('@/assets/images/services/gc.png'),
         },
         {
             title: "MEP",
-            image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: require('@/assets/images/services/interiors.jpg'),
         },
         {
             title: "Industrial Construction",
-            image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: require('@/assets/images/services/land.jpg'),
         },
         {
             title: "Warehousing Solutions",
-            image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: require('@/assets/images/services/mep.jpg'),
         },
         {
             title: "Infrastructure",
-            image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: require('@/assets/images/services/pre.jpg'),
         }
     ];
 
@@ -57,7 +58,7 @@ const Services = () => {
                 <div className={styles.scrollTrack}>
                     {scrollItems.map((service, index) => (
                         <div key={index} className={styles.serviceCard}>
-                            <img src={service.image} alt={service.title} className={styles.cardImage} />
+                            <Image src={service.image} alt={service.title} className={styles.cardImage} width={1000} height={1000} />
                             <div className={styles.overlay}>
                                 <span>{service.title}</span>
                             </div>

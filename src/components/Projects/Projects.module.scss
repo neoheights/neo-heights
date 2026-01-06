@@ -102,8 +102,14 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 20px;
-    background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+    padding: 18px 25px 10px;
+    
+    background: #3F3F3F4D;
+    backdrop-filter: blur(8.600000381469727px);
+    border: 1px solid #FFFFFF1A;
+
+    display: flex;
+    justify-content: space-between;
     
     h3 {
       font-size: 1.1rem;

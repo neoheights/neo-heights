@@ -13,7 +13,7 @@ const AboutUs = () => {
       description: "Years of experience delivering high-quality engineering solutions.",
       category: "ENGINEERING & CONSTRUCTION",
       subItems: ["Structural Design", "Project Execution"],
-      image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: require("@/assets/images/aboutUs/structural_design.jpg"),
     },
     {
       stat: "20+",
@@ -21,7 +21,7 @@ const AboutUs = () => {
       description: "Projects completed across commercial, residential, and industrial sectors.",
       category: "COMMERCIAL BUILDS",
       subItems: ["Commercial Builds", "Residential Projects"],
-      image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: require("@/assets/images/aboutUs/residential_prjts.png"),
     },
     {
       stat: "100%",
@@ -29,7 +29,7 @@ const AboutUs = () => {
       description: "Deployment of cutting-edge tools and equipment for precision work.",
       category: "LATEST EQUIPMENT",
       subItems: ["Advanced Machinery", "Modern Technology"],
-      image: "https://images.unsplash.com/photo-1581094794329-cd1096a7a2e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: require("@/assets/images/aboutUs/modern_tech.jpg"),
     },
     {
       stat: "3M+ sq.ft",
@@ -37,7 +37,7 @@ const AboutUs = () => {
       description: "Construction footprint delivered with engineering excellence.",
       category: "PROJECT SCALE",
       subItems: ["Large-format Builds", "Infrastructure Delivery"],
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: require("@/assets/images/aboutUs/infra_delivery.jpg"),
     },
     {
       stat: "3,000+",
@@ -45,7 +45,7 @@ const AboutUs = () => {
       description: "Widgets in one day boost operational efficiency.",
       category: "FORTUNE 500 COMPANY",
       subItems: ["Electrification", "Backend Development"],
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: require("@/assets/images/aboutUs/structural_design.jpg"),
     }
   ];
 

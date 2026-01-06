@@ -53,7 +53,7 @@ const Journey = () => {
         <div className={styles.rightPane}>
           <div className={styles.videoShell}>
             <video
-              src="/videos/intro.mp4"
+              src="/videos/neo_heights.mp4"
               autoPlay
               muted
               loop

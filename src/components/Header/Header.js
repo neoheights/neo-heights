@@ -16,13 +16,13 @@ const Header = () => {
 
     const navItems = [
         { label: 'Home', href: '/' },
-        { label: 'About us', href: '/about' },
-        { label: 'Projects', href: '/projects', hasDropdown: true },
-        { label: 'Services', href: '/services', hasDropdown: true },
-        { label: 'Sustainability', href: '/sustainability', hasDropdown: true },
-        { label: 'Newsroom', href: '/newsroom' },
-        { label: 'Team', href: '/team', hasDropdown: true },
-        { label: 'Contact', href: '/contact' },
+        { label: 'About us', href: '/' },
+        { label: 'Projects', href: '/', hasDropdown: true },
+        { label: 'Services', href: '/', hasDropdown: true },
+        { label: 'Sustainability', href: '/', hasDropdown: true },
+        { label: 'Newsroom', href: '/' },
+        { label: 'Team', href: '/', hasDropdown: true },
+        { label: 'Contact', href: '/' },
     ];
 
     return (

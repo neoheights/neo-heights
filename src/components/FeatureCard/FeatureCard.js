@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './FeatureCard.module.scss';
 import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 const FeatureCard = ({ stat, title, description, category, subItems, image }) => {
   return (
@@ -30,10 +31,13 @@ const FeatureCard = ({ stat, title, description, category, subItems, image }) =>
         {/* Hover Content */}
         <div className={styles.hoverContent}>
           <span className={styles.hoverTitle}>{title}</span>
-          <div
+          <Image
+            src={image}
+            alt="bg-image"
+            width={1000}
+            height={1000}
             className={styles.bgImage}
-            style={{ backgroundImage: `url(${image || '/placeholder-card-bg.jpg'})` }}
-          ></div>
+          />
           <button className={styles.knowMoreBtn}>
             Know More
             {/* <ArrowRight size={16} /> */}

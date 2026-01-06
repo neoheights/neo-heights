@@ -4,23 +4,24 @@ import React from 'react';
 import SectionText from '../SectionText/SectionText';
 import { ArrowRight } from 'lucide-react';
 import styles from './Blogs.module.scss';
+import Image from 'next/image';
 
 const Blogs = () => {
     const blogs = [
         {
             category: "SUSTAINABLE CONSTRUCTIONS",
             title: "Sustainable Construction Building Smarter and Greener",
-            image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" // Solar panels/green field
+            image: require('@/assets/images/blogs/sustainable.png')
         },
         {
             category: "MATERIALS",
             title: "Important factors every homeowner should know from design planning and material selection to approvals and timelines.",
-            image: "https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" // Modern building/greenery
+            image: require('@/assets/images/blogs/material.png')
         },
         {
             category: "SAFETY & QUALITY",
             title: "Discover best practices, safety standards, and quality checks that protect workers .",
-            image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" // Construction worker/concrete
+            image: require('@/assets/images/blogs/quality.png')
         }
     ];
 
@@ -38,7 +39,7 @@ const Blogs = () => {
                     {blogs.map((blog, index) => (
                         <div key={index} className={styles.blogCard}>
                             <div className={styles.imageContainer}>
-                                <img src={blog.image} alt={blog.title} className={styles.blogImage} />
+                                <Image width={1000} height={1000} src={blog.image} alt={blog.title} className={styles.blogImage} />
                             </div>
                             <div className={styles.overlay}>
                                 <div className={styles.topContent}>
