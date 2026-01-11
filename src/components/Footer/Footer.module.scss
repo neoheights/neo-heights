@@ -92,14 +92,14 @@
     font-size: 0.9rem;
   }
   .brandDesc {
-    color: #aaa;
+    color: var(--grey-3-color);
     line-height: 1.7;
   }
 }
 
 .linksCol {
   h4 {
-    color: #777;
+    color: #FFF;
     font-size: 0.8rem;
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -114,11 +114,11 @@
 
   li {
     margin-bottom: 12px;
-    color: #ccc;
+    color: var(--grey-3-color);
   }
 
   a {
-    color: #ccc;
+    color: var(--grey-3-color);
     text-decoration: none;
     transition: color 0.2s;
 
@@ -130,7 +130,7 @@
 
 .contactCol {
   h4 {
-    color: #777;
+    color: #FFF;
     font-size: 0.8rem;
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -140,7 +140,7 @@
     list-style: none;
     padding: 0;
     margin: 0 0 20px;
-    color: #ccc;
+    color: var(--grey-3-color);
     line-height: 1.9;
   }
 }
@@ -172,6 +172,7 @@
 
 .address{
   padding-left: 20px;
+  color: var(--grey-3-color);
 }
 
 .socialIcons {
@@ -179,7 +180,7 @@
   gap: 12px;
 
   a {
-    color: #888;
+    color: var(--grey-3-color);
     transition: color 0.2s;
     border: 1px solid #fff;
     width: 50px;
@@ -203,7 +204,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #666;
+  color: var(--grey-3-color);
   font-size: 0.8rem;
 
   @media (max-width: 576px) {

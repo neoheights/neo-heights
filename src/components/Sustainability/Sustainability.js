@@ -24,7 +24,7 @@ const Sustainability = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className={styles.sustainabilitySection}>
+        <section ref={sectionRef} className={styles.sustainabilitySection} id="sustainability">
             <div className={styles.overlay}></div>
 
             <div className={`container ${styles.container}`}>
