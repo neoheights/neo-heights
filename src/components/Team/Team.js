@@ -24,7 +24,7 @@ const Team = () => {
             bgColor: "#FF8C78"
         },
         {
-            role: "Operation Head",
+            role: "VP Business Development",
             image: require('@/assets/images/experts/vp.png'),
             bgColor: "#FFEFB6"
         },
