@@ -86,7 +86,7 @@ const Hero = () => {
                             className={styles.verticalItemImage}
                         />
                     </div>
-                    <div className={styles.verticalItem}>
+                    {/* <div className={styles.verticalItem}>
                         <Image
                             src={NeoLogo}
                             alt=""
@@ -94,7 +94,7 @@ const Hero = () => {
                             heigth={300}
                             className={styles.verticalItemImage}
                         />
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
