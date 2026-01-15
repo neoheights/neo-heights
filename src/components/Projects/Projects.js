@@ -19,18 +19,20 @@ const Projects = () => {
             title: "SHIMIZU - SAKATA",
             location: "DODDABLLAPURA",
             image: require('@/assets/images/projects/sakata.png'),
+            imagePosition: '50% 20%',
             size: "large"
         },
         {
-            title: "HINDUSTAN FOODS LTD",
-            location: "COIMBATORE",
-            image: require('@/assets/images/projects/hindustan.png'),
+            title: "Advik Hi Tech Pvt. Ltd.,",
+            location: "NARSAPURA, KA",
+            image: require('@/assets/images/projects/advik.png'),
+            imagePosition: '50% 20%',
             size: "small"
         },
         {
-            title: "Schaeffler India Limited, Shoolagiri",
-            location: "SAVLI, VADODARA",
-            description: "Construction of Hall 01 Boundary Wall, including civil foundation, RCC flooring.",
+            title: "SCHAEFFLER INDIA LIMITED",
+            location: "SHOOLAGIRI",
+            description: "Building a fully operational manufacturing facility involves a comprehensive scope that includes civil engineering, mechanical, electrical, and plumbing (MEP) systems. This project will encompass all necessary components to ensure a successful setup.",
             image: require('@/assets/images/projects/sakata.png'),
             size: "medium-text", // Special type for text + image split
             isFeatured: true
@@ -42,16 +44,25 @@ const Projects = () => {
             size: "large-wide"
         },
         {
-            title: "PEB WORKS FAIVELEY",
+            title: "TATA ELECTRONICS",
             location: "HOSUR",
-            image: require('@/assets/images/projects/peb.png'),
+            image: require('@/assets/images/projects/tata.png'),
+            imagePosition: '50% 20%',
             size: "small"
         },
         {
             title: "PEB WORKS VOLVO",
             location: "NARSAPURA",
-            image: require('@/assets/images/projects/volvo.png'),
+            image: require('@/assets/images/projects/peb.png'),
+            imagePosition: '50% 0%',
             size: "small"
+        },
+        {
+            // title: "PEB WORKS VOLVO",
+            description: "Executed as a turnkey EPC project, this facility integrates civil, structural, PEB, and MEP works to deliver a seamless, efficient, and future-ready industrial space tailored to client requirements.",
+            image: null,
+            size: "small",
+            isFeatured: true,
         }
     ];
 
@@ -98,7 +109,7 @@ const Projects = () => {
                 <div className={styles.projectsGrid}>
                     {/* Top Row */}
                     <div className={`${styles.projectCard} ${styles.span2}`}>
-                         <Image src={projects[0].image} alt={projects[0].title} className={styles.projectImage} width={1000} height={1000} />
+                         <Image src={projects[0].image} alt={projects[0].title} className={styles.projectImage} width={1000} height={1000} style={{ objectPosition: projects[0].imagePosition }} />
                          <div className={styles.overlay}>
                              <h3>{projects[0].title}</h3>
                              <span>{projects[0].location}</span>
@@ -135,14 +146,14 @@ const Projects = () => {
 
                     {/* Bottom Row */}
                     <div className={`${styles.projectCard} ${styles.span1}`}>
-                         <Image src={projects[4].image} alt={projects[4].title} className={styles.projectImage} width={1000} height={1000} />
+                         <Image src={projects[4].image} alt={projects[4].title} className={styles.projectImage} width={1000} height={1000} style={{ objectPosition: projects[4].imagePosition }} />
                          <div className={styles.overlay}>
                              <h3>{projects[4].title}</h3>
                              <span>{projects[4].location}</span>
                          </div>
                     </div>
                     <div className={`${styles.projectCard} ${styles.span1}`}>
-                         <Image src={projects[5].image} alt={projects[5].title} className={styles.projectImage} width={1000} height={1000} />
+                         <Image src={projects[5].image} alt={projects[5].title} className={styles.projectImage} width={1000} height={1000} style={{ objectPosition: projects[5].imagePosition }} />
                          <div className={styles.overlay}>
                              <h3>{projects[5].title}</h3>
                              <span>{projects[5].location}</span>
