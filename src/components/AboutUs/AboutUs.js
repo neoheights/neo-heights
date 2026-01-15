@@ -32,7 +32,7 @@ const AboutUs = () => {
       image: require("@/assets/images/aboutUs/modern_tech.jpg"),
     },
     {
-      stat: "3M+ sq.ft",
+      stat: "5M+ sq.ft",
       title: "Footprint Delivered",
       description: "Construction footprint delivered with engineering excellence.",
       category: "PROJECT SCALE",
@@ -40,7 +40,7 @@ const AboutUs = () => {
       image: require("@/assets/images/aboutUs/infra_delivery.jpg"),
     },
     {
-      stat: "3,000+",
+      stat: "1000+",
       title: "Widgets Produced",
       description: "Widgets in one day boost operational efficiency.",
       category: "FORTUNE 500 COMPANY",

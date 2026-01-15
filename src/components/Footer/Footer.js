@@ -96,11 +96,11 @@ const Footer = () => {
               <div className={styles.contactWrapper}>
                 <div className={styles.sectionContainer}>
                   <Phone size={16} color="#E17100" />
-                  <p>+91 87546 05666, +91 88700 33414</p>
+                  <p>+91 87546 05666, +91 99402 17718, +91 88700 33414</p>
                 </div>
                 <div className={styles.sectionContainer}>
                   <Mail size={16} color="#E17100" />
-                  <p>ceo@neoheights.com, marketing@neoheights.com</p>
+                  <p>ceo@neoheights.com, monalisa@neoheightd.com, marketing@neoheights.com</p>
                 </div>
                 <div className={styles.addressContainerWrapper}>
                   <p className={styles.addressContainer}>
