@@ -20,6 +20,8 @@ export async function POST(request) {
     const secure = String(process.env.SMTP_SECURE || '').toLowerCase() === 'true' || port === 465;
     const to = process.env.SMTP_TO || user;
 
+    const fromUser = process.env.SMTP_FROM || 'info@neoheights.com'
+
     if (!host || !user || !pass) {
       return NextResponse.json(
         { ok: false, error: 'SMTP environment variables not configured' },
@@ -52,8 +54,8 @@ ${message}
       </div>
     `;
 
-    await transporter.sendMail({
-      from: `"Neo Heights Website" <${user}>`,
+    const sendResponse = await transporter.sendMail({
+      from: `"Neo Heights Website" <${fromUser}>`,
       to,
       replyTo: email,
       subject,
@@ -61,7 +63,7 @@ ${message}
       html,
     });
 
-    return NextResponse.json({ ok: true });
+    return NextResponse.json({ ok: true, sendResponse });
   } catch (err) {
     return NextResponse.json(
       { ok: false, error: 'Failed to send email', details: String(err?.message || err) },
