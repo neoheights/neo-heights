@@ -1,6 +1,7 @@
   import localFont from "next/font/local";
   import './globals.scss';
   import ThemeProvider from "@/components/ThemeProvider";
+import ContactPopup from "@/components/ContactPopup/ContactPopup";
 
   const futura = localFont({
     src: [
@@ -37,6 +38,7 @@
           <ThemeProvider>
             {children}
           </ThemeProvider>
+          <ContactPopup />
         </body>
       </html>
     );
