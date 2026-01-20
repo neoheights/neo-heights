@@ -42,7 +42,7 @@ const AboutUs = () => {
     {
       stat: "1000+",
       title: "Widgets Produced",
-      description: "Widgets in one day boost operational efficiency.",
+      description: "A skilled workforce ensures precision, safety, and timely delivery.",
       category: "FORTUNE 500 COMPANY",
       subItems: ["Electrification", "Backend Development"],
       image: require("@/assets/images/aboutUs/workforce.jpg"),
