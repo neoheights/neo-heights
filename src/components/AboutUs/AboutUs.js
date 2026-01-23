@@ -8,7 +8,7 @@ import styles from './AboutUs.module.scss';
 const AboutUs = () => {
   const features = [
     {
-      stat: "12+",
+      stat: "14+",
       title: "Years of Excellence",
       description: "Years of experience delivering high-quality engineering solutions.",
       category: "ENGINEERING & CONSTRUCTION",
