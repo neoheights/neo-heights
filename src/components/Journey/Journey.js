@@ -11,7 +11,7 @@ const Journey = () => {
         <div className={styles.leftPane}>
           <div className={styles.sinceRow}>
             <span className={styles.sinceDot}></span>
-            <span className={styles.sinceText}>SINCE 1989</span>
+            <span className={styles.sinceText}>SINCE 1978</span>
           </div>
 
           <h2 className={styles.mainTitle}>

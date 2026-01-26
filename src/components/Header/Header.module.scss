@@ -147,3 +147,232 @@
     display: block;
   }
 }
+
+/* Mega Menu Styles */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999; // Below header but covers content? No, needs to cover everything to handle click outside
+  // If header is 1000, this should be 999 if we want header accessible, or 1001 if we want to modal-ize.
+  // User wants "disappear clicking outside". If I click header logo, it should probably close.
+  // So 1001 is safer, but header is z-index 1000.
+  // If I set z-index 1001, it covers header, so clicking "Projects" again (to toggle) would be clicking the backdrop.
+  // That's fine, clicking backdrop closes it.
+  z-index: 1001;
+  backdrop-filter: blur(3px);
+  animation: fadeIn 0.3s ease;
+}
+
+.projectsMegaMenu {
+  position: fixed;
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1000px;
+  background: #0f0f0f;
+  border: 1px solid #333;
+  border-radius: 16px;
+  padding: 40px;
+  z-index: 1002;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  animation: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  color: #fff;
+
+  @media (max-width: 768px) {
+    top: 80px;
+    padding: 20px;
+    width: 95%;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -30px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.megaMenuContainer {
+  padding: 0;
+  height: auto;
+  display: block;
+}
+
+.menuGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.sectionTitle {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.projectsList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.projectItem {
+  background: #1a1a1a;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid #2a2a2a;
+  transition: all 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    background: #222;
+    border-color: #444;
+  }
+
+  h5 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #eee;
+    margin-bottom: 4px;
+  }
+
+  span {
+    font-size: 0.75rem;
+    color: #888;
+    text-transform: uppercase;
+  }
+}
+
+.exploreSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.exploreCard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+
+  .exploreImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .exploreOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    
+    h5 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    span {
+      font-size: 0.75rem;
+      color: #ccc;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.bottomBar {
+  border-top: 1px solid #2a2a2a;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+}
+
+.ctaWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .ctaIcon {
+    width: 32px;
+    height: 32px;
+    background: var(--primary-orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: #ccc;
+
+    span {
+      color: #fff;
+      font-weight: 600;
+    }
+  }
+}
+
+.startProjectBtn {
+  background: var(--primary-orange);
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background: var(--primary-orange-hover);
+    transform: translateY(-1px);
+  }
+
+  .rotateIcon {
+    transform: rotate(-90deg); // Arrow right
+  }
+}

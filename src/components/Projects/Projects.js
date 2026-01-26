@@ -41,6 +41,7 @@ const Projects = () => {
             title: "SCHAEFFLER INDIA LIMITED",
             location: "SHOOLAGIRI",
             image: require('@/assets/images/projects/india.png'),
+            image2: require('@/assets/images/projects/india2.jpg'),
             size: "large-wide"
         },
         {
@@ -81,8 +82,8 @@ const Projects = () => {
             </div> */}
             <div className={styles.categoryFilters}>
                 {categories.map(cat => (
-                    <button 
-                        key={cat} 
+                    <button
+                        key={cat}
                         className={`${styles.categoryBtn} ${activeCategory === cat ? styles.active : ''}`}
                         onClick={() => setActiveCategory(cat)}
                     >
@@ -96,31 +97,31 @@ const Projects = () => {
     return (
         <section className={styles.projectsSection} id="projects">
             <div className={`container ${styles.container}`}>
-                <SectionText 
+                <SectionText
                     smallTitle="PROJECTS"
                     title="Innovative Projects That Push Boundaries and Surpass Goals"
                     buttonLabel="Explore All Projects"
-                    onButtonClick={() => {}}
+                    onButtonClick={() => { }}
                     align="left"
                     customChildren={<Filters />}
-                    // maxWidth='60%'
+                // maxWidth='60%'
                 />
 
                 <div className={styles.projectsGrid}>
                     {/* Top Row */}
                     <div className={`${styles.projectCard} ${styles.span2}`}>
-                         <Image src={projects[0].image} alt={projects[0].title} className={styles.projectImage} width={1000} height={1000} style={{ objectPosition: projects[0].imagePosition }} />
-                         <div className={styles.overlay}>
-                             <h3>{projects[0].title}</h3>
-                             <span>{projects[0].location}</span>
-                         </div>
+                        <Image src={projects[0].image} alt={projects[0].title} className={styles.projectImage} width={1000} height={1000} style={{ objectPosition: projects[0].imagePosition }} />
+                        <div className={styles.overlay}>
+                            <h3>{projects[0].title}</h3>
+                            <span>{projects[0].location}</span>
+                        </div>
                     </div>
                     <div className={`${styles.projectCard} ${styles.span1}`}>
-                         <Image src={projects[1].image} alt={projects[1].title} className={styles.projectImage} width={1000} height={1000} />
-                         <div className={styles.overlay}>
-                             <h3>{projects[1].title}</h3>
-                             <span>{projects[1].location}</span>
-                         </div>
+                        <Image src={projects[1].image} alt={projects[1].title} className={styles.projectImage} width={1000} height={1000} />
+                        <div className={styles.overlay}>
+                            <h3>{projects[1].title}</h3>
+                            <span>{projects[1].location}</span>
+                        </div>
                     </div>
 
                     {/* Middle Row - Featured Text Card */}
@@ -137,32 +138,39 @@ const Projects = () => {
                         </div>
                     </div>
                     <div className={`${styles.projectCard} ${styles.span2}`}>
-                         <Image src={projects[3].image} alt={projects[3].title} className={styles.projectImage} width={1000} height={1000} />
-                         <div className={styles.overlay}>
-                             <h3>{projects[3].title}</h3>
-                             <span>{projects[3].location}</span>
-                         </div>
+                        {/* Here these two images need to be in carousel */}
+                        <div className={styles.projectImageCarouselContainer}>
+                            <Image src={projects[3]?.image} alt={projects[3].title} className={styles.projectImage} width={1000} height={1000} />
+                            <Image src={projects[3]?.image2} alt={projects[3].title} className={styles.projectImage} width={1000} height={1000} />
+                            {/* Duplicates for infinite scroll */}
+                            <Image src={projects[3]?.image} alt={projects[3].title} className={styles.projectImage} width={1000} height={1000} />
+                            <Image src={projects[3]?.image2} alt={projects[3].title} className={styles.projectImage} width={1000} height={1000} />
+                        </div>
+                        <div className={styles.overlay}>
+                            <h3>{projects[3].title}</h3>
+                            <span>{projects[3].location}</span>
+                        </div>
                     </div>
 
                     {/* Bottom Row */}
                     <div className={`${styles.projectCard} ${styles.span1}`}>
-                         <Image src={projects[4].image} alt={projects[4].title} className={styles.projectImage} width={1000} height={1000} style={{ objectPosition: projects[4].imagePosition }} />
-                         <div className={styles.overlay}>
-                             <h3>{projects[4].title}</h3>
-                             <span>{projects[4].location}</span>
-                         </div>
+                        <Image src={projects[4].image} alt={projects[4].title} className={styles.projectImage} width={1000} height={1000} style={{ objectPosition: projects[4].imagePosition }} />
+                        <div className={styles.overlay}>
+                            <h3>{projects[4].title}</h3>
+                            <span>{projects[4].location}</span>
+                        </div>
                     </div>
                     <div className={`${styles.projectCard} ${styles.span1}`}>
-                         <Image src={projects[5].image} alt={projects[5].title} className={styles.projectImage} width={1000} height={1000} style={{ objectPosition: projects[5].imagePosition }} />
-                         <div className={styles.overlay}>
-                             <h3>{projects[5].title}</h3>
-                             <span>{projects[5].location}</span>
-                         </div>
+                        <Image src={projects[5].image} alt={projects[5].title} className={styles.projectImage} width={1000} height={1000} style={{ objectPosition: projects[5].imagePosition }} />
+                        <div className={styles.overlay}>
+                            <h3>{projects[5].title}</h3>
+                            <span>{projects[5].location}</span>
+                        </div>
                     </div>
                     <div className={`${styles.textCard} ${styles.span1} ${styles.darkTextCard}`}>
-                         <p className={styles.finalCardText}>
-Executed as a turnkey EPC project, this facility integrates civil, structural, PEB, and MEP works to deliver a seamless, efficient, and future-ready industrial space tailored to client requirements.                         </p>
-                         <button className={styles.viewMoreBtn}>
+                        <p className={styles.finalCardText}>
+                            Executed as a turnkey EPC project, this facility integrates civil, structural, PEB, and MEP works to deliver a seamless, efficient, and future-ready industrial space tailored to client requirements.                         </p>
+                        <button className={styles.viewMoreBtn}>
                             Learn More <ArrowRight size={14} />
                         </button>
                     </div>

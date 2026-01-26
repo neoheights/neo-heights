@@ -64,7 +64,7 @@ const Hero = () => {
 
             <div className={styles.verticalsWidget}>
                 <div className={styles.widgetHeader}>
-                    <span>Other Verticals</span>
+                    <span>Our Other Verticals</span>
                     <X size={14} className={styles.closeIcon} />
                 </div>
                 <div className={styles.verticalsList}>
