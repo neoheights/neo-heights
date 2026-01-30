@@ -34,7 +34,7 @@ const Hero = () => {
             <div className={styles.overlayContainer}></div>
             <div className={styles.overlay}>
                 <video
-                    src="/videos/intro.mp4"
+                    src="/videos/intro.mkv"
                     autoPlay
                     muted
                     loop

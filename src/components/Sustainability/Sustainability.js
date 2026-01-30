@@ -42,7 +42,7 @@ const Sustainability = () => {
                             animate ? styles.fadeUpDelay1 : styles.hidden
                         }`}
                     >
-                        Explore Our <ArrowRight size={18} />
+                        Explore Our Projects<ArrowRight size={18} />
                     </button>
                 </div>
 

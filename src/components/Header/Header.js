@@ -94,7 +94,11 @@ const Header = () => {
                 <div className={styles.bottomBar}>
                     <div className={styles.ctaWrapper}>
                         <div className={styles.ctaIcon}>
-                            <span>👋</span>
+                            <span style={{ display: 'flex' }}>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.83997 14.84H9.83997V1.84L16.2339 4.58025C16.6016 4.73783 16.84 5.09937 16.84 5.4994V14.84H18.84V16.84H-3.16003V14.84H-1.16003V1.48987C-1.16003 1.09469 -0.927304 0.736556 -0.566174 0.576056L7.13687 -2.84752C7.38927 -2.95968 7.68477 -2.84603 7.79687 -2.59369C7.82527 -2.52976 7.83997 -2.46058 7.83997 -2.39062V14.84Z" fill="white" />
+                                </svg>
+                            </span>
                         </div>
                         <p>Ready to kick off a project? <span>Let's get in touch!</span></p>
                     </div>
@@ -118,8 +122,16 @@ const Header = () => {
                         {navItems.map((item) => (
                             <li key={item.label} className={styles.navItem} onClick={() => handleNavClick(item)}>
                                 {/* <Link href={item.href} className={styles.navLink}> */}
-                                {item.label}
-                                {item.hasDropdown && <ChevronDown size={14} className={styles.dropdownIcon} />}
+                                <span>
+                                    {item.label}
+                                </span>
+                                <span>
+                                    {item.hasDropdown &&
+                                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5.5 8.25L11 13.75L16.5 8.25" stroke="white" stroke-width="1.375" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    }
+                                </span>
                                 {/* </Link> */}
                             </li>
                         ))}
@@ -143,7 +155,7 @@ const Header = () => {
                     </button>
                 </div>
             </div>
-            
+
             {showProjectsMenu && (
                 <>
                     <div className={styles.backdrop} onClick={closeProjectsMenu} />
