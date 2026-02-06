@@ -68,7 +68,7 @@ const Clients = () => {
                     smallTitle="CLIENTS"
                     title="We Collaborate With Trusted Brands In Engineering And Technology, Valuing Quality."
                     align="left"
-                    maxWidth="800px"
+                    maxWidth="1000px"
                 />
 
                 <div className={styles.slidersContainer}>

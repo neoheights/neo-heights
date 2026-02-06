@@ -374,6 +374,8 @@
   cursor: pointer;
   transition: all 0.2s;
 
+  font-family: var(--font-futura);
+
   &:hover {
     background: var(--primary-orange-hover);
     transform: translateY(-1px);

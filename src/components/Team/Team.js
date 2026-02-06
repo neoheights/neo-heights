@@ -33,8 +33,9 @@ const Team = () => {
             bgColor: "#FFEFB6"
         },
         {
-            role: "CFO",
-            image: null,
+            name: 'Mr. Thirumalesh',
+            role: "CHRO - ARUL GROUP",
+            image: require('@/assets/images/experts/thirumalesh.png'),
             bgColor: "#C7F1FA"
         }
     ];
@@ -83,7 +84,10 @@ const Team = () => {
                 <div className={styles.teamGrid}>
                     {teamMembers.map((member, index) => (
                         <div key={index} className={styles.teamCard}>
-                            <div className={styles.cardVisual} style={{ backgroundColor: member.bgColor }}>
+                            <div
+                                className={styles.cardVisual}
+                                // style={{ backgroundColor: member.bgColor }}
+                            >
                                 {member.image && (
                                     <Image width={1000} height={1000} src={member.image} alt={member.role} className={styles.memberImage} />
                                 )}
