@@ -95,6 +95,7 @@
   @media (max-width: 768px) {
     font-size: 1.9rem;
     line-height: 0.9;
+    letter-spacing: -0.2;
 
     margin-bottom: 15px;
   }
@@ -119,6 +120,10 @@
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    gap: 12px;
+  }
 }
 
 .btn {
