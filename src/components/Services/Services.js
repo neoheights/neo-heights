@@ -10,32 +10,52 @@ const Services = () => {
     const services = [
         {
             title: "Civil Engineering",
-            image: require('@/assets/images/services/civil.jpg'),
+            image: require('@/assets/images/services/service1.jpg'),
         },
         {
             title: "Pre-Engineering Building",
-            image: require('@/assets/images/services/epc.png'),
+            image: require('@/assets/images/services/service2.jpg'),
         },
         {
             title: "Commercial Interiors",
-            image: require('@/assets/images/services/gc.png'),
+            image: require('@/assets/images/services/service3.jpg'),
         },
         {
             title: "MEP",
-            image: require('@/assets/images/services/interiors.jpg'),
+            image: require('@/assets/images/services/service4.jpg'),
         },
         {
-            title: "Industrial Construction",
-            image: require('@/assets/images/services/land.jpg'),
+            title: "Land Development",
+            image: require('@/assets/images/services/service5.jpg'),
         },
         {
-            title: "Warehousing Solutions",
-            image: require('@/assets/images/services/mep.jpg'),
+            title: "GC PROJECTS",
+            image: require('@/assets/images/services/service6.jpg'),
         },
         {
-            title: "Infrastructure",
-            image: require('@/assets/images/services/pre.jpg'),
-        }
+            title: "EPC CONTRACTOR",
+            image: require('@/assets/images/services/service7.png'),
+        },
+        {
+            title: "Civil Engineering",
+            image: require('@/assets/images/services/service8.jpg'),
+        },
+        {
+            title: "Pre Engineering Building",
+            image: require('@/assets/images/services/service9.jpg'),
+        },
+        {
+            title: "Land Development",
+            image: require('@/assets/images/services/service10.jpg'),
+        },
+        {
+            title: "GC PROJECTS",
+            image: require('@/assets/images/services/service11.png'),
+        },
+        {
+            title: "EPC CONTRACTOR",
+            image: require('@/assets/images/services/service12.png'),
+        },
     ];
 
     // Duplicate the list to ensure seamless scrolling
