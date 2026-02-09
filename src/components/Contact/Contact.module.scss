@@ -213,6 +213,8 @@
     transition: background 0.2s;
     margin-top: 10px;
 
+    font-size: 16px;
+
     &:hover {
         background-color: darken(#ff6b00, 5%); // Assuming orange is somewhat like this
     }

@@ -100,7 +100,7 @@ const Footer = () => {
                 </div>
                 <div className={styles.sectionContainer}>
                   <Mail size={16} color="#E17100" />
-                  <p>ceo@neoheights.com, monalisa@neoheightd.com, marketing@neoheights.com</p>
+                  <p>ceo@neoheights.com, monalisa@neoheights.com, marketing@neoheights.com</p>
                 </div>
                 <div className={styles.addressContainerWrapper}>
                   <p className={styles.addressContainer}>
