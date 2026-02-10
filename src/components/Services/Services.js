@@ -36,26 +36,26 @@ const Services = () => {
             title: "EPC CONTRACTOR",
             image: require('@/assets/images/services/service7.png'),
         },
-        {
-            title: "Civil Engineering",
-            image: require('@/assets/images/services/service8.jpg'),
-        },
-        {
-            title: "Pre Engineering Building",
-            image: require('@/assets/images/services/service9.jpg'),
-        },
-        {
-            title: "Land Development",
-            image: require('@/assets/images/services/service10.jpg'),
-        },
-        {
-            title: "GC PROJECTS",
-            image: require('@/assets/images/services/service11.png'),
-        },
-        {
-            title: "EPC CONTRACTOR",
-            image: require('@/assets/images/services/service12.png'),
-        },
+        // {
+        //     title: "Civil Engineering",
+        //     image: require('@/assets/images/services/service8.jpg'),
+        // },
+        // {
+        //     title: "Pre Engineering Building",
+        //     image: require('@/assets/images/services/service9.jpg'),
+        // },
+        // {
+        //     title: "Land Development",
+        //     image: require('@/assets/images/services/service10.jpg'),
+        // },
+        // {
+        //     title: "GC PROJECTS",
+        //     image: require('@/assets/images/services/service11.png'),
+        // },
+        // {
+        //     title: "EPC CONTRACTOR",
+        //     image: require('@/assets/images/services/service12.png'),
+        // },
     ];
 
     // Duplicate the list to ensure seamless scrolling
