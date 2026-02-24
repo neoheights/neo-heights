@@ -18,6 +18,7 @@ const BlogPost = ({
     <article className={styles.blogPost}>
       {/* Hero Section */}
       <section className={styles.hero}>
+        <div className={styles.backgourndBlack}></div>
         <div className={styles.heroOverlay}>
           <div className={styles.container}>
             <div className={styles.heroContentTopContent}>
