@@ -130,6 +130,17 @@
   transform: translateY(20px);
   transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
   pointer-events: none; // Let clicks pass through if needed, or remove if button is clickable
+
+  .absoluteColorWhenHover {
+    position: absolute;
+    bottom: -10%;
+    right: -5%;
+    width: 50%;
+    height: 75px;
+    z-index: 0; // Place it behind the content
+    border-radius: 50%;
+    filter: blur(30px);
+  }
 }
 
 .hoverTitle {

@@ -14,6 +14,7 @@ const AboutUs = () => {
       category: "ENGINEERING & CONSTRUCTION",
       subItems: ["Structural Design", "Project Execution"],
       image: require("@/assets/images/aboutUs/structural_design.jpg"),
+      backgroundColor: '#0462AE',
     },
     {
       stat: "20+",
@@ -22,6 +23,7 @@ const AboutUs = () => {
       category: "COMMERCIAL BUILDS",
       subItems: ["Commercial Builds", "Residential Projects"],
       image: require("@/assets/images/aboutUs/residential_prjts.png"),
+      backgroundColor: '#E0654F',
     },
     {
       stat: "100%",
@@ -30,6 +32,7 @@ const AboutUs = () => {
       category: "LATEST EQUIPMENT",
       subItems: ["Advanced Machinery", "Modern Technology"],
       image: require("@/assets/images/aboutUs/modern_tech.jpg"),
+      backgroundColor: '#F57F2A',
     },
     {
       stat: "5M+ sq.ft",
@@ -38,6 +41,7 @@ const AboutUs = () => {
       category: "PROJECT SCALE",
       subItems: ["Large-format Builds", "Infrastructure Delivery"],
       image: require("@/assets/images/aboutUs/infra_delivery.jpg"),
+      backgroundColor: '#F57F2A',
     },
     {
       stat: "1000+",
@@ -46,6 +50,7 @@ const AboutUs = () => {
       category: "FORTUNE 500 COMPANY",
       subItems: ["Electrification", "Backend Development"],
       image: require("@/assets/images/aboutUs/workforce.jpg"),
+      backgroundColor: '#E0654F',
     }
   ];
 

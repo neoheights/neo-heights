@@ -5,7 +5,7 @@ import SectionText from '../SectionText/SectionText';
 import { ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
 import styles from './FAQ.module.scss';
 
-const FAQ = () => {
+const FAQ = ({ showBannerOnly = false }) => {
     const [openIndex, setOpenIndex] = useState(0); // Default first one open
 
     const faqs = [
@@ -34,30 +34,34 @@ const FAQ = () => {
     return (
         <section className={styles.faqSection}>
             <div className={`container ${styles.container}`}>
-                <SectionText 
-                    smallTitle="NEED HELP?"
-                    title="Frequently asked questions"
-                    align="center"
-                    maxWidth="800px"
-                />
+                {!showBannerOnly && (
+                    <div>
+                        <SectionText
+                            smallTitle="NEED HELP?"
+                            title="Frequently asked questions"
+                            align="center"
+                            maxWidth="800px"
+                        />
 
-                <div className={styles.faqList}>
-                    {faqs.map((faq, index) => (
-                        <div 
-                            key={index} 
-                            className={`${styles.faqItem} ${openIndex === index ? styles.active : ''}`}
-                            onClick={() => toggleFAQ(index)}
-                        >
-                            <div className={styles.questionHeader}>
-                                <h3>{faq.question}</h3>
-                                {openIndex === index ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-                            </div>
-                            <div className={styles.answerBody}>
-                                <p>{faq.answer}</p>
-                            </div>
+                        <div className={styles.faqList}>
+                            {faqs.map((faq, index) => (
+                                <div
+                                    key={index}
+                                    className={`${styles.faqItem} ${openIndex === index ? styles.active : ''}`}
+                                    onClick={() => toggleFAQ(index)}
+                                >
+                                    <div className={styles.questionHeader}>
+                                        <h3>{faq.question}</h3>
+                                        {openIndex === index ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                                    </div>
+                                    <div className={styles.answerBody}>
+                                        <p>{faq.answer}</p>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-                    ))}
-                </div>
+                    </div>
+                )}
 
                 <div className={styles.bottomCta}>
                     <div className={styles.ctaCard}>

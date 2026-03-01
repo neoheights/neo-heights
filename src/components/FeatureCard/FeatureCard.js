@@ -3,7 +3,7 @@ import styles from './FeatureCard.module.scss';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 
-const FeatureCard = ({ stat, title, description, category, subItems, image }) => {
+const FeatureCard = ({ stat, title, description, category, subItems, image, backgroundColor }) => {
   return (
     <div className={styles.card}>
       <div className={styles.content}>
@@ -42,6 +42,7 @@ const FeatureCard = ({ stat, title, description, category, subItems, image }) =>
             Know More
             {/* <ArrowRight size={16} /> */}
           </button>
+          <div className={styles?.absoluteColorWhenHover} style={{ backgroundColor }} />
         </div>
       </div>
     </div>

@@ -96,8 +96,11 @@
 }
 
 .badgeBox {
-  width: 55px;
-  height: 55px;
+  position: relative;
+  overflow: hidden;
+
+  width: 66px;
+  height: 66px;
   border-radius: 12px;
   // background: linear-gradient(180deg, #ff8a00, #ff6b00);
   display: flex;
@@ -108,27 +111,42 @@
   font-weight: 800;
   color: var(--primary-orange);
 
-  backdrop-filter: blur(200px);
-  box-shadow: 0px 8px 30px 0px #00000069;
-  box-shadow: 0px 0px 12px 0px #FFFFFF08 inset;
+  background-color: #FFFFFF08;
 }
 
 .iconBox {
-  width: 55px;
-  height: 55px;
+  position: relative;
+  overflow: hidden;
+
+  width: 66px;
+  height: 66px;
   border-radius: 12px;
   // background: rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
 
-  backdrop-filter: blur(200px);
-  box-shadow: 0px 8px 30px 0px #00000069;
-  box-shadow: 0px 0px 12px 0px #FFFFFF08 inset;
+  background-color: #FFFFFF08;
 
   svg {
     color: #ff8a00;
   }
+}
+
+.badgeOverlay {
+  width: 63.375px;
+  height: 26px;
+  border-radius: 50%;
+  filter: blur(6px);
+  opacity: 0.4;
+  
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 0;
+
+  transform: translate(-50%, 50%);
+  background-color: #E08E4B;
 }
 
 .featureContent {
@@ -189,7 +207,7 @@
   overflow: hidden;
   background: #1a1a1a;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
-  
+
   @media (max-width: 768px) {
     border-radius: 4px;
   }

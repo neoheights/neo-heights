@@ -1,0 +1,134 @@
+.blogHero {
+  margin: 120px 0 0;
+  padding: 2% 7% 4%;
+  color: var(--foreground);
+
+  .breadcrumb {
+    font-size: 14px;
+    margin-bottom: 40px;
+    color: var(--text-secondary);
+
+    .active {
+      color: var(--foreground);
+      font-weight: 500;
+    }
+  }
+
+  .contentWrapper {
+    display: flex;
+    gap: 40px;
+
+    @media (max-width: 992px) {
+      flex-direction: column;
+    }
+  }
+
+  .mainBlog {
+    flex: 2;
+
+    .imageWrapper {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #222;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 24px;
+
+      .placeholderImage {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, #333, #444);
+      }
+    }
+
+    .mainBlogDetails {
+      .meta {
+        display: block;
+        font-size: 12px;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        letter-spacing: 1px;
+      }
+
+      .mainTitle {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 1.3;
+        margin-bottom: 30px;
+        max-width: 90%;
+      }
+
+      .learnMore {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--primary-orange);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 14px;
+        transition: gap 0.3s ease;
+
+        &:hover {
+          gap: 12px;
+        }
+      }
+    }
+  }
+
+  .sidebar {
+    flex: 1;
+    border-left: 1px solid #333;
+    padding-left: 40px;
+
+    @media (max-width: 992px) {
+      border-left: none;
+      padding-left: 0;
+      border-top: 1px solid #333;
+      padding-top: 40px;
+    }
+
+    .sidebarTitle {
+      font-size: 16px;
+      color: var(--primary-orange);
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+    }
+
+    .otherBlogsList {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .otherBlogItem {
+      border-bottom: 1px solid #333;
+      padding-bottom: 20px;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .otherBlogTitle {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.4;
+        margin-bottom: 12px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: var(--primary-orange);
+        }
+      }
+
+      .otherBlogMeta {
+        font-size: 12px;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
