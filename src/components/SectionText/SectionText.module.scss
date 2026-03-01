@@ -107,26 +107,34 @@
 }
 
 .ctaButton {
-  background: transparent;
-  border: none;
-  color: var(--primary-orange);
-  font-weight: 600;
-  font-size: 14px;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  cursor: pointer;
-  padding: 12px 0;
-  transition: all 0.2s;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  font-family: var(--font-futura);
 
+  cursor: pointer;
   white-space: nowrap; // prevents text from breaking into next line
 
+  background: var(--primary-orange);
+  color: #fff;
+  border: 1px solid var(--primary-orange);
+
   &:hover {
-    gap: 12px;
+    background: var(--primary-orange-hover);
+    border-color: var(--primary-orange-hover);
+    transform: translateY(-2px);
   }
 
   @media (max-width: 768px) {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    padding: 10px 20px;
+    border-radius: 8px;
   }
 }
 

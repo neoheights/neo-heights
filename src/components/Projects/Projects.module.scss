@@ -121,7 +121,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 18px 25px 10px;
+    padding: 28px 25px 20px;
 
     background: #3F3F3F4D;
     backdrop-filter: blur(8.600000381469727px);
@@ -189,9 +189,29 @@
 .textHeader {
   margin-bottom: 20px;
 
+  display: flex;
+  gap: 30px;
+
   h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
+  }
+
+  span {
+    height: 44px;
+    padding: 12px;
+    border-radius: 12px;
+    background: #494949;
+    color: var(--foreground);
+
+    font-size: 0.85rem;
+    font-weight: 500;
+
+    white-space: nowrap; // prevents text from breaking into next line
+  }
+
+  @media (max-width: 768px) {
+    display: none;
   }
 }
 
@@ -205,7 +225,7 @@
 }
 
 .viewMoreBtn {
-  margin-top: auto;
+  margin-top: 40px;
   background: transparent;
   border: none;
   color: var(--primary-orange);
@@ -243,12 +263,17 @@
 }
 
 @keyframes carouselScroll {
-  0%, 40% {
+
+  0%,
+  40% {
     transform: translateX(0);
   }
-  50%, 90% {
+
+  50%,
+  90% {
     transform: translateX(-25%);
   }
+
   100% {
     transform: translateX(-50%);
   }

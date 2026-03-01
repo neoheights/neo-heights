@@ -30,7 +30,7 @@ const Projects = () => {
             size: "small"
         },
         {
-            title: "SCHAEFFLER INDIA LIMITED",
+            title: "Schaeffler India Limited, Shoolagiri",
             location: "SHOOLAGIRI",
             description: "Building a fully operational manufacturing facility involves a comprehensive scope that includes civil engineering, mechanical, electrical, and plumbing (MEP) systems. This project will encompass all necessary components to ensure a successful setup.",
             image: require('@/assets/images/projects/sakata.png'),

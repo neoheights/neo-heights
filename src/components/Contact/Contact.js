@@ -69,7 +69,7 @@ const Contact = () => {
                             <input
                                 type="text"
                                 name="name"
-                                placeholder="Your full Name"
+                                placeholder="First & Last name"
                                 className={styles.input}
                                 value={form.name}
                                 onChange={onChange}
