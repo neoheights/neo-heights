@@ -19,8 +19,7 @@ const Blogs = () => {
             category: "MATERIALS",
             title: "Important factors every homeowner should know from design planning and material selection to approvals and timelines.",
             image: require('@/assets/images/blogs/material.png'),
-            slug: ""
-            // slug: "gold-and-platinum-rated-buildings"
+            slug: "gold-and-platinum-rated-buildings"
         },
         {
             category: "SAFETY & QUALITY",
