@@ -114,7 +114,12 @@ const BlogPost = ({
             </div>
 
             <div className={styles.introText}>
-              {content?.intro}
+              {/* Main Introduction Text */}
+              {content?.intro?.map((paragraph, index) => (
+                <p key={index} className={styles.introParagraph}>
+                  {paragraph}
+                </p>
+              ))}
             </div>
 
             {/* Sections */}
@@ -132,62 +137,91 @@ const BlogPost = ({
                 )}
 
                 <div className={styles.sectionBody}>
-                  {Object.keys(section).map((key) => {
-                    const value = section[key];
-
-                    switch (key) {
-                      case "text":
+                  {section.sectionContent?.map((item, i) => {
+                    switch (item.type) {
+                      case "scroll-images":
                         return (
-                          <div key={key} className={styles.sectionTextWrapper}>
-                            {(Array.isArray(value) ? value : [value]).map(
-                              (paragraph, i) => (
-                                <p key={i} className={styles.sectionText}>
-                                  {paragraph}
-                                </p>
-                              )
-                            )}
+                          <div key={i} className={styles.scrollImagesContainer}>
+                            {item.content.map((imageUrl, j) => (
+                              <div key={j} className={styles.scrollImageWrapper}>
+                                <Image
+                                  src={imageUrl}
+                                  alt={`${section.title || "section image"} ${j + 1}`}
+                                  width={1000}
+                                  height={1000}
+                                  className={styles.scrollImage}
+                                />
+                              </div>
+                            ))}
                           </div>
+                        );
+
+                      case "paragraph":
+                        return (
+                          <p key={i} className={styles.sectionText}>
+                            {item.content}
+                          </p>
                         );
 
                       case "image":
                         return (
-                          value && (
-                            <div key={key} className={styles.sectionImageWrapper}>
-                              <Image
-                                src={value}
-                                alt={section.title || "section image"}
-                                width={1000}
-                                height={1000}
-                                className={styles.sectionImage}
-                              />
-                              {section.imageCaption && (
-                                <span className={styles.imageCaption}>
-                                  {section.imageCaption}
-                                </span>
-                              )}
-                            </div>
-                          )
+                          <div key={i} className={styles.sectionImageWrapper}>
+                            <Image
+                              src={item.url}
+                              alt={section.title || "section image"}
+                              width={1000}
+                              height={1000}
+                              className={styles.sectionImage}
+                            />
+                            {item.imageCaption && (
+                              <span className={styles.imageCaption}>
+                                {item.imageCaption}
+                              </span>
+                            )}
+                          </div>
                         );
 
                       case "list":
                         return (
-                          value && (
-                            <ul key={key} className={styles.sectionList}>
-                              {value.map((item, i) => (
-                                <li key={i} className={styles.sectionListItem}>
-                                  <span>
-                                    <svg width="22" height="34" viewBox="0 0 22 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                      <path d="M8.25 22.5L13.75 17L8.25 11.5" stroke="#F68121" stroke-width="1.375" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                  </span>
-                                  <div className={styles.listItemContent}>
-                                    <p>{item.label}</p>
-                                    <p>{item.value}</p>
-                                  </div>
-                                </li>
-                              ))}
-                            </ul>
-                          )
+                          <ul key={i} className={styles.sectionList}>
+                            {item.content.map((listItem, j) => (
+                              <li key={j} className={styles.sectionListItem}>
+                                <span>
+                                  <svg
+                                    width="22"
+                                    height="34"
+                                    viewBox="0 0 22 34"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M8.25 22.5L13.75 17L8.25 11.5"
+                                      stroke="#F68121"
+                                      strokeWidth="1.375"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                    />
+                                  </svg>
+                                </span>
+
+                                <div className={styles.listItemContent}>
+                                  <p>{listItem.label}</p>
+                                  <p>{listItem.value}</p>
+                                </div>
+                              </li>
+                            ))}
+                          </ul>
+                        );
+
+                      case "bullet-points":
+                        return (
+                          <ul key={i} className={styles.bulletPointsList}>
+                            {item.content.map((point, j) => (
+                              <li key={j} className={styles.bulletPointItem}>
+                                <p>{point}</p>
+                              </li>
+                            ))}
+                          </ul>
                         );
 
                       default:
