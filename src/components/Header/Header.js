@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import { ChevronDown, Moon, Sun, Menu, X } from 'lucide-react';
 import { useTheme } from '../ThemeProvider';
 import styles from './Header.module.scss';
@@ -12,6 +13,8 @@ const Header = () => {
     const { theme, toggleTheme } = useTheme();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [showProjectsMenu, setShowProjectsMenu] = useState(false);
+    const pathname = usePathname();
+    const router = useRouter();
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -38,6 +41,10 @@ const Header = () => {
     const handleNavClick = (item) => {
         if (item.id === 'projects') {
             setShowProjectsMenu(!showProjectsMenu);
+        } else if (pathname !== '/') {
+            // If we're not on the home page, navigate to home and then scroll
+            setIsMenuOpen(false);
+            router.push(`/#${item.id}`);
         } else {
             scrollToSection(item.id);
         }
@@ -64,6 +71,17 @@ const Header = () => {
             behavior: "smooth",
         });
     };
+
+    React.useEffect(() => {
+        // Handle hash scrolling on page load (e.g., coming from a blog page)
+        if (pathname === '/' && window.location.hash) {
+            const id = window.location.hash.replace('#', '');
+            // Small delay to ensure the page has rendered
+            setTimeout(() => {
+                scrollToSection(id);
+            }, 100);
+        }
+    }, [pathname]);
 
     const ProjectsMegaMenu = () => (
         <div className={styles.projectsMegaMenu}>
@@ -113,9 +131,9 @@ const Header = () => {
     return (
         <header className={styles.header}>
             <div className={`container ${styles.container}`}>
-                <div className={styles.logo}>
+                <Link href="/" className={styles.logo}>
                     <Image src={logoImg} width={300} height={300} className={styles.logoIcon} alt="neo" />
-                </div>
+                </Link>
 
                 <nav className={`${styles.nav} ${isMenuOpen ? styles.mobileOpen : ''}`}>
                     <ul className={styles.navList}>
