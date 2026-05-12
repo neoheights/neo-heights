@@ -16,17 +16,16 @@
 }
 
 .container {
-  padding: 40px 20px 20px;
+  padding: 0 20px 24px;
 }
 
 .ctaBar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #161616;
-  border-radius: 12px;
-  padding: 24px;
-  margin-bottom: 40px;
+  padding: 28px 0 30px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
   @media (max-width: 576px) {
     flex-direction: column;
@@ -37,14 +36,15 @@
 
 .ctaText {
   h4 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin: 0 0 6px;
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin: 0 0 8px;
   }
 
   p {
-    color: #aaa;
+    color: #9a9a9a;
     margin: 0;
+    font-size: 0.85rem;
   }
 }
 
@@ -53,11 +53,11 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px 24px;
-  border-radius: 12px;
-  font-weight: 400;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 500;
   transition: all 0.3s ease;
-  font-size: 1rem;
+  font-size: 0.9rem;
 
   cursor: pointer;
 
@@ -74,8 +74,8 @@
 
 .bottomSection {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 2fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1.4fr 1fr 1fr 2fr;
+  gap: 34px;
 
   @media (max-width: 992px) {
     grid-template-columns: 1fr 1fr;
@@ -117,7 +117,7 @@
 
 .linksCol {
   h4 {
-    color: #FFF;
+    color: #fff;
     font-size: 0.8rem;
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -147,10 +147,18 @@
 }
 
 .contactCol {
+  .contactHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
   h4 {
-    color: #FFF;
+    color: #fff;
     font-size: 0.8rem;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     text-transform: uppercase;
     letter-spacing: 1px;
   }
@@ -197,15 +205,16 @@
 .socialIcons {
   display: flex;
   gap: 12px;
+  flex-wrap: wrap;
 
   a {
     color: var(--grey-3-color);
     transition: color 0.2s;
-    border: 1px solid #fff;
-    width: 50px;
-    height: 36px;
-    padding: 10px;
-    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -9,9 +9,8 @@ import Sustainability from "@/components/Sustainability/Sustainability";
 import Legacy from "@/components/Legacy/Legacy";
 import Team from "@/components/Team/Team";
 import Blogs from "@/components/Blogs/Blogs";
-import Journey from "@/components/Journey/Journey";
-import FAQ from "@/components/FAQ/FAQ";
 import Contact from "@/components/Contact/Contact";
+import Journey from "@/components/Journey/Journey";
 import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
@@ -30,7 +29,6 @@ export default function Home() {
       <Blogs />
       <Contact />
       <Journey />
-      <FAQ />
       <Footer />
     </main>
   );

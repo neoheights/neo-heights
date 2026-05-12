@@ -1,29 +1,58 @@
 :root {
-  --background: #1D1D1D;
-  --foreground: #FFFFFF;
-  --primary-orange: #F68121;
+  --background: #1d1d1d;
+  --foreground: #ffffff;
+  --primary-orange: #f68121;
   --primary-orange-hover: #e65100;
   --text-secondary: #909090;
-  --text-third: #F4F4F4;
+  --text-third: #f4f4f4;
   --border-color: #e5e5e5;
-  --grey-color: #E7E7E7;
+  --grey-color: #e7e7e7;
   --black-color: #121212;
   --black-1-color: #161514;
   --grey-1-color: #555555;
-  --grey-2-color: #71717A;
-  --grey-3-color: #D4D4D4;
-  --grey-4-color: #BBBBBB;
+  --grey-2-color: #71717a;
+  --grey-3-color: #d4d4d4;
+  --grey-4-color: #bbbbbb;
   --nav-bg: rgba(255, 255, 255, 0.8);
   --glass-border: rgba(0, 0, 0, 0.1);
+  --surface-1: #121212;
+  --surface-2: #1a1a1a;
+  --surface-3: #222222;
+  --surface-muted: rgba(255, 255, 255, 0.1);
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --background: #0a0a0a;
   --foreground: #ededed;
   --text-secondary: #a3a3a3;
   --border-color: #262626;
   --nav-bg: rgba(10, 10, 10, 0.8);
   --glass-border: rgba(255, 255, 255, 0.1);
+  --surface-1: #121212;
+  --surface-2: #1a1a1a;
+  --surface-3: #222222;
+  --surface-muted: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] {
+  --background: #f5f5f1;
+  --foreground: #1b1b1b;
+  --text-secondary: #5e5e5e;
+  --text-third: #262626;
+  --border-color: #d6d6d6;
+  --grey-color: #dfdfdf;
+  --black-color: #1b1b1b;
+  --black-1-color: #252525;
+  --grey-1-color: #6a6a6a;
+  --grey-2-color: #6a6a74;
+  --grey-3-color: #3f3f3f;
+  --grey-4-color: #5d5d5d;
+  --nav-bg: rgba(245, 245, 241, 0.85);
+  --glass-border: rgba(0, 0, 0, 0.12);
+  --surface-1: #ffffff;
+  --surface-2: #f4f4f4;
+  --surface-3: #e8e8e8;
+  --surface-muted: rgba(0, 0, 0, 0.06);
 }
 
 html,
@@ -38,7 +67,62 @@ body {
   font-family: var(--font-fustat);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+[data-theme="light"] [class*="aboutSection"],
+[data-theme="light"] [class*="servicesSection"],
+[data-theme="light"] [class*="projectsSection"],
+[data-theme="light"] [class*="clientsSection"],
+[data-theme="light"] [class*="sustainabilitySection"],
+[data-theme="light"] [class*="legacySection"],
+[data-theme="light"] [class*="teamSection"],
+[data-theme="light"] [class*="blogsSection"],
+[data-theme="light"] [class*="contactSection"],
+[data-theme="light"] [class*="journeySection"],
+[data-theme="light"] [class*="faqSection"],
+[data-theme="light"] [class*="blogPost"],
+[data-theme="light"] [class*="blogHero"],
+[data-theme="light"] [class*="footer"] {
+  background-color: var(--surface-1) !important;
+  color: var(--foreground);
+}
+
+[data-theme="light"] [class*="projectsMegaMenu"],
+[data-theme="light"] [class*="faqItem"],
+[data-theme="light"] [class*="ctaCard"],
+[data-theme="light"] [class*="formCard"],
+[data-theme="light"] [class*="projectItem"],
+[data-theme="light"] [class*="textCard"],
+[data-theme="light"] [class*="serviceCard"],
+[data-theme="light"] [class*="quoteCard"],
+[data-theme="light"] [class*="mapPanel"],
+[data-theme="light"] [class*="mapCard"] {
+  background: var(--surface-2) !important;
+  border-color: var(--border-color) !important;
+  color: var(--foreground);
+}
+
+[data-theme="light"] input,
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+  background: #ffffff !important;
+  border-color: var(--border-color) !important;
+  color: var(--foreground) !important;
+}
+
+[data-theme="light"] [class*="answerBody"],
+[data-theme="light"] [class*="formDesc"],
+[data-theme="light"] [class*="mapDetails"],
+[data-theme="light"] [class*="description"],
+[data-theme="light"] [class*="brandDesc"] {
+  color: var(--text-secondary) !important;
 }
 
 * {
