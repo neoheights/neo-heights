@@ -100,6 +100,13 @@ const Contact = () => {
         alt=""
       />
       <div className={`container ${styles.container}`}>
+        <div className={styles.sectionIntro}>
+          <p className={styles.sectionEyebrow}>HAVE A PROJECT IN MIND</p>
+          <h2 className={styles.sectionTitle}>
+            We Build Spaces That Power Growth And Last For Generations.
+          </h2>
+        </div>
+
         <div className={styles.topPanel}>
           <div className={styles.formWrapper}>
             <div className={styles.absoluteBgColor}></div>
@@ -216,4 +223,3 @@ const Contact = () => {
 
 export default Contact;
 
-//updated

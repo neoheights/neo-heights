@@ -1,48 +1,54 @@
 .header {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-
+  inset: 0 0 auto 0;
+  width: 100%;
   z-index: 1000;
-  background: var(--background);
-  transition: background 0.3s ease;
-
-  // Add background on scroll if needed, or if not transparent
+  background: rgba(20, 20, 20, 0.98);
+  border-top: 3px solid #0f84ff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(14px);
 }
 
 .container {
-  height: 120px; // This height fixed, used for header margin-top
-  padding: 22.5px 4%;
+  height: 84px;
+  max-width: 1440px;
+  padding: 0 24px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   @media (max-width: 768px) {
-    height: 75px;
+    height: 72px;
+    padding: 0 16px;
   }
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  flex: 0 0 auto;
 
   .logoIcon {
-    width: 107px;
-    height: 75px;
+    width: 86px;
+    height: 50px;
     object-fit: contain;
   }
 
   @media (max-width: 500px) {
     .logoIcon {
-      width: 80px;
-      height: 40px;
+      width: 74px;
+      height: 38px;
     }
   }
 }
 
 .nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+
   @media (max-width: 992px) {
     position: fixed;
     top: 0;
@@ -62,7 +68,8 @@
 .navList {
   display: flex;
   list-style: none;
-  gap: 50px;
+  gap: 38px;
+  align-items: center;
 
   @media (max-width: 992px) {
     flex-direction: column;
@@ -74,17 +81,18 @@
 .navItem {
   position: relative;
   cursor: pointer;
-
-  font-size: 18px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 14px;
   font-family: var(--font-futura);
   font-weight: 500;
+  letter-spacing: 0.01em;
   display: flex;
   align-items: center;
   gap: 4px;
   transition: color 0.2s;
 
   &:hover {
-    color: var(--primary-orange);
+    color: #ffffff;
   }
 
   .dropdownIcon {
@@ -117,28 +125,28 @@
 .actions {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
   z-index: 1001; // Above mobile menu
+  flex: 0 0 auto;
 }
 
 .themeToggle {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
   padding: 4px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .themeOption {
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
   border: none;
   border-radius: 999px;
   background: transparent;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.72);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -146,22 +154,22 @@
   transition: all 0.2s ease;
 
   &.active {
-    background: #0d0d0d;
+    background: #060606;
     color: #ffffff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
   }
 }
 
 :global([data-theme="light"]) .themeToggle {
-  border-color: rgba(0, 0, 0, 0.12);
-  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 :global([data-theme="light"]) .themeOption {
   color: rgba(0, 0, 0, 0.6);
 
   &.active {
-    background: #0d0d0d;
+    background: #101010;
     color: #ffffff;
   }
 }
