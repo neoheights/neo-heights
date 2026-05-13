@@ -46,6 +46,10 @@ const Header = () => {
   const handleNavClick = (item) => {
     if (item.id === "projects") {
       setShowProjectsMenu(!showProjectsMenu);
+    } else if (item.id === "contactUs") {
+      setIsMenuOpen(false);
+      setShowProjectsMenu(false);
+      router.push("/contact");
     } else if (pathname !== "/") {
       // If we're not on the home page, navigate to home and then scroll
       setIsMenuOpen(false);

@@ -14,38 +14,40 @@
     ),
     #0d0d0d;
   color: #fff;
-  padding: 92px 0 0;
+  padding: 104px 0 0;
+  margin-top: 2rem;
 
   @media (max-width: 768px) {
-    padding-top: 64px;
+    padding-top: 80px;
   }
 }
 
 .contactSectionBg {
   position: absolute;
-  right: -80px;
-  bottom: -80px;
-  width: min(520px, 42vw);
+  right: -110px;
+  bottom: -92px;
+  width: min(560px, 44vw);
   height: auto;
   object-fit: contain;
-  opacity: 0.24;
+  opacity: 0.18;
   pointer-events: none;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  gap: 42px;
-  padding: 0 10% 0;
+  gap: 34px;
+  padding: 0 7% 0;
 
   @media (max-width: 768px) {
-    gap: 28px;
+    gap: 24px;
     padding: 0 6% 0;
   }
 }
 
 .sectionIntro {
-  max-width: 760px;
+  max-width: 780px;
+  margin-bottom: 2px;
 }
 
 .sectionEyebrow {
@@ -57,20 +59,20 @@
 }
 
 .sectionTitle {
-  max-width: 680px;
+  max-width: 740px;
   font-family: var(--font-fustat);
-  font-size: clamp(2.1rem, 3.4vw, 3.65rem);
+  font-size: clamp(2rem, 3.3vw, 3.45rem);
   font-weight: 500;
-  line-height: 1.08;
-  letter-spacing: -0.045em;
+  line-height: 1.06;
+  letter-spacing: -0.05em;
   color: #f4f4f4;
 }
 
 .topPanel {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 290px;
-  gap: 48px;
-  align-items: center;
+  gap: 40px;
+  align-items: start;
 
   @media (max-width: 992px) {
     grid-template-columns: 1fr;
@@ -80,7 +82,7 @@
 
 .formWrapper {
   position: relative;
-  max-width: 438px;
+  max-width: 420px;
 }
 
 .absoluteBgColor {
@@ -103,31 +105,31 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  padding: 30px 22px 24px;
+  padding: 24px 20px 20px;
   border-radius: 12px;
   background: rgba(17, 17, 17, 0.98);
   border: 1px solid rgba(255, 255, 255, 0.06);
   box-shadow: 0 20px 70px rgba(0, 0, 0, 0.24);
 
   @media (max-width: 768px) {
-    padding: 24px;
+    padding: 22px 18px 18px;
     border-radius: 12px;
   }
 }
 
 .formCardTitle {
-  margin-bottom: 10px;
+  margin-bottom: 7px;
   font-family: var(--font-fustat);
-  font-size: 1.15rem !important;
+  font-size: 1.05rem !important;
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
 
 .formDesc {
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   font-family: var(--font-fustat);
-  font-size: 0.78rem !important;
+  font-size: 0.73rem !important;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.54);
 
@@ -148,12 +150,12 @@
 .textarea {
   width: 100%;
   padding: 11px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 6px;
-  background: #262626;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 5px;
+  background: #2a2a2a;
   color: #fff;
   font-family: var(--font-fustat);
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 400;
 
   &:focus {
@@ -168,7 +170,7 @@
 }
 
 .textarea {
-  min-height: 92px;
+  min-height: 104px;
   resize: none;
 }
 
@@ -179,12 +181,12 @@
   gap: 6px;
   width: max-content;
   margin-top: 10px;
-  padding: 11px 20px;
+  padding: 10px 20px;
   border: none;
-  border-radius: 8px;
+  border-radius: 7px;
   background: linear-gradient(135deg, #ffb13c 0%, #ff840e 100%);
   color: #fff;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 600;
   cursor: pointer;
   transition:
@@ -223,7 +225,7 @@
 .contactRail {
   display: grid;
   gap: 18px;
-  padding-top: 4px;
+  padding-top: 12px;
 }
 
 .contactMethod {
@@ -239,7 +241,7 @@
   flex: 0 0 auto;
   width: 30px;
   height: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.24);
+  border: 1px solid rgba(255, 255, 255, 0.26);
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.02);
   color: #fff;
@@ -253,7 +255,7 @@
 
 .contactMethodValue {
   color: rgba(255, 255, 255, 0.6);
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   line-height: 1.35;
 }
 
