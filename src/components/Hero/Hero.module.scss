@@ -1,5 +1,5 @@
 .hero {
-  margin: 120px 0 0;
+  margin: 0;
   padding: 0 7%;
 
   font-family: var(--font-futura); // Only for header
@@ -33,7 +33,7 @@
     object-position: center;
   }
 
-  [data-theme='light'] & {
+  [data-theme="light"] & {
     // In light mode, maybe we want it lighter or keep it dark for contrast with white text?
     // Screenshot shows dark background regardless, so we might force dark mode styles for Hero or keep it consistent.
     // Assuming the hero image is always dark/foggy.
@@ -51,11 +51,10 @@
   background: linear-gradient(
     to right,
     rgba(0, 0, 0, 0.85) 0%,
-    rgba(0, 0, 0, 0.70) 20%,
+    rgba(0, 0, 0, 0.7) 20%,
     rgba(0, 0, 0, 0.2) 60%,
     rgba(0, 0, 0, 0) 100%
   );
-  
 }
 
 .container {

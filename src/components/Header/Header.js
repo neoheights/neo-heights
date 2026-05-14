@@ -22,15 +22,15 @@ const Header = () => {
     { label: "Home", href: "/", id: "home" },
     { label: "About us", href: "/", id: "aboutUs" },
     { label: "Projects", href: "/", hasDropdown: true, id: "projects" },
-    { label: "Services", href: "/", hasDropdown: false, id: "services" },
+    { label: "Services", href: "/", hasDropdown: true, id: "services" },
     {
       label: "Sustainability",
       href: "/",
-      hasDropdown: false,
+      hasDropdown: true,
       id: "sustainability",
     },
-    // { label: 'Newsroom', href: '/' },
-    { label: "Team", href: "/", hasDropdown: false, id: "team" },
+    { label: "Newsroom", href: "/blogs", id: "newsroom" },
+    { label: "Team", href: "/", hasDropdown: true, id: "team" },
     { label: "Contact", href: "/", id: "contactUs" },
   ];
 
@@ -179,28 +179,10 @@ const Header = () => {
                 className={styles.navItem}
                 onClick={() => handleNavClick(item)}
               >
-                {/* <Link href={item.href} className={styles.navLink}> */}
-                <span>{item.label}</span>
-                <span>
-                  {item.hasDropdown && (
-                    <svg
-                      width="22"
-                      height="22"
-                      viewBox="0 0 22 22"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M5.5 8.25L11 13.75L16.5 8.25"
-                        stroke="currentColor"
-                        strokeWidth="1.375"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  )}
-                </span>
-                {/* </Link> */}
+                <span className={styles.navLabel}>{item.label}</span>
+                {item.hasDropdown && (
+                  <ChevronDown className={styles.dropdownIcon} size={13} />
+                )}
               </li>
             ))}
           </ul>

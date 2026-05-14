@@ -371,7 +371,7 @@
 }
 
 :global([data-theme="light"]) .sectionEyebrow {
-  color: rgba(27, 27, 27, 0.45);
+  color: #111111;
 }
 
 :global([data-theme="light"]) .sectionTitle {
@@ -393,7 +393,7 @@
 }
 
 :global([data-theme="light"]) .formDesc {
-  color: rgba(23, 23, 23, 0.62);
+  color: #111111;
 
   span {
     color: #111111;
@@ -422,7 +422,7 @@
 }
 
 :global([data-theme="light"]) .contactMethodValue {
-  color: rgba(23, 23, 23, 0.62);
+  color: #111111;
 }
 
 :global([data-theme="light"]) .submitBtn {
@@ -434,7 +434,7 @@
 }
 
 :global([data-theme="light"]) .mapDetailRow p {
-  color: #2f2f2f;
+  color: #111111;
 }
 
 :global([data-theme="light"]) .mapDetailIcon {

@@ -67,6 +67,29 @@
   }
 }
 
+:global([data-theme="light"]) .filterBtn {
+  color: #111111;
+  border-color: rgba(0, 0, 0, 0.14);
+}
+
+:global([data-theme="light"]) .filterBtn:hover,
+:global([data-theme="light"]) .filterBtn.active {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+}
+
+:global([data-theme="light"]) .categoryBtn {
+  background: rgba(17, 17, 17, 0.06);
+  color: #111111;
+}
+
+:global([data-theme="light"]) .categoryBtn:hover,
+:global([data-theme="light"]) .categoryBtn.active {
+  background: #111111;
+  color: #ffffff;
+}
+
 .projectsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -123,9 +146,9 @@
     width: 100%;
     padding: 28px 25px 20px;
 
-    background: #3F3F3F4D;
+    background: #3f3f3f4d;
     backdrop-filter: blur(8.600000381469727px);
-    border: 1px solid #FFFFFF1A;
+    border: 1px solid #ffffff1a;
 
     display: flex;
     justify-content: space-between;
@@ -248,6 +271,10 @@
   margin-bottom: 20px;
 }
 
+:global([data-theme="light"]) .finalCardText {
+  color: #111111;
+}
+
 .projectImageCarouselContainer {
   display: flex;
   width: 400%;
@@ -263,7 +290,6 @@
 }
 
 @keyframes carouselScroll {
-
   0%,
   40% {
     transform: translateX(0);
