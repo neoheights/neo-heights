@@ -20,7 +20,7 @@ const Header = () => {
 
   const navItems = [
     { label: "Home", href: "/", id: "home" },
-    { label: "About us", href: "/", id: "aboutUs" },
+    { label: "About us", href: "/about", id: "about" },
     { label: "Projects", href: "/", hasDropdown: true, id: "projects" },
     { label: "Services", href: "/", hasDropdown: true, id: "services" },
     {
@@ -31,7 +31,7 @@ const Header = () => {
     },
     { label: "Newsroom", href: "/blogs", id: "newsroom" },
     { label: "Team", href: "/", hasDropdown: true, id: "team" },
-    { label: "Contact", href: "/", id: "contactUs" },
+    { label: "Contact", href: "/contact", id: "contactUs" },
   ];
 
   const projectList = [
@@ -50,6 +50,10 @@ const Header = () => {
       setIsMenuOpen(false);
       setShowProjectsMenu(false);
       router.push("/contact");
+    } else if (item.href === "/about" || item.id === "about") {
+      setIsMenuOpen(false);
+      setShowProjectsMenu(false);
+      router.push("/about");
     } else if (pathname !== "/") {
       // If we're not on the home page, navigate to home and then scroll
       setIsMenuOpen(false);

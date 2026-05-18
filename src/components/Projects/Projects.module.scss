@@ -146,9 +146,9 @@
     width: 100%;
     padding: 28px 25px 20px;
 
-    background: #3f3f3f4d;
-    backdrop-filter: blur(8.600000381469727px);
-    border: 1px solid #ffffff1a;
+    background: var(--overlay-bg, rgba(63, 63, 63, 0.3));
+    /* color tint is computed in JS and set via --overlay-bg */
+    border: 1px solid rgba(255, 255, 255, 0.1);
 
     display: flex;
     justify-content: space-between;
@@ -157,11 +157,13 @@
       font-size: 1.1rem;
       margin-bottom: 4px;
       font-weight: 600;
+      color: var(--overlay-text-color, var(--foreground));
+      text-shadow: var(--overlay-text-shadow, none);
     }
 
     span {
       font-size: 0.8rem;
-      color: #aaa;
+      color: var(--overlay-text-secondary, rgba(255, 255, 255, 0.85));
       text-transform: uppercase;
     }
   }
@@ -302,5 +304,36 @@
 
   100% {
     transform: translateX(-50%);
+  }
+}
+
+/* Light-theme override: force readable overlay text when theme is light */
+:global([data-theme="light"]) {
+  .projectCard .overlay h3 {
+    color: var(--black-color) !important;
+    text-shadow: none !important;
+  }
+
+  .projectCard .overlay span {
+    color: var(--black-color) !important;
+    opacity: 0.9 !important;
+  }
+
+  .projectCard .overlay {
+    border-color: rgba(0,0,0,0.06) !important;
+    background: rgba(255,255,255,0.18) !important;
+  }
+}
+
+/* Force readable overlay text in light theme as a safety fallback */
+:global([data-theme="light"]) {
+  .projectCard .overlay h3 {
+    color: var(--black-color) !important;
+    text-shadow: none !important;
+  }
+
+  .projectCard .overlay span {
+    color: var(--black-color) !important;
+    opacity: 0.9;
   }
 }
