@@ -25,7 +25,12 @@
 
   .title {
     padding: 0% !important;
-    max-width: 80%;
+    max-width: 620px;
+    font-size: clamp(32px, 5.5vw, 64px);
+    line-height: 1.02;
+    color: #ffffff;
+    font-weight: 800;
+    margin-bottom: 8px;
   }
 
   .headerGroup {

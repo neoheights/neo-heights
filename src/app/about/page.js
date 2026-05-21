@@ -1,11 +1,17 @@
+"use client";
+
 import Header from "@/components/Header/Header";
 import TrustedBy from "@/components/TrustedBy/TrustedBy";
 import Footer from "@/components/Footer/Footer";
 import SectionText from "@/components/SectionText/SectionText";
 import styles from "./page.module.scss";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import buildingImage from "@/assets/images/aboutUs/infra_delivery.jpg";
 
 export default function AboutPage() {
-  const buildingImage = require("@/assets/images/aboutUs/infra_delivery.jpg");
+  // static import for image so it's bundled correctly
+  const buildingImage = require("@/assets/images/aboutUs/aboutpage.jpg");
 
   return (
     <main>
@@ -22,6 +28,7 @@ export default function AboutPage() {
               align="left"
               maxWidth={760}
             />
+            <div className={styles.trusted}>TRUSTED BY 100+ BUSINESSES</div>
           </div>
 
           <div className={styles.heroRight}>
@@ -31,7 +38,19 @@ export default function AboutPage() {
               solutions across industrial, commercial, residential, and
               infrastructure sectors.
             </p>
-            <button className={styles.contactBtn}>Contact Us</button>
+
+            <p>
+              Driven by quality, precision, and long-term value creation, we
+              specialize in EPC contracting, civil construction, PEB structures,
+              MEP systems, land development, and interior solutions. With
+              decades of industry expertise and a commitment to excellence, Neo
+              Heights continues to scale newer heights through future-ready
+              construction and sustainable development.
+            </p>
+
+            <button className={styles.contactBtn}>
+              Contact Us <ArrowRight size={16} />
+            </button>
           </div>
         </div>
 
@@ -39,10 +58,13 @@ export default function AboutPage() {
       </section>
 
       <section className={styles.heroImageWrap}>
-        <img
+        <Image
           src={buildingImage}
           alt="building"
           className={styles.buildingImage}
+          width={1600}
+          height={620}
+          priority
         />
       </section>
 
@@ -74,7 +96,7 @@ export default function AboutPage() {
           </div>
 
           <div className={styles.storyText}>
-            <h3>TheNeoHeights Story</h3>
+            <h3>The Neo Heights Story</h3>
             <p>
               Founded in 2011 under the strong industrial legacy of Arul Group,
               Neo Heights was established with a vision to redefine modern
