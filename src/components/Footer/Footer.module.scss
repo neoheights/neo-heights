@@ -5,8 +5,7 @@
 }
 
 .footerTopStrip {
-  background: #fff;
-  border-bottom: 1px solid #e5e5e5;
+  display: none; /* hide white top strip (logos are handled by TrustedBy) */
 }
 
 .footerTopImage {
@@ -16,16 +15,16 @@
 }
 
 .container {
-  padding: 0 20px 24px;
+  padding: 28px 64px 40px;
 }
 
 .ctaBar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 28px 0 30px;
-  margin-bottom: 28px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 40px 0 42px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 
   @media (max-width: 576px) {
     flex-direction: column;
@@ -53,28 +52,27 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 10px 22px;
-  border-radius: 8px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  font-size: 0.9rem;
+  padding: 12px 26px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  font-size: 1rem;
 
   cursor: pointer;
 
   background: var(--primary-orange);
   color: #fff;
-  border: 1px solid var(--primary-orange);
+  border: 0;
 
   &:hover {
-    background: var(--primary-orange-hover);
-    border-color: var(--primary-orange-hover);
+    filter: brightness(0.95);
     transform: translateY(-2px);
   }
 }
 
 .bottomSection {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 2fr;
+  grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
   gap: 34px;
 
   @media (max-width: 992px) {

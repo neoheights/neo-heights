@@ -56,17 +56,17 @@ const TrustedBy = () => {
     <section className={styles.trustedSection}>
       <h3 className={styles.heading}>TRUSTED BY INDUSTRY LEADERS</h3>
 
-      <div className={styles.slider}>
-        <div className={styles.slideTrack}>
+      <div className={styles.logosStrip}>
+        <div className={styles.logosContainer}>
           {logos.map((logo, index) => (
-            <div key={index} className={styles.slide}>
+            <div key={index} className={styles.logoItem}>
               <Image
                 src={logo.src}
                 alt={logo.alt}
                 className={styles.logo}
                 width={160}
                 height={80}
-                priority={index < 7} // load first set eagerly
+                priority={index < 8}
               />
             </div>
           ))}

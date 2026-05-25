@@ -8,10 +8,14 @@ import styles from "./page.module.scss";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import buildingImage from "@/assets/images/aboutUs/infra_delivery.jpg";
+import FAQ from "@/components/FAQ/FAQ";
+import Contact from "@/components/Contact/Contact";
+import Legacy from "@/components/Legacy/Legacy";
+import ContactPopup from "@/components/ContactPopup/ContactPopup";
+import JourneySection from "@/components/JourneySection/JourneySection";
 
 export default function AboutPage() {
-  // static import for image so it's bundled correctly
-  const buildingImage = require("@/assets/images/aboutUs/aboutpage.jpg");
+  // use the imported `buildingImage` asset
 
   return (
     <main>
@@ -114,6 +118,13 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <Legacy />
+      <ContactPopup />
+      <Contact showMap={false} />
+
+      <JourneySection />
+
+      <FAQ />
       <TrustedBy />
       <Footer />
     </main>

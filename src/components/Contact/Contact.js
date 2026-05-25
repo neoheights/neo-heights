@@ -47,7 +47,7 @@ const locationDetails = [
   },
 ];
 
-const Contact = () => {
+const Contact = ({ showMap = true }) => {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -105,7 +105,7 @@ const Contact = () => {
           <h2 className={styles.sectionTitle}>
             We Build Spaces That Power Growth And Last For Generations.
           </h2>
-        </div>npm r
+        </div>
 
         <div className={styles.topPanel}>
           <div className={styles.formWrapper}>
@@ -188,38 +188,39 @@ const Contact = () => {
           </aside>
         </div>
 
-        <div className={styles.mapPanel}>
-          <div className={styles.mapInfo}>
-            <h3 className={styles.mapTitle}>
-              Neo Heights builders and promoters pvt ltd
-            </h3>
-            <div className={styles.mapDetails}>
-              {locationDetails.map(({ icon: Icon, value }) => (
-                <div className={styles.mapDetailRow} key={value}>
-                  <span className={styles.mapDetailIcon}>
-                    <Icon size={15} />
-                  </span>
-                  <p>{value}</p>
-                </div>
-              ))}
+        {showMap && (
+          <div className={styles.mapPanel}>
+            <div className={styles.mapInfo}>
+              <h3 className={styles.mapTitle}>
+                Neo Heights builders and promoters pvt ltd
+              </h3>
+              <div className={styles.mapDetails}>
+                {locationDetails.map(({ icon: Icon, value }) => (
+                  <div className={styles.mapDetailRow} key={value}>
+                    <span className={styles.mapDetailIcon}>
+                      <Icon size={15} />
+                    </span>
+                    <p>{value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className={styles.mapCard}>
+              <iframe
+                title="Neo Heights office map"
+                src="https://www.google.com/maps?q=Achuth%20Square%20Complex%2C%201018%2F1%2C%201st%20Floor%2C%2024th%20Main%20Rd%2C%2013th%20Cross%20Rd%2C%201st%20Sector%2C%20HSR%20Layout%2C%20Bengaluru%2C%20Karnataka%20560102&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+                className={styles.mapIframe}
+              ></iframe>
             </div>
           </div>
-
-          <div className={styles.mapCard}>
-            <iframe
-              title="Neo Heights office map"
-              src="https://www.google.com/maps?q=Achuth%20Square%20Complex%2C%201018%2F1%2C%201st%20Floor%2C%2024th%20Main%20Rd%2C%2013th%20Cross%20Rd%2C%201st%20Sector%2C%20HSR%20Layout%2C%20Bengaluru%2C%20Karnataka%20560102&output=embed"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-              className={styles.mapIframe}
-            ></iframe>
-          </div>
-        </div>
+        )}
       </div>
     </section>
   );
 };
 
 export default Contact;
-
