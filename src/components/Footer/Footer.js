@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Facebook,
   Twitter,
@@ -165,6 +166,11 @@ const Footer = () => {
 
         <div className={styles.copyright}>
           <p>© 2025 Neo Heights. All rights reserved.</p>
+          <div className={styles.legalLinks}>
+            <Link href="/terms-and-conditions">Terms &amp; Conditions</Link>
+            <span className={styles.divider}>|</span>
+            <a href="#">Privacy policy</a>
+          </div>
           <span className={styles.rightNote}>
             A part of the <a href="#">Arul Group</a>.
           </span>
