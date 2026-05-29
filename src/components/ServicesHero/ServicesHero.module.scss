@@ -1,7 +1,7 @@
 .servicesHero {
   margin-top: 80px;
   padding: 72px 7% 0;
-  background: var(--background);
+  background: linear-gradient(180deg, #151414 0%, #0b0b0b 100%);
 
   @media (max-width: 768px) {
     padding: 56px 5% 0;
@@ -12,8 +12,8 @@
 .intro {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: flex-start;
+  gap: 56px;
+  align-items: start;
   margin-bottom: 56px;
 
   @media (max-width: 768px) {
@@ -38,12 +38,12 @@
 }
 
 .heading {
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-size: clamp(2.2rem, 5.5vw, 3.6rem);
   font-weight: 700;
   line-height: 1.2;
   color: var(--foreground);
   font-family: var(--font-futura);
-  max-width: 480px;
+  max-width: 640px;
 }
 
 .introRight {
@@ -54,10 +54,10 @@
 }
 
 .description {
-  font-size: 0.95rem;
-  line-height: 1.85;
-  color: var(--text-secondary);
-  max-width: 520px;
+  font-size: 0.98rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 480px;
 }
 
 .ctaButton {
@@ -73,7 +73,9 @@
   font-weight: 600;
   cursor: pointer;
   align-self: flex-start;
-  transition: filter 0.2s ease, transform 0.2s ease;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
 
   &:hover {
     filter: brightness(0.92);
@@ -152,4 +154,248 @@
 /* ── Light theme ── */
 [data-theme="light"] .servicesHero {
   background-color: var(--surface-1);
+}
+
+/* ── Large hero image ── */
+.heroImageWrap {
+  width: 100%;
+  margin-top: 16px;
+  overflow: hidden;
+  border-radius: 6px;
+  position: relative;
+  height: clamp(220px, 28vw, 420px);
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(100%) contrast(0.95) brightness(0.7);
+  transition:
+    transform 0.6s ease,
+    filter 0.4s ease;
+}
+
+@media (max-width: 768px) {
+  .heroImageWrap {
+    height: clamp(160px, 32vw, 280px);
+    margin-top: 12px;
+  }
+}
+
+.heroImageWrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(16, 16, 16, 0.35),
+    rgba(10, 10, 10, 0.85)
+  );
+  pointer-events: none;
+}
+
+/* ── Story + stats ── */
+.storySection {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 36px;
+  align-items: start;
+  margin-top: 32px;
+  padding: 56px 7% 80px;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+    padding: 32px 5% 56px;
+    gap: 20px;
+  }
+}
+
+.statsPanel {
+  position: relative;
+  background: linear-gradient(180deg, #14110f 0%, #0e0d0d 100%);
+  color: #fff;
+  padding: 48px 36px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  min-height: 560px;
+  box-shadow: 0 6px 28px rgba(3, 3, 3, 0.6) inset;
+}
+
+.statsPanel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 48%;
+  border-radius: 8px 0 0 8px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 138, 0, 0.14) 0%,
+    rgba(0, 0, 0, 0) 60%
+  );
+  pointer-events: none;
+}
+
+.statsPanel::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: 12px;
+  bottom: 12px;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.02)
+  );
+  pointer-events: none;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--primary-orange, #ff8a00);
+  text-shadow:
+    0 6px 18px rgba(255, 138, 0, 0.04),
+    0 1px 0 rgba(0, 0, 0, 0.6);
+}
+
+.statLabel {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 220px;
+  line-height: 1.45;
+}
+
+.storyText {
+  color: var(--text-primary);
+  max-width: 760px;
+}
+
+.storyText h2 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.storyText p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+/* ── Strategy / Feature cards section ── */
+.strategySection {
+  background: transparent;
+  padding: 60px 7% 80px;
+}
+
+.strategyIntro {
+  max-width: 720px;
+  margin: 0 0 32px 0;
+}
+
+.strategyIntro h2 {
+  font-size: 1.8rem;
+  color: var(--foreground);
+  margin-bottom: 12px;
+}
+
+.strategyIntro p {
+  color: var(--text-secondary);
+  max-width: 720px;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 18px;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cardSimple {
+  background: #0f0f0f;
+  border-radius: 12px;
+  padding: 28px;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.cardIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.cardBadge {
+  display: inline-block;
+  background: rgba(255, 140, 0, 0.12);
+  color: var(--primary-orange);
+  font-weight: 700;
+  font-size: 0.72rem;
+  padding: 8px 14px;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.cardTitle {
+  color: #fff;
+  font-size: 1.05rem;
+  margin: 6px 0 0 0;
+  font-weight: 700;
+}
+
+.cardDesc {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-top: 8px;
+}
+
+/* trustedInline overrides when TrustedBy is used inside stats panel */
+.trustedInline {
+  margin-top: 12px;
+}
+
+.trustedInline .trustedSection {
+  padding: 0;
+  text-align: center;
+}
+
+.trustedInline .trustedSection .heading {
+  margin: 8px 0 18px 0;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.85rem;
+}
+
+.trustedInline .trustedSection .logosStrip {
+  padding: 6px 0 12px;
+  background: transparent;
+}
+
+.trustedInline .trustedSection .logosContainer {
+  justify-content: center;
+  gap: 36px;
 }

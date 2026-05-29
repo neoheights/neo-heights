@@ -20,7 +20,7 @@ export default function ServicesPage() {
       <ServicesHero />
       <Blogs />
       <Contact showMap={false} />
-      <FAQ />
+      <FAQ hideCta={true} />
       <Journey />
       <TrustedBy />
       <Footer />
