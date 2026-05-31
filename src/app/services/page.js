@@ -1,11 +1,11 @@
 import Header from "@/components/Header/Header";
+import ServicesIntro from "@/components/ServicesIntro/ServicesIntro";
 import Blogs from "@/components/Blogs/Blogs";
 import Contact from "@/components/Contact/Contact";
 import FAQ from "@/components/FAQ/FAQ";
 import Journey from "@/components/Journey/Journey";
 import TrustedBy from "@/components/TrustedBy/TrustedBy";
 import Footer from "@/components/Footer/Footer";
-import ServicesHero from "@/components/ServicesHero/ServicesHero";
 
 export const metadata = {
   title: "Services | Neo Heights",
@@ -17,7 +17,7 @@ export default function ServicesPage() {
   return (
     <main>
       <Header />
-      <ServicesHero />
+      <ServicesIntro />
       <Blogs />
       <Contact showMap={false} />
       <FAQ hideCta={true} />

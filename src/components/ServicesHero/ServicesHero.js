@@ -1,168 +1,144 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import styles from "./ServicesHero.module.scss";
-import TrustedBy from "@/components/TrustedBy/TrustedBy";
-
-const services = [
-  {
-    title: "Civil Engineering",
-    image: require("@/assets/images/services/service1.jpg"),
-  },
-  {
-    title: "Pre-Engineering Building",
-    image: require("@/assets/images/services/service2.jpg"),
-  },
-  {
-    title: "Commercial Interiors",
-    image: require("@/assets/images/services/service3.jpg"),
-  },
-  {
-    title: "MEP",
-    image: require("@/assets/images/services/service4.jpg"),
-  },
-  {
-    title: "Land Development",
-    image: require("@/assets/images/services/service5.jpg"),
-  },
-  {
-    title: "GC Projects",
-    image: require("@/assets/images/services/service6.jpg"),
-  },
-  {
-    title: "EPC Contractor",
-    image: require("@/assets/images/services/service7.png"),
-  },
-];
+import ContactBg from "@/assets/images/contact_bg.png";
 
 const ServicesHero = () => {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [status, setStatus] = useState({
+    sending: false,
+    ok: null,
+    error: null,
+  });
+
+  const onChange = (event) => {
+    const { name, value } = event.target;
+    setForm((previous) => ({ ...previous, [name]: value }));
+  };
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setStatus({ sending: true, ok: null, error: null });
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.ok) {
+        setStatus({ sending: false, ok: true, error: null });
+        setForm({ name: "", email: "", phone: "", message: "" });
+        return;
+      }
+
+      throw new Error(data.error || "Request failed");
+    } catch (error) {
+      setStatus({
+        sending: false,
+        ok: false,
+        error: error.message || "Failed to send",
+      });
+    }
+  };
+
   return (
     <section className={styles.servicesHero}>
-      {/* ── Hero intro ── */}
-      <div className={styles.intro}>
-        <div className={styles.introLeft}>
-          <span className={styles.eyebrow}>OUR SERVICES</span>
+      <Image
+        src={ContactBg}
+        className={styles.heroBackground}
+        width={900}
+        height={700}
+        alt=""
+      />
+
+      <div className={styles.heroInner}>
+        <div className={styles.heroCopy}>
+          <p className={styles.eyebrow}>HAVE A PROJECT IN MIND</p>
           <h1 className={styles.heading}>
-            Engineering Excellence Across Every Sector
+            We Build Spaces That Power Growth And Last For Generations.
           </h1>
-        </div>
-        <div className={styles.introRight}>
           <p className={styles.description}>
-            From civil engineering to specialized construction solutions, we
-            deliver precision and quality across every project. Our
-            comprehensive services are backed by decades of expertise and a
-            commitment to excellence that drives every structure we build.
-          </p>
-          <button className={styles.ctaButton}>
-            Contact Us <ArrowRight size={16} />
-          </button>
-        </div>
-      </div>
-
-      {/* ── Large hero image ── */}
-      <div className={styles.heroImageWrap}>
-        <Image
-          src={require("@/assets/images/aboutUs/aboutpage.jpg")}
-          alt="services-hero"
-          className={styles.heroImage}
-          width={1600}
-          height={600}
-          priority
-        />
-      </div>
-
-      {/* ── Story + stats section ── */}
-      <div className={styles.storySection}>
-        <div className={styles.statsPanel}>
-          <div className={styles.statItem}>
-            <div className={styles.statNumber}>14+</div>
-            <div className={styles.statLabel}>
-              Years of Construction Excellence
-            </div>
-          </div>
-
-          <div className={styles.statItem}>
-            <div className={styles.statNumber}>100+</div>
-            <div className={styles.statLabel}>Completed & Ongoing Projects</div>
-          </div>
-          <div className={styles.statItem}>
-            <div className={styles.statNumber}>1000+</div>
-            <div className={styles.statLabel}>
-              Strong Workforce & Technical Teams
-            </div>
-          </div>
-          <div className={styles.statItem}>
-            <div className={styles.statNumber}>100%</div>
-            <div className={styles.statLabel}>Latest Equipments</div>
-          </div>
-        </div>
-
-        <div className={styles.storyText}>
-          <h2>TheNeoHeights Story</h2>
-          <p>
-            Founded in 2011 under the strong industrial legacy of Arul Group,
-            Neo Heights was established with a vision to redefine modern
-            construction through engineering excellence, innovation, and
-            customer trust.
-          </p>
-          <p>
-            Today, our portfolio spans industrial facilities, warehouses,
-            commercial spaces, residential developments, infrastructure works,
-            PEB projects, MEP engineering, and interior solutions — serving some
-            of the world's leading brands and industries.
-          </p>
-        </div>
-      </div>
-
-      {/* Trusted logos below story section */}
-      <div className={styles.trustedStrip}>
-        <TrustedBy />
-      </div>
-
-      {/* ── Strategy / Feature cards ── */}
-      <div className={styles.strategySection}>
-        <div className={styles.strategyIntro}>
-          <h2>
-            Building strategy, execution and delivering tangible business growth
-          </h2>
-          <p>
-            Comprehensive engineering, procurement, and construction solutions
-            designed for seamless project execution and operational efficiency.
+            From civil and PEB works to interiors and MEP solutions, Neo Heights
+            delivers reliable, end-to-end construction services with precision,
+            quality, and long-term value.
           </p>
         </div>
 
-        <div className={styles.cardsGrid}>
-          <div className={styles.cardSimple}>
-            <div className={styles.cardIcon} />
-            <div className={styles.cardBadge}>SITE SAFETY</div>
-            <h3 className={styles.cardTitle}>
-              We enforce rigorous safety standards
-            </h3>
-            <p className={styles.cardDesc}>
-              We enforce rigorous safety standards on every job site
+        <div className={styles.formShell}>
+          <div className={styles.glow} aria-hidden="true" />
+          <div className={styles.formCard}>
+            <h2 className={styles.formTitle}>Let&apos;s connect</h2>
+            <p className={styles.formDesc}>
+              You can reach us anytime via <span>frontdesk@neoheights.com</span>
             </p>
-          </div>
 
-          <div className={styles.cardSimple}>
-            <div className={styles.cardIcon} />
-            <div className={styles.cardBadge}>SKILLED TRADES</div>
-            <h3 className={styles.cardTitle}>
-              Deployment of expert tradespeople
-            </h3>
-            <p className={styles.cardDesc}>
-              We deploy expert tradespeople for every phase of construction
-            </p>
-          </div>
+            <form className={styles.form} onSubmit={onSubmit}>
+              <input
+                type="text"
+                name="name"
+                placeholder="First & Last name"
+                className={styles.input}
+                value={form.name}
+                onChange={onChange}
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email address"
+                className={styles.input}
+                value={form.email}
+                onChange={onChange}
+                required
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone number"
+                className={styles.input}
+                value={form.phone}
+                onChange={onChange}
+              />
+              <textarea
+                name="message"
+                placeholder="Write your message"
+                rows="5"
+                className={styles.textarea}
+                value={form.message}
+                onChange={onChange}
+                required
+              />
 
-          <div className={styles.cardSimple}>
-            <div className={styles.cardIcon} />
-            <div className={styles.cardBadge}>PROJECT DELIVERY</div>
-            <h3 className={styles.cardTitle}>On-time, on-budget delivery</h3>
-            <p className={styles.cardDesc}>
-              We complete complex builds on time and within budget
-            </p>
+              <button
+                type="submit"
+                className={styles.submitBtn}
+                disabled={status.sending}
+              >
+                {status.sending ? "Sending..." : "Send Enquiry"}{" "}
+                <ArrowRight size={16} />
+              </button>
+            </form>
+
+            {status.ok && (
+              <p className={styles.successMsg}>
+                Thanks! We will reach out shortly.
+              </p>
+            )}
+            {status.error && (
+              <p className={styles.errorMsg}>Error: {status.error}</p>
+            )}
           </div>
         </div>
       </div>
