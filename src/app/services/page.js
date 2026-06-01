@@ -1,5 +1,6 @@
 import Header from "@/components/Header/Header";
 import ServicesIntro from "@/components/ServicesIntro/ServicesIntro";
+import ServicesGrid from "@/components/ServicesGrid/ServicesGrid";
 import Blogs from "@/components/Blogs/Blogs";
 import Contact from "@/components/Contact/Contact";
 import FAQ from "@/components/FAQ/FAQ";
@@ -18,6 +19,7 @@ export default function ServicesPage() {
     <main>
       <Header />
       <ServicesIntro />
+      <ServicesGrid />
       <Blogs />
       <Contact showMap={false} />
       <FAQ hideCta={true} />
