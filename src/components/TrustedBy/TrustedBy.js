@@ -55,6 +55,7 @@ const TrustedBy = () => {
   return (
     <section className={styles.trustedSection}>
       <div className={styles.logosBand}>
+        <h3 className={styles.heading}>Trusted By Partners</h3>
         <div className={styles.logosContainer}>
           {logos.map((logo, index) => (
             <div key={index} className={styles.logoItem}>
