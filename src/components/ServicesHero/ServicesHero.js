@@ -1,87 +1,146 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import styles from "./ServicesHero.module.scss";
-
-const services = [
-  {
-    title: "Civil Engineering",
-    image: require("@/assets/images/services/service1.jpg"),
-  },
-  {
-    title: "Pre-Engineering Building",
-    image: require("@/assets/images/services/service2.jpg"),
-  },
-  {
-    title: "Commercial Interiors",
-    image: require("@/assets/images/services/service3.jpg"),
-  },
-  {
-    title: "MEP",
-    image: require("@/assets/images/services/service4.jpg"),
-  },
-  {
-    title: "Land Development",
-    image: require("@/assets/images/services/service5.jpg"),
-  },
-  {
-    title: "GC Projects",
-    image: require("@/assets/images/services/service6.jpg"),
-  },
-  {
-    title: "EPC Contractor",
-    image: require("@/assets/images/services/service7.png"),
-  },
-];
+import ContactBg from "@/assets/images/contact_bg.png";
 
 const ServicesHero = () => {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [status, setStatus] = useState({
+    sending: false,
+    ok: null,
+    error: null,
+  });
+
+  const onChange = (event) => {
+    const { name, value } = event.target;
+    setForm((previous) => ({ ...previous, [name]: value }));
+  };
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setStatus({ sending: true, ok: null, error: null });
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.ok) {
+        setStatus({ sending: false, ok: true, error: null });
+        setForm({ name: "", email: "", phone: "", message: "" });
+        return;
+      }
+
+      throw new Error(data.error || "Request failed");
+    } catch (error) {
+      setStatus({
+        sending: false,
+        ok: false,
+        error: error.message || "Failed to send",
+      });
+    }
+  };
+
   return (
     <section className={styles.servicesHero}>
-      {/* ── Hero intro ── */}
-      <div className={styles.intro}>
-        <div className={styles.introLeft}>
-          <span className={styles.eyebrow}>OUR SERVICES</span>
-          <h1 className={styles.heading}>
-            Engineering Excellence Across Every Sector
-          </h1>
-        </div>
-        <div className={styles.introRight}>
-          <p className={styles.description}>
-            From civil engineering to specialized construction solutions, we
-            deliver precision and quality across every project. Our
-            comprehensive services are backed by decades of expertise and a
-            commitment to excellence that drives every structure we build.
-          </p>
-          <button className={styles.ctaButton}>
-            Contact Us <ArrowRight size={16} />
-          </button>
-        </div>
-      </div>
+      <Image
+        src={ContactBg}
+        className={styles.heroBackground}
+        width={900}
+        height={700}
+        alt=""
+      />
 
-      {/* ── Services grid ── */}
-      <div className={styles.grid}>
-        {services.map((service, idx) => (
-          <div
-            key={idx}
-            className={`${styles.card} ${
-              idx === services.length - 1 && services.length % 2 !== 0
-                ? styles.cardLast
-                : ""
-            }`}
-          >
-            <Image
-              src={service.image}
-              alt={service.title}
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className={styles.cardImage}
-            />
-            <div className={styles.cardOverlay} />
-            <span className={styles.cardLabel}>{service.title}</span>
+      <div className={styles.heroInner}>
+        <div className={styles.heroCopy}>
+          <p className={styles.eyebrow}>HAVE A PROJECT IN MIND</p>
+          <h1 className={styles.heading}>
+            We Build Spaces That Power Growth And Last For Generations.
+          </h1>
+          <p className={styles.description}>
+            From civil and PEB works to interiors and MEP solutions, Neo Heights
+            delivers reliable, end-to-end construction services with precision,
+            quality, and long-term value.
+          </p>
+        </div>
+
+        <div className={styles.formShell}>
+          <div className={styles.glow} aria-hidden="true" />
+          <div className={styles.formCard}>
+            <h2 className={styles.formTitle}>Let&apos;s connect</h2>
+            <p className={styles.formDesc}>
+              You can reach us anytime via <span>frontdesk@neoheights.com</span>
+            </p>
+
+            <form className={styles.form} onSubmit={onSubmit}>
+              <input
+                type="text"
+                name="name"
+                placeholder="First & Last name"
+                className={styles.input}
+                value={form.name}
+                onChange={onChange}
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email address"
+                className={styles.input}
+                value={form.email}
+                onChange={onChange}
+                required
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone number"
+                className={styles.input}
+                value={form.phone}
+                onChange={onChange}
+              />
+              <textarea
+                name="message"
+                placeholder="Write your message"
+                rows="5"
+                className={styles.textarea}
+                value={form.message}
+                onChange={onChange}
+                required
+              />
+
+              <button
+                type="submit"
+                className={styles.submitBtn}
+                disabled={status.sending}
+              >
+                {status.sending ? "Sending..." : "Send Enquiry"}{" "}
+                <ArrowRight size={16} />
+              </button>
+            </form>
+
+            {status.ok && (
+              <p className={styles.successMsg}>
+                Thanks! We will reach out shortly.
+              </p>
+            )}
+            {status.error && (
+              <p className={styles.errorMsg}>Error: {status.error}</p>
+            )}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );

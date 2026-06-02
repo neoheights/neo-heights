@@ -1,90 +1,95 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import styles from "./AboutCertifications.module.scss";
-
-const awards = [
-  { label: "ISO 100", sublabel: "Quality Award", year: "2023" },
-  { label: "Forbes SME 100", sublabel: "Award 2023", year: "2023" },
-  { label: "Top Domestic Sales Award", sublabel: "National Recognition", year: "2024" },
-  { label: "IME 2025", sublabel: "International Machine Exhibition", year: "2025" },
-];
-
-const isoCerts = [
-  {
-    standard: "ISO 9001:2015",
-    title: "Quality Management System Certification",
-    body: "IAS · IAF",
-  },
-  {
-    standard: "ISO 45001:2018",
-    title: "Occupational Safety Management Certification",
-    body: "IAS · IAF",
-  },
-];
 
 const AboutCertifications = () => {
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
-        {/* Header */}
+
+        {/* ── Header ── */}
         <div className={styles.header}>
           <span className={styles.eyebrow}>OUR CERTIFICATIONS</span>
           <h2 className={styles.heading}>
-            Certified Excellence. Continuous Quality.
-            <br className={styles.br} /> Global Standards.
+            Certified Excellence. Continuous Quality. Global Standards.
           </h2>
           <p className={styles.description}>
-            Neo Heights is committed to international quality standards,
-            consistently maintaining compliance with globally recognized
-            certifications. Our accreditations reflect our dedication to
-            robust processes, workplace safety, and sustainable construction.
+            At Neo Heights, quality is not just a process it is a commitment embedded into every project we deliver.
+            Our operations follow internationally recognized quality and safety standards, ensuring consistency, reliability,
+            and operational excellence across all stages of construction and engineering.
           </p>
         </div>
 
-        {/* Awards strip */}
-        <div className={styles.awardsRow}>
-          {awards.map((award, idx) => (
-            <div key={idx} className={styles.awardBadge}>
-              <div className={styles.awardIcon}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="8" r="6" />
-                  <path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12" />
-                </svg>
-              </div>
-              <div className={styles.awardText}>
-                <strong>{award.label}</strong>
-                <span>{award.sublabel}</span>
+        {/* ── Awards Grid ── */}
+        <div className={styles.awardsGrid}>
+          {/* Left column */}
+          <div className={styles.awardsLeft}>
+            <div className={styles.awardCard}>
+              <div className={styles.awardCardInner}>
+                <div className={styles.smeLogoBox}>
+                  {/* Replace with: <Image src={sme100Logo} alt="India SME 100" fill /> */}
+                  <span className={styles.placeholderLabel}>India SME 100 Awards</span>
+                </div>
+                <div className={styles.smeText}>
+                  <p>Neo Heights Builders and Promoters Pvt Ltd has been honored as one of the Top 100 Winners of the 10th Edition of the India SME 100 Awards 2023, selected from over 21,000 nominations received for this edition.</p>
+                </div>
               </div>
             </div>
-          ))}
-        </div>
-
-        {/* ISO Certifications */}
-        <div className={styles.isoSection}>
-          <h3 className={styles.isoTitle}>ISO Certification</h3>
-          <div className={styles.isoGrid}>
-            {isoCerts.map((cert, idx) => (
-              <div key={idx} className={styles.certCard}>
-                {/* Certificate mock */}
-                <div className={styles.certFrame}>
-                  <div className={styles.certTop}>
-                    <div className={styles.certLogoPlaceholder} />
-                    <span className={styles.certOf}>Certificate of Registration</span>
-                  </div>
-                  <div className={styles.certStandard}>{cert.standard}</div>
-                  <div className={styles.certBody}>{cert.body}</div>
-                  <div className={styles.certSeal}>
-                    <div className={styles.sealRing}>
-                      <div className={styles.sealInner}>ISO</div>
-                    </div>
-                  </div>
+            <div className={styles.awardPhotoCard}>
+              {/* Replace with: <Image src={smeAward2023} alt="India SME 100 Award 2023" fill /> */}
+              <div className={styles.photoPlaceholder}>
+                <div className={styles.awardBadgeOverlay}>
+                  <p className={styles.awardBadgeText}>HAS BEEN HONORED WITH THE PRESTIGIOUS</p>
+                  <p className={styles.awardBadgeName}>India SME 100 Award 2023</p>
                 </div>
-                <p className={styles.certLabel}>{cert.title}</p>
               </div>
-            ))}
+            </div>
+          </div>
+
+          {/* Right column */}
+          <div className={styles.awardsRight}>
+            <div className={styles.awardImgCard}>
+              {/* Replace with: <Image src={domesticSalesAward} alt="Top Domestic Sales Award" fill /> */}
+              <div className={styles.photoPlaceholder}>
+                <span className={styles.placeholderLabel}>TOP DOMESTIC SALES AWARD<br />(Rubber Machineries and Equipment)</span>
+              </div>
+            </div>
+            <div className={styles.awardImgCard}>
+              {/* Replace with: <Image src={ime2025Badge} alt="IME 2025" fill /> */}
+              <div className={styles.photoPlaceholder}>
+                <span className={styles.placeholderLabel}>11th IME 2025<br />International Mining, Equipment &amp; Minerals Exhibition</span>
+              </div>
+            </div>
           </div>
         </div>
+
+        {/* ── ISO Certifications ── */}
+        <div className={styles.isoSection}>
+          <h3 className={styles.isoTitle}>ISO Certfication</h3>
+          <div className={styles.isoGrid}>
+            <div className={styles.certCard}>
+              <div className={styles.certImgWrap}>
+                {/* Replace with: <Image src={iso9001Cert} alt="ISO 9001:2015" fill objectFit="contain" /> */}
+                <div className={styles.certPlaceholder}>
+                  <span className={styles.certPlaceholderText}>Certificate of Registration<br /><strong>ISO 9001:2015</strong></span>
+                </div>
+              </div>
+              <p className={styles.certLabel}>Quality Management System<br />Certification</p>
+            </div>
+            <div className={styles.certCard}>
+              <div className={styles.certImgWrap}>
+                {/* Replace with: <Image src={iso45001Cert} alt="ISO 45001:2018" fill objectFit="contain" /> */}
+                <div className={styles.certPlaceholder}>
+                  <span className={styles.certPlaceholderText}>Certificate of Registration<br /><strong>ISO 45001:2018</strong></span>
+                </div>
+              </div>
+              <p className={styles.certLabel}>Occupational Safety Management<br />Certification</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

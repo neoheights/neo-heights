@@ -136,6 +136,9 @@ export default function AboutPage() {
       {/* ── Process timeline + Quality policy ── */}
       <AboutProcess />
 
+      {/* ── Legacy / Arul Group ── */}
+      <Legacy />
+
       {/* ── Team ── */}
       <Team />
 
