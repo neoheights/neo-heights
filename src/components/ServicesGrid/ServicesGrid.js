@@ -1,22 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./ServicesGrid.module.scss";
-import service1 from "@/assets/images/services/service1.jpg";
-import service2 from "@/assets/images/services/service2.jpg";
-import service3 from "@/assets/images/services/service3.jpg";
-import service4 from "@/assets/images/services/service4.jpg";
-import service5 from "@/assets/images/services/service5.jpg";
-import service6 from "@/assets/images/services/service6.jpg";
-import service7 from "@/assets/images/services/service7.png";
-
-const services = [
-  { title: "Civil Engineering", image: service1 },
-  { title: "Pre Engineering Building", image: service2 },
-  { title: "Commercial Interiors", image: service3 },
-  { title: "MEP", image: service4 },
-  { title: "Land Development", image: service5 },
-  { title: "GC Projects", image: service6 },
-  { title: "EPC Contractor", image: service7 },
-];
+import { services } from "@/data/services";
 
 export default function ServicesGrid() {
   return (
@@ -24,18 +9,23 @@ export default function ServicesGrid() {
       <div className={styles.container}>
         <div className={styles.grid}>
           {services.map((service) => (
-            <div key={service.title} className={styles.card}>
+            <Link
+              key={service.slug}
+              href={`/services/${service.slug}`}
+              className={styles.card}
+              aria-label={`View ${service.name} service`}
+            >
               <Image
                 src={service.image}
-                alt={service.title}
+                alt={service.name}
                 className={styles.cardImage}
                 fill
                 sizes="(max-width: 640px) 100vw, 50vw"
               />
               <div className={styles.overlay}>
-                <span className={styles.cardTitle}>{service.title}</span>
+                <span className={styles.cardTitle}>{service.name}</span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
