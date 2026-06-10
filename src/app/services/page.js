@@ -3,6 +3,7 @@ import ServicesIntro from "@/components/ServicesIntro/ServicesIntro";
 import ServicesGrid from "@/components/ServicesGrid/ServicesGrid";
 import Blogs from "@/components/Blogs/Blogs";
 import Contact from "@/components/Contact/Contact";
+import Achievements from "@/components/Achievements/Achievements";
 import FAQ from "@/components/FAQ/FAQ";
 import Journey from "@/components/Journey/Journey";
 import TrustedBy from "@/components/TrustedBy/TrustedBy";
@@ -22,6 +23,7 @@ export default function ServicesPage() {
       <ServicesGrid />
       <Blogs />
       <Contact showMap={false} />
+      <Achievements />
       <FAQ hideCta={true} />
       <Journey />
       <TrustedBy />

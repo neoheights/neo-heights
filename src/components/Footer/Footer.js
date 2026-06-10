@@ -18,18 +18,20 @@ import styles from "./Footer.module.scss";
 import FooterTopImage from "@/assets/images/footer_top.png";
 import NeoLogo from "@/assets/images/neo_logo.png";
 
-const Footer = () => {
+const Footer = ({ showTopStrip = false }) => {
   return (
     <footer className={styles.footer}>
       {/* White top strip image */}
-      <div className={styles.footerTopStrip}>
-        <Image
-          src={FooterTopImage}
-          alt="Footer Partners"
-          className={styles.footerTopImage}
-          priority
-        />
-      </div>
+      {showTopStrip && (
+        <div className={styles.footerTopStrip}>
+          <Image
+            src={FooterTopImage}
+            alt="Footer Partners"
+            className={styles.footerTopImage}
+            priority
+          />
+        </div>
+      )}
 
       <div className={`container ${styles.container}`}>
         {/* CTA Bar */}
