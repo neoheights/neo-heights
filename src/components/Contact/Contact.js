@@ -12,6 +12,7 @@ import {
 import styles from "./Contact.module.scss";
 
 import ContactBg from "@/assets/images/contact_bg.png";
+import ServicesHero from "@/components/ServicesHero/ServicesHero";
 
 const contactMethods = [
   {
@@ -89,6 +90,10 @@ const Contact = ({ showMap = true }) => {
       });
     }
   };
+
+  if (!showMap) {
+    return <ServicesHero />;
+  }
 
   return (
     <section className={styles.contactSection} id="contactUs">

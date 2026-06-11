@@ -5,7 +5,7 @@
 }
 
 .footerTopStrip {
-  display: none; /* hide white top strip (logos are handled by TrustedBy) */
+  width: 100%;
 }
 
 .footerTopImage {
@@ -238,6 +238,32 @@
     align-items: flex-start;
     gap: 8px;
   }
+}
+
+.legalLinks {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+
+  a {
+    color: var(--grey-3-color);
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--primary-orange);
+    }
+  }
+
+  @media (max-width: 576px) {
+    order: 2;
+  }
+}
+
+.divider {
+  color: var(--grey-4-color);
+  opacity: 0.5;
 }
 
 .rightNote {

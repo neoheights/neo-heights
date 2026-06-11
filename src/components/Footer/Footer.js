@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Facebook,
   Twitter,
@@ -17,18 +18,20 @@ import styles from "./Footer.module.scss";
 import FooterTopImage from "@/assets/images/footer_top.png";
 import NeoLogo from "@/assets/images/neo_logo.png";
 
-const Footer = () => {
+const Footer = ({ showTopStrip = false }) => {
   return (
     <footer className={styles.footer}>
       {/* White top strip image */}
-      <div className={styles.footerTopStrip}>
-        <Image
-          src={FooterTopImage}
-          alt="Footer Partners"
-          className={styles.footerTopImage}
-          priority
-        />
-      </div>
+      {showTopStrip && (
+        <div className={styles.footerTopStrip}>
+          <Image
+            src={FooterTopImage}
+            alt="Footer Partners"
+            className={styles.footerTopImage}
+            priority
+          />
+        </div>
+      )}
 
       <div className={`container ${styles.container}`}>
         {/* CTA Bar */}
@@ -165,6 +168,11 @@ const Footer = () => {
 
         <div className={styles.copyright}>
           <p>© 2025 Neo Heights. All rights reserved.</p>
+          <div className={styles.legalLinks}>
+            <Link href="/terms-and-conditions">Terms &amp; Conditions</Link>
+            <span className={styles.divider}>|</span>
+            <a href="#">Privacy policy</a>
+          </div>
           <span className={styles.rightNote}>
             A part of the <a href="#">Arul Group</a>.
           </span>

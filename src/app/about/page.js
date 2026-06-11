@@ -13,14 +13,18 @@ import Contact from "@/components/Contact/Contact";
 import Legacy from "@/components/Legacy/Legacy";
 import ContactPopup from "@/components/ContactPopup/ContactPopup";
 import JourneySection from "@/components/JourneySection/JourneySection";
+import Team from "@/components/Team/Team";
+import Journey from "@/components/Journey/Journey";
+import AboutValueProp from "@/components/AboutValueProp/AboutValueProp";
+import AboutCertifications from "@/components/AboutCertifications/AboutCertifications";
+import AboutProcess from "@/components/AboutProcess/AboutProcess";
 
 export default function AboutPage() {
-  // use the imported `buildingImage` asset
-
   return (
     <main>
       <Header />
 
+      {/* ── Hero ── */}
       <section className={styles.hero}>
         <div className={styles.heroInner}>
           <div className={styles.heroLeft}>
@@ -61,6 +65,7 @@ export default function AboutPage() {
         <div className={styles.heroGlow} />
       </section>
 
+      {/* ── Building image ── */}
       <section className={styles.heroImageWrap}>
         <Image
           src={buildingImage}
@@ -72,6 +77,7 @@ export default function AboutPage() {
         />
       </section>
 
+      {/* ── Stats + Story ── */}
       <section className={styles.storySection}>
         <div className={styles.storyInner}>
           <div className={styles.statsBox}>
@@ -84,13 +90,13 @@ export default function AboutPage() {
             <div className={styles.statItem}>
               <div className={styles.statNumber}>100+</div>
               <div className={styles.statLabel}>
-                Completed & Ongoing Projects
+                Completed &amp; Ongoing Projects
               </div>
             </div>
             <div className={styles.statItem}>
               <div className={styles.statNumber}>1000+</div>
               <div className={styles.statLabel}>
-                Strong Workforce & Technical Teams
+                Strong Workforce &amp; Technical Teams
               </div>
             </div>
             <div className={styles.statItem}>
@@ -112,20 +118,47 @@ export default function AboutPage() {
               Today, our portfolio spans industrial facilities, transportation,
               commercial spaces, residential developments, infrastructure works,
               PEB projects, MEP engineering, and interior solutions — serving
-              some of the world's leading brands and industries.
+              some of the world&apos;s leading brands and industries.
             </p>
           </div>
         </div>
       </section>
 
+      {/* ── Trusted by industry leaders ── */}
+      <TrustedBy />
+
+      {/* ── Value proposition ── */}
+      <AboutValueProp />
+
+      {/* ── Certifications & awards ── */}
+      <AboutCertifications />
+
+      {/* ── Process timeline + Quality policy ── */}
+      <AboutProcess />
+
+      {/* ── Legacy / Arul Group ── */}
       <Legacy />
+
+      {/* ── Team ── */}
+      <Team />
+
       <ContactPopup />
+
+      {/* ── Contact ── */}
       <Contact showMap={false} />
 
+      {/* ── Legacy / Arul Group journey ── */}
       <JourneySection />
 
+      {/* ── FAQ ── */}
       <FAQ />
+
+      {/* ── CTA banner ── */}
+      <Journey />
+
+      {/* ── Trusted partners logos ── */}
       <TrustedBy />
+
       <Footer />
     </main>
   );
