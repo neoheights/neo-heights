@@ -183,11 +183,13 @@ const ServiceDetail = ({ service }) => {
           <span className={styles.processEyebrow}>PROCESS</span>
           <h2 className={styles.processTitle}>{processTitle}</h2>
           {processDescription && (
-            <p className={styles.processDesc}>{processDescription}</p>
+            <>
+              <p className={styles.processDesc}>{processDescription}</p>
+              <Link href="/about" className={styles.learnMore}>
+                Learn More <ArrowRight size={16} />
+              </Link>
+            </>
           )}
-          <Link href="/about" className={styles.learnMore}>
-            Learn More <ArrowRight size={16} />
-          </Link>
         </section>
       )}
 

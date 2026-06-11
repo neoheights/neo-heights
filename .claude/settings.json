@@ -1,7 +1,14 @@
 {
   "permissions": {
     "allow": [
-      "Bash(curl -s http://localhost:3000/services/commercial-interiors)"
+      "Bash(curl -s http://localhost:3000/services/commercial-interiors)",
+      "Bash(git status *)",
+      "Bash(cd \"c:\\\\Users\\\\HP\\\\Desktop\\\\neo-heights\" && curl -s http://localhost:3000/services/pre-engineering-building > /tmp/peb.html && grep -o \"processSection[^\\\\\"]*\\\\|stepDivider[^\\\\\"]*\\\\|stepNumber[^\\\\\"]*\\\\|stepTitle[^\\\\\"]*\\\\|learnMore[^\\\\\"]*\\\\|Key Advantages[^<]*\\\\|Up to 40[^<]*\\\\|Cost-optimised[^<]*\" /tmp/peb.html | sort -u)",
+      "Read(//tmp/**)",
+      "Read(//c/Program Files \\(x86\\)/Microsoft/Edge/Application/**)",
+      "PowerShell(& \"C:\\\\Program Files \\(x86\\)\\\\Microsoft\\\\Edge\\\\Application\\\\msedge.exe\" --headless --disable-gpu --screenshot=\"C:\\\\Users\\\\HP\\\\Desktop\\\\neo-heights\\\\peb_full.png\" --window-size=1280,2000 --hide-scrollbars \"http://localhost:3000/services/pre-engineering-building\")",
+      "PowerShell(& \"C:\\\\Program Files \\(x86\\)\\\\Microsoft\\\\Edge\\\\Application\\\\msedge.exe\" --headless --disable-gpu --screenshot=\"C:\\\\Users\\\\HP\\\\Desktop\\\\neo-heights\\\\peb_full2.png\" --window-size=1920,1400 --hide-scrollbars \"http://localhost:3000/services/pre-engineering-building\")",
+      "PowerShell(& \"C:\\\\Program Files \\(x86\\)\\\\Microsoft\\\\Edge\\\\Application\\\\msedge.exe\" --headless --disable-gpu --screenshot=\"C:\\\\Users\\\\HP\\\\Desktop\\\\neo-heights\\\\peb_full3.png\" --window-size=1920,1400 --hide-scrollbars \"http://localhost:3000/services/pre-engineering-building\")"
     ]
   }
 }
