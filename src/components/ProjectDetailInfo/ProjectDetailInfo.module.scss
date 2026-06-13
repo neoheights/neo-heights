@@ -1,0 +1,205 @@
+.infoSection {
+  background: #0d0d0d;
+  padding: 0 0 64px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 7%;
+}
+
+/* ── Breadcrumb ── */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.breadcrumbLink {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.65);
+  }
+}
+
+.breadcrumbSep {
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  flex-shrink: 0;
+}
+
+.breadcrumbCurrent {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ── Rows ── */
+.rows {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Client row — 3 columns: label | value | logo */
+.rowClient {
+  display: grid;
+  grid-template-columns: 130px 1fr auto;
+  gap: 32px;
+  align-items: center;
+  padding: 36px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Description + Tags rows — 2 columns: label | value */
+.row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 32px;
+  align-items: start;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.rowLabel {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.01em;
+  padding-top: 2px;
+}
+
+.rowBody {
+  min-width: 0;
+}
+
+.clientName {
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  font-weight: 700;
+  color: #fff;
+  font-family: var(--font-futura);
+  line-height: 1.15;
+}
+
+.description {
+  font-size: 0.9rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 680px;
+  margin: 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 0.73rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+/* ── Logo box ── */
+.logoBox {
+  position: relative;
+  width: 110px;
+  height: 52px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.clientLogoImg {
+  object-fit: contain;
+  padding: 10px 12px;
+}
+
+/* ── Stats ── */
+.stats {
+  display: flex;
+  gap: 72px;
+  padding: 40px 0 0;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.statValue {
+  font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+  font-weight: 700;
+  color: #fff;
+  font-family: var(--font-futura);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .rowClient {
+    grid-template-columns: 100px 1fr;
+    gap: 20px;
+  }
+
+  .logoBox {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    width: 90px;
+    height: 42px;
+  }
+
+  .row {
+    grid-template-columns: 100px 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rowClient,
+  .row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .rowLabel {
+    padding-top: 0;
+  }
+
+  .logoBox {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+  }
+
+  .stats {
+    gap: 40px;
+  }
+}

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import styles from "./ProjectsGrid.module.scss";
 
@@ -27,6 +28,7 @@ const categories = [
 
 const imageProjects = [
   {
+    slug: "volvo-trucks",
     title: "Volvo Trucks",
     location: "HOSKOTE",
     image: volvoImg,
@@ -37,12 +39,14 @@ const imageProjects = [
     ],
   },
   {
+    slug: "advik-hi-tech",
     title: "Advik Hi Tech Pvt. Ltd.,",
     location: "NARSAPURA, KA",
     image: advikImg,
     tags: ["Completed", "EPC Contracts", "Civil Engineering"],
   },
   {
+    slug: "schaeffler-india-limited",
     title: "SCHAEFFLER INDIA LIMITED",
     location: "SHOOLAGIRI",
     image: indiaImg,
@@ -54,12 +58,14 @@ const imageProjects = [
     ],
   },
   {
+    slug: "tata-electronics",
     title: "TATA ELECTRONICS",
     location: "HOSUR",
     image: tataImg,
     tags: ["On-going", "EPC Contracts", "Civil Engineering"],
   },
   {
+    slug: "peb-works-volvo",
     title: "PEB WORKS VOLVO",
     location: "NARSAPURA",
     image: pebImg,
@@ -73,26 +79,31 @@ const imageProjects = [
 // GE Healthcare, PCA, Toyota and Vajra Towers project photos when available.
 const moreProjects = [
   {
+    slug: "ge-healthcare",
     title: "GE Healthcare / Wipro GE Healthcare",
     location: "BENGALURU KARNATAKA",
     image: hindustanImg,
   },
   {
+    slug: "pca",
     title: "PCA",
     location: "BENGALURU",
     image: sakataImg,
   },
   {
+    slug: "toyota",
     title: "Toyota",
     location: "BENGALURU",
     image: india2Img,
   },
   {
+    slug: "vajra-towers",
     title: "Vajra Towers",
     location: "HOSUR",
     image: tataImg,
   },
   {
+    slug: "vajra-towers",
     title: "Vajra Towers",
     location: "HOSUR",
     image: advikImg,
@@ -103,16 +114,19 @@ const moreProjects = [
 // NOTE: images below are temporary placeholders.
 const additionalProjects = [
   {
+    slug: "ge-healthcare",
     title: "GE Healthcare / Wipro GE Healthcare",
     location: "BENGALURU KARNATAKA",
     image: sakataImg,
   },
   {
+    slug: "foxconn-cinda",
     title: "Foxconn-Cinda",
     location: "CHENNAI",
     image: volvoImg,
   },
   {
+    slug: "lm-wind-power",
     title: "LM Wind Power (GE Renewable Energy)",
     location: "DOBBASPET",
     image: pebImg,
@@ -194,8 +208,9 @@ const ProjectCard = ({ project, size }) => {
     return () => img.removeEventListener("load", handleLoad);
   }, [project]);
 
-  return (
-    <div ref={cardRef} className={`${styles.projectCard} ${styles[size]}`}>
+  const className = `${styles.projectCard} ${styles[size]}`;
+  const cardContent = (
+    <>
       <Image
         src={project.image}
         alt={project.title}
@@ -208,6 +223,20 @@ const ProjectCard = ({ project, size }) => {
         <h3>{project.title}</h3>
         <span>{project.location}</span>
       </div>
+    </>
+  );
+
+  if (project.slug) {
+    return (
+      <Link ref={cardRef} href={`/projects/${project.slug}`} className={className}>
+        {cardContent}
+      </Link>
+    );
+  }
+
+  return (
+    <div ref={cardRef} className={className}>
+      {cardContent}
     </div>
   );
 };

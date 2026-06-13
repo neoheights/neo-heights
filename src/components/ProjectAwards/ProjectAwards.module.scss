@@ -1,0 +1,140 @@
+.section {
+  background: #0d0d0d;
+  padding: 80px 0 88px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 7%;
+}
+
+.heading {
+  font-size: clamp(1.9rem, 4vw, 2.9rem);
+  font-weight: 700;
+  color: #fff;
+  font-family: var(--font-futura);
+  line-height: 1.18;
+  margin-bottom: 52px;
+}
+
+/* ── List ── */
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Collapsed row — 3-column grid: title | description | arrow */
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 22px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  cursor: pointer;
+  transition: background 0.18s ease;
+
+  &:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.03);
+  }
+}
+
+/* Active row — 2-column: content | year */
+.row.active {
+  grid-template-columns: 1fr auto;
+  align-items: flex-start;
+  gap: 32px;
+  padding: 26px 28px;
+  background: rgba(255, 255, 255, 0.04);
+  cursor: default;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.04);
+  }
+}
+
+/* ── Active content (title + desc stacked) ── */
+.activeContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── Shared title ── */
+.rowTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.4;
+
+  .active & {
+    font-size: 0.95rem;
+  }
+}
+
+/* ── Active description (below title) ── */
+.rowDesc {
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+}
+
+/* ── Collapsed description (middle column) ── */
+.rowDescInline {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.32);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Year (right of active row) ── */
+.year {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.12);
+  font-family: var(--font-futura);
+  letter-spacing: 0.02em;
+  line-height: 1;
+  padding-top: 4px;
+}
+
+/* ── Arrow (right of collapsed row) ── */
+.arrow {
+  color: rgba(255, 255, 255, 0.25);
+  flex-shrink: 0;
+  transition: transform 0.18s ease, color 0.18s ease;
+
+  .row:hover & {
+    transform: translateX(3px);
+    color: rgba(255, 255, 255, 0.55);
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .row {
+    grid-template-columns: 1fr auto;
+    padding: 18px 16px;
+  }
+
+  .row.active {
+    grid-template-columns: 1fr auto;
+    padding: 20px 16px;
+  }
+
+  .rowDescInline {
+    display: none;
+  }
+
+  .year {
+    font-size: 1.6rem;
+  }
+}
