@@ -12,7 +12,6 @@ import logoImg from "@/assets/images/neo_logo.png";
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showProjectsMenu, setShowProjectsMenu] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
 
@@ -21,7 +20,7 @@ const Header = () => {
   const navItems = [
     { label: "Home", href: "/", id: "home" },
     { label: "About us", href: "/about", id: "about" },
-    { label: "Projects", href: "/", hasDropdown: true, id: "projects" },
+    { label: "Projects", href: "/projects", id: "projects" },
     { label: "Services", href: "/services", id: "services" },
     {
       label: "Sustainability",
@@ -34,29 +33,18 @@ const Header = () => {
     { label: "Contact", href: "/contact", id: "contactUs" },
   ];
 
-  const projectList = [
-    { title: "Schaeffler India Limited.", location: "SHOOLAGIRI" },
-    { title: "SHIMZU - SAKATA", location: "HOSUR" },
-    { title: "FAIVELEY - CS Building", location: "HOSUR" },
-    { title: "SAKATA - WAREHOUSE", location: "BENGALURU" },
-    { title: "Toyato Design Build canteen", location: "BIDADI, KA" },
-    { title: "TATA Electronic", location: "HOSUR" },
-  ];
-
   const handleNavClick = (item) => {
     if (item.id === "projects") {
-      setShowProjectsMenu(!showProjectsMenu);
+      setIsMenuOpen(false);
+      router.push("/projects");
     } else if (item.id === "contactUs") {
       setIsMenuOpen(false);
-      setShowProjectsMenu(false);
       router.push("/contact");
     } else if (item.href === "/about" || item.id === "about") {
       setIsMenuOpen(false);
-      setShowProjectsMenu(false);
       router.push("/about");
     } else if (item.id === "services") {
       setIsMenuOpen(false);
-      setShowProjectsMenu(false);
       router.push("/services");
     } else if (pathname !== "/") {
       // If we're not on the home page, navigate to home and then scroll
@@ -67,13 +55,8 @@ const Header = () => {
     }
   };
 
-  const closeProjectsMenu = () => {
-    setShowProjectsMenu(false);
-  };
-
   const scrollToSection = (id) => {
     setIsMenuOpen(false); // For mobile screens, close the navbar while clicking navbar element
-    setShowProjectsMenu(false);
     const element = document.getElementById(id);
     if (!element) return;
 
@@ -99,72 +82,6 @@ const Header = () => {
       }, 100);
     }
   }, [pathname]);
-
-  const ProjectsMegaMenu = () => (
-    <div className={styles.projectsMegaMenu}>
-      <div className={`container ${styles.megaMenuContainer}`}>
-        <div className={styles.menuGrid}>
-          <div className={styles.projectsListSection}>
-            <h4 className={styles.sectionTitle}>Projects</h4>
-            <div className={styles.projectsList}>
-              {projectList.map((project, index) => (
-                <div key={index} className={styles.projectItem}>
-                  <h5>{project.title}</h5>
-                  <span>{project.location}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className={styles.exploreSection}>
-            <h4 className={styles.sectionTitle}>Explore</h4>
-            <div className={styles.exploreCard}>
-              <Image
-                src={require("@/assets/images/projects/sakata.png")}
-                alt="Explore"
-                width={400}
-                height={300}
-                className={styles.exploreImage}
-              />
-              <div className={styles.exploreOverlay}>
-                <h5>SAKATA INDIA PVT LTD</h5>
-                <span>DODDABALLAPURA</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={styles.bottomBar}>
-          <div className={styles.ctaWrapper}>
-            <div className={styles.ctaIcon}>
-              <span style={{ display: "flex" }}>
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7.83997 14.84H9.83997V1.84L16.2339 4.58025C16.6016 4.73783 16.84 5.09937 16.84 5.4994V14.84H18.84V16.84H-3.16003V14.84H-1.16003V1.48987C-1.16003 1.09469 -0.927304 0.736556 -0.566174 0.576056L7.13687 -2.84752C7.38927 -2.95968 7.68477 -2.84603 7.79687 -2.59369C7.82527 -2.52976 7.83997 -2.46058 7.83997 -2.39062V14.84Z"
-                    fill="white"
-                  />
-                </svg>
-              </span>
-            </div>
-            <p>
-              Ready to kick off a project? <span>Let's get in touch!</span>
-            </p>
-          </div>
-          <button
-            className={styles.startProjectBtn}
-            onClick={() => scrollToSection("contactUs")}
-          >
-            Start Your Project{" "}
-            <ChevronDown className={styles.rotateIcon} size={16} />
-          </button>
-        </div>
-      </div>
-    </div>
-  );
 
   return (
     <header className={styles.header}>
@@ -232,13 +149,6 @@ const Header = () => {
           </button>
         </div>
       </div>
-
-      {showProjectsMenu && (
-        <>
-          <div className={styles.backdrop} onClick={closeProjectsMenu} />
-          <ProjectsMegaMenu />
-        </>
-      )}
     </header>
   );
 };
