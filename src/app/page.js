@@ -10,6 +10,7 @@ import Legacy from "@/components/Legacy/Legacy";
 import Team from "@/components/Team/Team";
 import Blogs from "@/components/Blogs/Blogs";
 import Contact from "@/components/Contact/Contact";
+import Achievements from "@/components/Achievements/Achievements";
 import Journey from "@/components/Journey/Journey";
 import Footer from "@/components/Footer/Footer";
 
@@ -28,6 +29,7 @@ export default function Home() {
       <Team />
       <Blogs />
       <Contact />
+      <Achievements />
       <Journey />
       <Footer />
     </main>

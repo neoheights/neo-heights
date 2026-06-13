@@ -21,8 +21,6 @@
   overflow: hidden;
   border-radius: 6px;
   cursor: pointer;
-  color: inherit;
-  text-decoration: none;
 
   &:last-child:nth-child(odd) {
     grid-column: 1 / 2;
