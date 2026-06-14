@@ -1,0 +1,126 @@
+.section {
+  background: #1f1f1f;
+  padding: 64px 0 80px;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto 28px;
+  padding: 0 7%;
+}
+
+.heading {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  color: #fff;
+  font-family: var(--font-fustat);
+}
+
+.viewMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary-orange);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: gap 0.2s ease, opacity 0.2s ease;
+
+  &:hover {
+    gap: 10px;
+    opacity: 0.8;
+  }
+}
+
+/* ── Horizontal strip ── */
+.strip {
+  display: flex;
+  gap: 16px;
+  padding: 0 7%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ── Card ── */
+.card {
+  position: relative;
+  flex: 0 0 460px;
+  height: 290px;
+  border-radius: 10px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  text-decoration: none;
+  background: #1a1a1a;
+
+  &:hover .cardImage {
+    transform: scale(1.04);
+  }
+}
+
+.cardImage {
+  object-fit: cover;
+  transition: transform 400ms ease;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.08) 50%,
+    transparent 100%
+  );
+}
+
+.cardFooter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 24px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.cardLocation {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 560px) {
+  .card {
+    flex: 0 0 280px;
+    height: 200px;
+  }
+
+  .cardTitle {
+    font-size: 0.9rem;
+  }
+}

@@ -235,7 +235,7 @@
 ═══════════════════════════════════════ */
 
 .processSection {
-  background: var(--background);
+  background: #161616;
   padding: 88px 7%;
   text-align: center;
 }
@@ -430,6 +430,33 @@
   font-family: var(--font-futura);
 }
 
+.featuredControls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.scrollBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+
+  &:hover {
+    border-color: var(--primary-orange);
+    color: var(--primary-orange);
+    background: rgba(244, 162, 33, 0.08);
+  }
+}
+
 .viewMore {
   display: inline-flex;
   align-items: center;
@@ -447,24 +474,47 @@
 .featuredGrid {
   max-width: 1320px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
   gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
 
 .featuredCard {
   position: relative;
+  flex: 0 0 calc(50% - 10px);
   aspect-ratio: 16 / 10;
   border-radius: 12px;
   overflow: hidden;
+  scroll-snap-align: start;
+
+  @media (max-width: 768px) {
+    flex: 0 0 85%;
+  }
 }
 
 .featuredImage {
   object-fit: cover;
+}
+
+.featuredBadge {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  z-index: 1;
+  padding: 10px 22px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, var(--primary-orange), #f6b921);
+  border-radius: 6px 0 0 6px;
+  white-space: nowrap;
 }
 
 .featuredOverlay {

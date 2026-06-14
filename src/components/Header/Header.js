@@ -80,7 +80,6 @@ function ProjectsMegaMenu({ projectList, closeProjectsMenu, scrollToSection }) {
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showProjectsMenu, setShowProjectsMenu] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
 
@@ -89,7 +88,7 @@ const Header = () => {
   const navItems = [
     { label: "Home", href: "/", id: "home" },
     { label: "About us", href: "/about", id: "about" },
-    { label: "Projects", href: "/", hasDropdown: true, id: "projects" },
+    { label: "Projects", href: "/projects", id: "projects" },
     { label: "Services", href: "/services", id: "services" },
     {
       label: "Sustainability",
@@ -102,29 +101,18 @@ const Header = () => {
     { label: "Contact", href: "/contact", id: "contactUs" },
   ];
 
-  const projectList = [
-    { title: "Schaeffler India Limited.", location: "SHOOLAGIRI" },
-    { title: "SHIMZU - SAKATA", location: "HOSUR" },
-    { title: "FAIVELEY - CS Building", location: "HOSUR" },
-    { title: "SAKATA - WAREHOUSE", location: "BENGALURU" },
-    { title: "Toyato Design Build canteen", location: "BIDADI, KA" },
-    { title: "TATA Electronic", location: "HOSUR" },
-  ];
-
   const handleNavClick = (item) => {
     if (item.id === "projects") {
-      setShowProjectsMenu(!showProjectsMenu);
+      setIsMenuOpen(false);
+      router.push("/projects");
     } else if (item.id === "contactUs") {
       setIsMenuOpen(false);
-      setShowProjectsMenu(false);
       router.push("/contact");
     } else if (item.href === "/about" || item.id === "about") {
       setIsMenuOpen(false);
-      setShowProjectsMenu(false);
       router.push("/about");
     } else if (item.id === "services") {
       setIsMenuOpen(false);
-      setShowProjectsMenu(false);
       router.push("/services");
     } else if (pathname !== "/") {
       // If we're not on the home page, navigate to home and then scroll
@@ -135,13 +123,8 @@ const Header = () => {
     }
   };
 
-  const closeProjectsMenu = () => {
-    setShowProjectsMenu(false);
-  };
-
   const scrollToSection = (id) => {
     setIsMenuOpen(false); // For mobile screens, close the navbar while clicking navbar element
-    setShowProjectsMenu(false);
     const element = document.getElementById(id);
     if (!element) return;
 
@@ -229,17 +212,6 @@ const Header = () => {
           </button>
         </div>
       </div>
-
-      {showProjectsMenu && (
-        <>
-          <div className={styles.backdrop} onClick={closeProjectsMenu} />
-          <ProjectsMegaMenu
-            projectList={projectList}
-            closeProjectsMenu={closeProjectsMenu}
-            scrollToSection={scrollToSection}
-          />
-        </>
-      )}
     </header>
   );
 };
