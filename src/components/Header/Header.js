@@ -88,16 +88,15 @@ const Header = () => {
   const navItems = [
     { label: "Home", href: "/", id: "home" },
     { label: "About us", href: "/about", id: "about" },
-    { label: "Projects", href: "/projects", id: "projects" },
-    { label: "Services", href: "/services", id: "services" },
+    { label: "Projects", href: "/projects", hasDropdown: true, id: "projects" },
+    { label: "Services", href: "/services", hasDropdown: true, id: "services" },
     {
       label: "Sustainability",
       href: "/",
-      hasDropdown: true,
       id: "sustainability",
     },
     { label: "Newsroom", href: "/blogs", id: "newsroom" },
-    { label: "Team", href: "/", hasDropdown: true, id: "team" },
+    { label: "Team", href: "/", id: "team" },
     { label: "Contact", href: "/contact", id: "contactUs" },
   ];
 

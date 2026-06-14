@@ -6,6 +6,7 @@ import tataImg from "@/assets/images/projects/tata.png";
 import hindustanImg from "@/assets/images/projects/hindustan.png";
 import pebImg from "@/assets/images/projects/peb.png";
 import india2Img from "@/assets/images/projects/india2.jpg";
+import tataRwhPondImg from "@/assets/images/services/land/tata-rwh.jpg";
 
 import svc1 from "@/assets/images/services/service1.jpg";
 import svc2 from "@/assets/images/services/service2.jpg";
@@ -93,36 +94,33 @@ export const projects = [
   },
   {
     slug: "advik-hi-tech",
-    title: "Advik Hi Tech Pvt. Ltd.",
-    location: "NARSAPURA · KARNATAKA",
+    title: "PEB Works — Advik Hi Power",
+    location: "NARASAPURA",
     heroImage: advikImg,
     galleryLabel: "Gallery No: 03",
-    client: "Advik Hi Tech Pvt. Ltd.",
+    client: "Advik Hi Power",
     clientLogo: logo3,
     description:
-      "EPC construction of Advik Hi Tech's manufacturing plant at Narsapura. The scope covered complete civil works, structural frameworks, and building systems, delivering a ready-to-operate industrial facility.",
-    tags: ["EPC Contractor", "Civil Construction"],
-    totalArea: "8,400 m²",
-    projectPeriod: "2020–22",
+      "Steel-frame PEB factory shed for Advik Hi Power's industrial manufacturing facility at Narasapura.",
+    tags: ["PEB Structure"],
+    totalArea: "-",
+    projectPeriod: "Completed",
     scopeOfWork: [
-      "Site clearing and earthwork",
-      "RCC foundations and column structures",
-      "Structural steel framework",
-      "Roofing and cladding works",
-      "Utility and service connections",
+      "Steel-frame PEB factory shed",
+      "Industrial manufacturing facility",
     ],
     gallery: [advikImg, sakataImg, svc3, svc6],
   },
   {
     slug: "tata-electronics",
-    title: "Tata Electronics",
-    location: "HOSUR · TAMIL NADU",
-    heroImage: tataImg,
+    title: "Tata Electronics. Rainwater Harvesting (RWH)",
+    location: "DOBBASPET, KARNATAKA",
+    heroImage: tataRwhPondImg,
     galleryLabel: "Gallery No: 04",
     client: "Tata Electronics Pvt. Ltd.",
     clientLogo: logo5,
     description:
-      "Large-scale industrial campus development for Tata Electronics at Hosur. Works included civil construction, rainwater harvesting infrastructure, land development, and EPC execution across multiple facility phases.",
+      "RWH pond and utilities area a key sustainability intervention delivered by our team and well appreciated for its long-term impact.",
     tags: [
       "EPC Contractor",
       "Civil Construction",
@@ -227,6 +225,24 @@ export const projects = [
       "MEP systems integration throughout",
     ],
     gallery: [india2Img, indiaImg, svc1, svc5, svc9, svc10],
+    relatedProjects: [
+      {
+        title: "Faiveley Transport India Pvt Ltd",
+        location: "HOSUR",
+        image: pebImg,
+      },
+      {
+        slug: "ge-healthcare",
+        title: "GE Healthcare / Wipro GE Healthcare",
+        location: "WHITEFIELD, BANGALORE",
+        image: geHealthcareImg,
+      },
+      {
+        title: "Hindustan Foods Ltd",
+        location: "",
+        image: hindustanImg,
+      },
+    ],
   },
   {
     slug: "vajra-towers",

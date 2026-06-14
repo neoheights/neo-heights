@@ -51,8 +51,8 @@ const imageProjects = [
   },
   {
     slug: "advik-hi-tech",
-    title: "Advik Hi Tech Pvt. Ltd.,",
-    location: "NARSAPURA, KA",
+    title: "PEB Works — Advik Hi Power",
+    location: "NARASAPURA, KA",
     image: advikImg,
     tags: ["Completed", "EPC Contracts", "Civil Engineering"],
   },

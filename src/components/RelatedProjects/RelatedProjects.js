@@ -5,7 +5,18 @@ import styles from "./RelatedProjects.module.scss";
 import { projects } from "@/data/projects";
 
 export default function RelatedProjects({ currentSlug }) {
-  const related = projects.filter((p) => p.slug !== currentSlug);
+  const current = projects.find((p) => p.slug === currentSlug);
+
+  const related = current?.relatedProjects?.length
+    ? current.relatedProjects
+    : projects
+        .filter((p) => p.slug !== currentSlug)
+        .map((p) => ({
+          slug: p.slug,
+          title: p.title,
+          location: p.location,
+          image: p.heroImage,
+        }));
 
   if (related.length === 0) return null;
 
@@ -19,26 +30,42 @@ export default function RelatedProjects({ currentSlug }) {
       </div>
 
       <div className={styles.strip}>
-        {related.map((project) => (
-          <Link
-            key={project.slug}
-            href={`/projects/${project.slug}`}
-            className={styles.card}
-          >
-            <Image
-              src={project.heroImage}
-              alt={project.title}
-              fill
-              className={styles.cardImage}
-              sizes="360px"
-            />
-            <div className={styles.overlay} />
-            <div className={styles.cardFooter}>
-              <span className={styles.cardTitle}>{project.title}</span>
-              <span className={styles.cardLocation}>{project.location}</span>
+        {related.map((project, index) => {
+          const cardContent = (
+            <>
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className={styles.cardImage}
+                sizes="360px"
+              />
+              <div className={styles.overlay} />
+              <div className={styles.cardFooter}>
+                <span className={styles.cardTitle}>{project.title}</span>
+                <span className={styles.cardLocation}>{project.location}</span>
+              </div>
+            </>
+          );
+
+          if (project.slug) {
+            return (
+              <Link
+                key={`${project.slug}-${index}`}
+                href={`/projects/${project.slug}`}
+                className={styles.card}
+              >
+                {cardContent}
+              </Link>
+            );
+          }
+
+          return (
+            <div key={`${project.title}-${index}`} className={styles.card}>
+              {cardContent}
             </div>
-          </Link>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
