@@ -1,9 +1,11 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
+  ArrowLeft,
   Check,
   Factory,
   Building2,
@@ -19,8 +21,8 @@ import {
 import styles from "./ServiceDetail.module.scss";
 import Achievements from "@/components/Achievements/Achievements";
 import { navServices } from "@/data/services";
-import sakataImg from "@/assets/images/projects/sakata.png";
-import vajraImg from "@/assets/images/project_img.jpg";
+import sakataImg from "@/assets/images/services/civil/sakata-building.png";
+import vajraImg from "@/assets/images/services/civil/vajra-towers.png";
 
 const iconMap = {
   Factory,
@@ -110,6 +112,15 @@ const ServiceDetail = ({ service }) => {
     service.processDescription ?? defaultProcessDescription;
   const steps = service.processSteps ?? defaultProcessSteps;
   const projects = service.featuredProjects ?? defaultFeaturedProjects;
+  const featuredTrackRef = useRef(null);
+
+  const scrollFeatured = (direction) => {
+    const track = featuredTrackRef.current;
+    if (!track) return;
+    const card = track.querySelector(`.${styles.featuredCard}`);
+    const amount = card ? card.offsetWidth + 20 : track.clientWidth * 0.8;
+    track.scrollBy({ left: direction * amount, behavior: "smooth" });
+  };
 
   return (
     <>
@@ -235,11 +246,29 @@ const ServiceDetail = ({ service }) => {
       <section className={styles.featuredSection}>
         <div className={styles.featuredHeader}>
           <h2 className={styles.featuredTitle}>Featured Projects</h2>
-          <Link href="/#projects" className={styles.viewMore}>
-            View More <ArrowRight size={16} />
-          </Link>
+          <div className={styles.featuredControls}>
+            <button
+              type="button"
+              className={styles.scrollBtn}
+              onClick={() => scrollFeatured(-1)}
+              aria-label="Previous projects"
+            >
+              <ArrowLeft size={16} />
+            </button>
+            <button
+              type="button"
+              className={styles.scrollBtn}
+              onClick={() => scrollFeatured(1)}
+              aria-label="Next projects"
+            >
+              <ArrowRight size={16} />
+            </button>
+            <Link href="/#projects" className={styles.viewMore}>
+              View More <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
-        <div className={styles.featuredGrid}>
+        <div className={styles.featuredGrid} ref={featuredTrackRef}>
           {projects.map((project) => (
             <div key={project.title} className={styles.featuredCard}>
               <Image
@@ -247,8 +276,11 @@ const ServiceDetail = ({ service }) => {
                 alt={project.title}
                 fill
                 className={styles.featuredImage}
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 768px) 85vw, 50vw"
               />
+              {project.badge && (
+                <span className={styles.featuredBadge}>{project.badge}</span>
+              )}
               <div className={styles.featuredOverlay}>
                 <h3>{project.title}</h3>
                 <span>{project.location}</span>

@@ -17,6 +17,8 @@ import svc7 from "@/assets/images/services/service7.png";
 import svc8 from "@/assets/images/services/service8.jpg";
 import svc9 from "@/assets/images/services/service9.jpg";
 import svc10 from "@/assets/images/services/service10.jpg";
+import geHealthcareImg from "@/assets/images/services/epc/epc-hero.webp";
+import geHealthcareBuildingImg from "@/assets/images/services/epc/1773dd480df6ffdba64edd50610e2d23ca806821.webp";
 
 import logo1 from "@/assets/images/trustedPartners/img1.png";
 import logo2 from "@/assets/images/trustedPartners/img2.png";
@@ -164,25 +166,25 @@ export const projects = [
   {
     slug: "ge-healthcare",
     title: "GE Healthcare / Wipro GE Healthcare",
-    location: "BENGALURU · KARNATAKA",
-    heroImage: hindustanImg,
+    location: "BENGALURU REGION, KARNATAKA",
+    heroImage: geHealthcareImg,
     galleryLabel: "Gallery No: 06",
-    client: "Wipro GE Healthcare Pvt. Ltd.",
-    clientLogo: logo6,
+    client: "GE Healthcare / Wipro GE Healthcare",
+    clientLogo: logo9,
     description:
-      "Civil and interior construction works for GE Healthcare's Bengaluru facility. The scope covered structural build-out, high-spec interior fit-outs, and MEP integration tailored to healthcare equipment manufacturing requirements.",
-    tags: ["Civil Construction", "Interior Fit-out", "MEP Systems"],
-    totalArea: "9,200 m²",
-    projectPeriod: "2020–22",
+      "Manufacturing and office facility construction for GE Healthcare's Bengaluru plant. The scope included civil, MEP, and interior works delivered as a composite EPC package. Neo Heights won the GE Healthcare Supplier of the Year Award 2025.",
+    tags: ["EPC Contractor", "Civil Construction", "PEB Structure", "MEP Systems"],
+    totalArea: "-",
+    projectPeriod: "Ongoing",
     scopeOfWork: [
-      "Civil structural build-out works",
-      "High-spec clean room interior fit-out",
-      "False ceiling and flooring systems",
-      "Precision HVAC and air filtration",
-      "Electrical and data cabling infrastructure",
-      "Fire suppression and safety systems",
+      "Manufacturing and office facility construction",
+      "Fire pump room — VTP 354 M3/Hr with diesel engine pumps",
+      "STP, HVAC, electrical systems",
+      "Civil, MEP, and interior works",
+      "DM RO Plant — 10,000 litre capacity",
+      "Plumbing and drainage infrastructure",
     ],
-    gallery: [hindustanImg, svc3, svc4, svc6],
+    gallery: [svc7, { src: svc9, label: "Safety Training" }, geHealthcareBuildingImg],
   },
   {
     slug: "pca",
@@ -191,7 +193,7 @@ export const projects = [
     heroImage: sakataImg,
     galleryLabel: "Gallery No: 07",
     client: "PCA",
-    clientLogo: logo9,
+    clientLogo: logo6,
     description:
       "Full-scope construction and fit-out works for PCA's Bengaluru operations. The project combined civil construction, PEB structural works, and complete MEP systems installation within a defined project timeline.",
     tags: ["Civil Construction", "PEB Structures", "MEP Systems"],
@@ -211,25 +213,18 @@ export const projects = [
     location: "BENGALURU · KARNATAKA",
     heroImage: india2Img,
     galleryLabel: "Gallery No: 08",
-    client: "Toyota Kirloskar Motor Pvt. Ltd.",
+    client: "Toyota",
     clientLogo: logo10,
     description:
-      "Large-scale manufacturing campus construction for Toyota's Bengaluru facility. Integrated civil structural works, PEB production sheds, and full MEP systems integration across a sprawling industrial campus.",
-    tags: [
-      "Civil Construction",
-      "PEB Structures",
-      "MEP Systems",
-      "EPC Contractor",
-    ],
-    totalArea: "18,000 m²",
-    projectPeriod: "2022–24",
+      "Large-scale manufacturing campus construction for Toyota's Bengaluru facility. The project involves integrated civil structural works, PEB production sheds, and full MEP systems integration across a sprawling industrial campus.",
+    tags: ["EPC Contractor", "Civil Construction", "PEB Structure", "MEP Systems"],
+    totalArea: "-",
+    projectPeriod: "Ongoing",
     scopeOfWork: [
-      "Multi-block civil structural works",
-      "Large-span PEB production sheds",
-      "Overhead crane girder and rail systems",
-      "Complete MEP systems integration",
-      "Roads and external infrastructure",
-      "Safety systems and fire protection",
+      "Large-scale manufacturing campus construction",
+      "PEB sheds for production areas",
+      "Civil structural works and foundations",
+      "MEP systems integration throughout",
     ],
     gallery: [india2Img, indiaImg, svc1, svc5, svc9, svc10],
   },

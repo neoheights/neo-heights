@@ -1,8 +1,8 @@
 import Header from "@/components/Header/Header";
 import ProjectsHero from "@/components/ProjectsHero/ProjectsHero";
 import ProjectsGrid from "@/components/ProjectsGrid/ProjectsGrid";
-import TrustedBy from "@/components/TrustedBy/TrustedBy";
-import Contact from "@/components/Contact/Contact";
+import Blogs from "@/components/Blogs/Blogs";
+import Journey from "@/components/Journey/Journey";
 import Footer from "@/components/Footer/Footer";
 
 export const metadata = {
@@ -17,9 +17,9 @@ export default function ProjectsPage() {
       <Header />
       <ProjectsHero />
       <ProjectsGrid />
-      <TrustedBy />
-      <Contact showMap={false} />
-      <Footer />
+      <Blogs />
+      <Journey />
+      <Footer showTopStrip />
     </main>
   );
 }

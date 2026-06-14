@@ -13,7 +13,7 @@ const awards = [
   },
   {
     title: "India SME 100 Awards 2023",
-    description: "Top 100 Women — selected from 21,000+ nominations",
+    description: "Top 100 Winners — selected from 31,000+ nominations",
     year: "2023",
   },
   {

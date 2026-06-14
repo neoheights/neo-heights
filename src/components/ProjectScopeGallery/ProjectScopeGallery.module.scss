@@ -1,5 +1,5 @@
 .section {
-  background: #0d0d0d;
+  background: #1f1f1f;
   padding: 0 0 80px;
 }
 
@@ -17,10 +17,10 @@
 }
 
 .heading {
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
   color: #fff;
-  font-family: var(--font-futura);
+  font-family: var(--font-fustat);
   margin-bottom: 32px;
 }
 
@@ -44,20 +44,23 @@
 
 .scopeItem {
   display: flex;
-  align-items: flex-start;
-  gap: 12px;
+  align-items: center;
+  gap: 14px;
   font-size: 0.83rem;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.75);
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 16px 20px;
 }
 
 .bullet {
   flex-shrink: 0;
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.22);
-  margin-top: 8px;
+  background: var(--primary-orange);
 }
 
 /* ── Gallery ── */
@@ -77,6 +80,29 @@
   overflow: hidden;
   border-radius: 4px;
   background: #1a1a1a;
+}
+
+.wide {
+  grid-column: 1 / -1;
+  aspect-ratio: 16 / 7;
+
+  @media (max-width: 560px) {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+.galleryBadge {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  z-index: 1;
+  padding: 10px 22px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, var(--primary-orange), #f6b921);
+  border-radius: 6px 0 0 6px;
+  white-space: nowrap;
 }
 
 .galleryImage {

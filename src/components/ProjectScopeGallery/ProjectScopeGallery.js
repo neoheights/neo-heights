@@ -37,17 +37,28 @@ export default function ProjectScopeGallery({ project }) {
 
         {project.gallery?.length > 0 && (
           <div className={styles.galleryGrid}>
-            {project.gallery.map((img, i) => (
-              <div key={i} className={styles.galleryItem}>
-                <Image
-                  src={img}
-                  alt={`${project.title} — photo ${i + 1}`}
-                  fill
-                  className={styles.galleryImage}
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                />
-              </div>
-            ))}
+            {project.gallery.map((item, i) => {
+              const img = item?.src ?? item;
+              const label = item?.label;
+              const isWide =
+                project.gallery.length % 2 === 1 &&
+                i === project.gallery.length - 1;
+              return (
+                <div
+                  key={i}
+                  className={`${styles.galleryItem} ${isWide ? styles.wide : ""}`}
+                >
+                  <Image
+                    src={img}
+                    alt={`${project.title} — photo ${i + 1}`}
+                    fill
+                    className={styles.galleryImage}
+                    sizes={isWide ? "100vw" : "(max-width: 640px) 100vw, 50vw"}
+                  />
+                  {label && <span className={styles.galleryBadge}>{label}</span>}
+                </div>
+              );
+            })}
           </div>
         )}
       </div>

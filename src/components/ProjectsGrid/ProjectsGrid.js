@@ -6,14 +6,25 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import styles from "./ProjectsGrid.module.scss";
 
-import volvoImg from "@/assets/images/projects/volvo.png";
 import advikImg from "@/assets/images/projects/advik.png";
 import sakataImg from "@/assets/images/projects/sakata.png";
 import indiaImg from "@/assets/images/projects/india.png";
 import tataImg from "@/assets/images/projects/tata.png";
-import hindustanImg from "@/assets/images/projects/hindustan.png";
 import pebImg from "@/assets/images/projects/peb.png";
-import india2Img from "@/assets/images/projects/india2.jpg";
+
+import volvoAerialImg from "@/assets/images/services/epc/5c5045d58f5f455bf74b38872b82565af17992d0.webp";
+import toyotaImg from "@/assets/images/services/epc/931a18e0b6b494b3883cab079980e47c2e33fa48.webp";
+import vajraInteriorImg from "@/assets/images/services/commercial/d86a0c296c788c16230b1529c9f9d2ef05b4faf6.png";
+import vajraNightImg from "@/assets/images/services/civil/vajra-towers.png";
+import geHealthcareImg from "@/assets/images/services/epc/epc-hero.webp";
+import foxconnImg from "@/assets/images/services/epc/0890fd8fee161194c0997d296a5416bf8309c158.webp";
+import lmWindImg from "@/assets/images/services/service12.png";
+import tataRwhPondImg from "@/assets/images/services/land/tata-rwh.jpg";
+import tataRwhAerialImg from "@/assets/images/services/service1.jpg";
+import csWendtImg from "@/assets/images/services/civil/6291cb839d92a01ce7932a3d6e3412a7a257e58b.png";
+import rccMagnumImg from "@/assets/images/services/civil/62a588ccadda717d4b886e1e7748dd9e4b11ebd0.png";
+import schoolCsrImg from "@/assets/images/services/civil/31d21483aa2467352b9a312f85f50daf0832f795.png";
+import rccAsterImg from "@/assets/images/services/civil/70e80b9d3d7a0b72d60f56a6c10331ed9d618d38.png";
 
 const categories = [
   "All",
@@ -31,7 +42,7 @@ const imageProjects = [
     slug: "volvo-trucks",
     title: "Volvo Trucks",
     location: "HOSKOTE",
-    image: volvoImg,
+    image: volvoAerialImg,
     tags: [
       "Completed",
       "Civil, PEB, Interior & MEP Works",
@@ -75,14 +86,12 @@ const imageProjects = [
 ];
 
 // Additional showcase projects rendered below the filterable grid.
-// NOTE: images below are temporary placeholders - swap with the real
-// GE Healthcare, PCA, Toyota and Vajra Towers project photos when available.
 const moreProjects = [
   {
     slug: "ge-healthcare",
     title: "GE Healthcare / Wipro GE Healthcare",
     location: "BENGALURU KARNATAKA",
-    image: hindustanImg,
+    image: geHealthcareImg,
   },
   {
     slug: "pca",
@@ -94,24 +103,23 @@ const moreProjects = [
     slug: "toyota",
     title: "Toyota",
     location: "BENGALURU",
-    image: india2Img,
+    image: toyotaImg,
   },
   {
     slug: "vajra-towers",
     title: "Vajra Towers",
     location: "HOSUR",
-    image: tataImg,
+    image: vajraInteriorImg,
   },
   {
     slug: "vajra-towers",
     title: "Vajra Towers",
     location: "HOSUR",
-    image: advikImg,
+    image: vajraNightImg,
   },
 ];
 
 // Final showcase row - GE Healthcare, Foxconn-Cinda and LM Wind Power.
-// NOTE: images below are temporary placeholders.
 const additionalProjects = [
   {
     slug: "ge-healthcare",
@@ -123,13 +131,50 @@ const additionalProjects = [
     slug: "foxconn-cinda",
     title: "Foxconn-Cinda",
     location: "CHENNAI",
-    image: volvoImg,
+    image: foxconnImg,
   },
   {
     slug: "lm-wind-power",
     title: "LM Wind Power (GE Renewable Energy)",
     location: "DOBBASPET",
-    image: pebImg,
+    image: lmWindImg,
+  },
+];
+
+// Final row - Tata Electronics RWH, School CSR project and RCC Aster residential.
+const finalProjects = [
+  {
+    slug: "tata-electronics",
+    title: "Tata Electronics — Rainwater Harvesting (RWH)",
+    location: "DOBBASPET, KARNATAKA",
+    image: tataRwhPondImg,
+  },
+  {
+    slug: "tata-electronics",
+    title: "Tata Electronics — Rainwater Harvesting (RWH)",
+    location: "DOBBASPET, KARNATAKA",
+    image: tataRwhAerialImg,
+  },
+  {
+    title: "CS Building — Wendt India",
+    location: "HOSUR",
+    image: csWendtImg,
+  },
+  {
+    title: "RCC Residential Building — Magnum",
+    location: "",
+    image: rccMagnumImg,
+  },
+  {
+    title: "School Building CSR Project — for Schaeffler",
+    location: "",
+    image: schoolCsrImg,
+    badge: "CSR Project",
+  },
+  {
+    title: "RCC Residential Building — Aster",
+    location: "",
+    image: rccAsterImg,
   },
 ];
 
@@ -219,6 +264,7 @@ const ProjectCard = ({ project, size }) => {
         height={1000}
         style={{ objectPosition: project.imagePosition || "50% 50%" }}
       />
+      {project.badge && <span className={styles.cardBadge}>{project.badge}</span>}
       <div className={styles.overlay}>
         <h3>{project.title}</h3>
         <span>{project.location}</span>
@@ -251,7 +297,9 @@ const MasonryGrid = ({ images, infoCard, ctaCard }) => {
     size: slotSizes[index % slotSizes.length],
   }));
 
-  gridItems.splice(Math.min(2, gridItems.length), 0, { type: "info", key: "info" });
+  if (infoCard) {
+    gridItems.splice(Math.min(2, gridItems.length), 0, { type: "info", key: "info" });
+  }
   if (ctaCard) gridItems.push({ type: "cta", key: "cta" });
 
   return (
@@ -359,6 +407,8 @@ export default function ProjectsGrid() {
             buttonLabel: "View More",
           }}
         />
+
+        <MasonryGrid images={finalProjects} />
       </div>
     </section>
   );
