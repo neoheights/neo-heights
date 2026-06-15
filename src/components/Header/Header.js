@@ -92,7 +92,7 @@ const Header = () => {
     { label: "Services", href: "/services", hasDropdown: true, id: "services" },
     {
       label: "Sustainability",
-      href: "/",
+      href: "/sustainability",
       id: "sustainability",
     },
     { label: "Newsroom", href: "/blogs", id: "newsroom" },
@@ -113,6 +113,9 @@ const Header = () => {
     } else if (item.id === "services") {
       setIsMenuOpen(false);
       router.push("/services");
+    } else if (item.id === "sustainability") {
+      setIsMenuOpen(false);
+      router.push("/sustainability");
     } else if (pathname !== "/") {
       // If we're not on the home page, navigate to home and then scroll
       setIsMenuOpen(false);

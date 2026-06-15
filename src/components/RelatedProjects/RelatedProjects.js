@@ -4,19 +4,36 @@ import { ArrowRight } from "lucide-react";
 import styles from "./RelatedProjects.module.scss";
 import { projects } from "@/data/projects";
 
-export default function RelatedProjects({ currentSlug }) {
+export default function RelatedProjects({
+  currentSlug,
+  projectSlugs,
+  imageOverrides,
+}) {
   const current = projects.find((p) => p.slug === currentSlug);
 
-  const related = current?.relatedProjects?.length
-    ? current.relatedProjects
-    : projects
-        .filter((p) => p.slug !== currentSlug)
-        .map((p) => ({
-          slug: p.slug,
-          title: p.title,
-          location: p.location,
-          image: p.heroImage,
-        }));
+  let related;
+  if (projectSlugs?.length) {
+    related = projectSlugs
+      .map((slug) => projects.find((p) => p.slug === slug))
+      .filter(Boolean)
+      .map((p) => ({
+        slug: p.slug,
+        title: p.title,
+        location: p.location,
+        image: imageOverrides?.[p.slug] ?? p.heroImage,
+      }));
+  } else if (current?.relatedProjects?.length) {
+    related = current.relatedProjects;
+  } else {
+    related = projects
+      .filter((p) => p.slug !== currentSlug)
+      .map((p) => ({
+        slug: p.slug,
+        title: p.title,
+        location: p.location,
+        image: p.heroImage,
+      }));
+  }
 
   if (related.length === 0) return null;
 

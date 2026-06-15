@@ -1,0 +1,92 @@
+.section {
+  background: #3c4a35;
+  padding: 64px 0;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 7%;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 48px;
+  align-items: center;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 420px;
+  margin: 0;
+  font-family: var(--font-fustat);
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 48px;
+
+  @media (max-width: 560px) {
+    gap: 28px;
+  }
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.statNumber {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #fff;
+  font-family: var(--font-futura);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 150px;
+}
+
+.certItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.certBadge {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.certBadgeIso {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #1a4fa0;
+}
+
+.certBadgeNumber {
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: #555;
+}
