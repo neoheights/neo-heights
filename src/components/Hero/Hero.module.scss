@@ -83,18 +83,18 @@
 }
 
 .title {
-  font-size: 76px;
-  font-family: var(--font-futura);
-  font-weight: 500;
-  line-height: 100%;
+  font-size: 52px;
+  font-family: var(--font-fustat);
+  font-weight: 700;
+  line-height: 120%;
   margin-bottom: 20px;
-  letter-spacing: -3px;
+  letter-spacing: 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 
   @media (max-width: 768px) {
     font-size: 1.9rem;
-    line-height: 0.9;
-    letter-spacing: -0.2;
+    line-height: 1.25;
+    letter-spacing: 0;
 
     margin-bottom: 15px;
   }

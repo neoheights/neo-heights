@@ -8,17 +8,18 @@ import styles from "./ProjectsGrid.module.scss";
 
 import advikImg from "@/assets/images/projects/advik.png";
 import sakataImg from "@/assets/images/projects/sakata.png";
+import pcaImg from "@/assets/images/projects/pca.png";
 import indiaImg from "@/assets/images/projects/india.png";
 import tataImg from "@/assets/images/projects/tata.png";
 import pebImg from "@/assets/images/projects/peb.png";
 
 import volvoAerialImg from "@/assets/images/services/epc/5c5045d58f5f455bf74b38872b82565af17992d0.webp";
 import toyotaImg from "@/assets/images/services/epc/931a18e0b6b494b3883cab079980e47c2e33fa48.webp";
-import vajraInteriorImg from "@/assets/images/services/commercial/d86a0c296c788c16230b1529c9f9d2ef05b4faf6.png";
+import vajraInteriorImg from "@/assets/images/projects/vajratower_interior.jpg";
 import vajraNightImg from "@/assets/images/services/civil/vajra-towers.png";
 import geHealthcareImg from "@/assets/images/services/epc/epc-hero.webp";
-import foxconnImg from "@/assets/images/services/epc/0890fd8fee161194c0997d296a5416bf8309c158.webp";
-import lmWindImg from "@/assets/images/services/service12.png";
+import foxconnImg from "@/assets/images/projects/foxconn.png";
+import lmWindImg from "@/assets/images/services/epc/1773dd480df6ffdba64edd50610e2d23ca806821.webp";
 import tataRwhPondImg from "@/assets/images/services/land/tata-rwh.jpg";
 import tataRwhAerialImg from "@/assets/images/services/service1.jpg";
 import csWendtImg from "@/assets/images/services/civil/6291cb839d92a01ce7932a3d6e3412a7a257e58b.png";
@@ -73,6 +74,7 @@ const imageProjects = [
     title: "TATA ELECTRONICS",
     location: "HOSUR",
     image: tataImg,
+    compact: true,
     tags: ["On-going", "EPC Contracts", "Civil Engineering"],
   },
   {
@@ -81,6 +83,8 @@ const imageProjects = [
     location: "NARSAPURA",
     image: pebImg,
     imagePosition: "50% 0%",
+    size: "span1",
+    compact: true,
     tags: ["Completed", "EPC Pre-Engineered Building", "MEP"],
   },
 ];
@@ -97,7 +101,7 @@ const moreProjects = [
     slug: "pca",
     title: "PCA",
     location: "BENGALURU",
-    image: sakataImg,
+    image: pcaImg,
   },
   {
     slug: "toyota",
@@ -141,14 +145,8 @@ const additionalProjects = [
   },
 ];
 
-// Final row - Tata Electronics RWH, School CSR project and RCC Aster residential.
-const finalProjects = [
-  {
-    slug: "tata-electronics",
-    title: "Tata Electronics — Rainwater Harvesting (RWH)",
-    location: "DOBBASPET, KARNATAKA",
-    image: tataRwhPondImg,
-  },
+// Tata RWH pair - rendered in equal 2-column grid
+const tataRwhProjects = [
   {
     slug: "tata-electronics",
     title: "Tata Electronics — Rainwater Harvesting (RWH)",
@@ -156,14 +154,28 @@ const finalProjects = [
     image: tataRwhAerialImg,
   },
   {
+    slug: "tata-electronics",
+    title: "Tata Electronics — Rainwater Harvesting (RWH)",
+    location: "DOBBASPET, KARNATAKA",
+    image: tataRwhPondImg,
+  },
+];
+
+// Final row - School CSR project and RCC residential buildings.
+const finalProjects = [
+  {
     title: "CS Building — Wendt India",
     location: "HOSUR",
     image: csWendtImg,
+    size: "span1",
+    compact: true,
   },
   {
     title: "RCC Residential Building — Magnum",
     location: "",
     image: rccMagnumImg,
+    size: "span2",
+    compact: true,
   },
   {
     title: "School Building CSR Project — for Schaeffler",
@@ -253,7 +265,7 @@ const ProjectCard = ({ project, size }) => {
     return () => img.removeEventListener("load", handleLoad);
   }, [project]);
 
-  const className = `${styles.projectCard} ${styles[size]}`;
+  const className = `${styles.projectCard} ${styles[size]}${project.compact ? ` ${styles.compactCard}` : ""}`;
   const cardContent = (
     <>
       <Image
@@ -289,16 +301,17 @@ const ProjectCard = ({ project, size }) => {
 
 // Recreates the masonry layout: image cards in cycling spans, with a
 // descriptive text card and a closing CTA card woven into the grid
-const MasonryGrid = ({ images, infoCard, ctaCard }) => {
+const MasonryGrid = ({ images, infoCard, ctaCard, infoCardPosition, compact }) => {
   const gridItems = images.map((project, index) => ({
     type: "image",
     key: `${project.title}-${index}`,
     project,
-    size: slotSizes[index % slotSizes.length],
+    size: project.size || slotSizes[index % slotSizes.length],
   }));
 
   if (infoCard) {
-    gridItems.splice(Math.min(2, gridItems.length), 0, { type: "info", key: "info" });
+    const pos = typeof infoCardPosition === "number" ? infoCardPosition : Math.min(2, gridItems.length);
+    gridItems.splice(Math.min(pos, gridItems.length), 0, { type: "info", key: "info" });
   }
   if (ctaCard) gridItems.push({ type: "cta", key: "cta" });
 
@@ -331,7 +344,7 @@ const MasonryGrid = ({ images, infoCard, ctaCard }) => {
         return (
           <div
             key={item.key}
-            className={`${styles.textCard} ${styles.span1} ${styles.darkTextCard}`}
+            className={`${styles.textCard} ${styles.span1} ${styles.darkTextCard}${compact ? ` ${styles.compactCta}` : ""}`}
           >
             <p className={styles.finalCardText}>{ctaCard.text}</p>
             <button className={styles.viewMoreBtn}>
@@ -352,6 +365,9 @@ export default function ProjectsGrid() {
       ? imageProjects
       : imageProjects.filter((project) => project.tags.includes(activeCategory));
 
+  const firstPair = filteredImages.slice(0, 2);
+  const remainingFiltered = filteredImages.slice(2);
+
   return (
     <section className={styles.projectsGridSection}>
       <div className={styles.container}>
@@ -369,8 +385,19 @@ export default function ProjectsGrid() {
           ))}
         </div>
 
+        {firstPair.length > 0 && (
+          <div className={styles.equalGrid}>
+            {firstPair.map((project, i) => (
+              <ProjectCard key={i} project={project} size="span1" />
+            ))}
+          </div>
+        )}
+
+        {remainingFiltered.length > 0 && (
         <MasonryGrid
-          images={filteredImages}
+          images={remainingFiltered}
+          infoCardPosition={0}
+          compact
           infoCard={{
             title: "Schaeffler India Limited, Shoolagiri",
             badge: "Area - 14,500 sq. m",
@@ -383,6 +410,7 @@ export default function ProjectsGrid() {
             buttonLabel: "Learn More",
           }}
         />
+        )}
 
         <MasonryGrid
           images={moreProjects}
@@ -407,6 +435,12 @@ export default function ProjectsGrid() {
             buttonLabel: "View More",
           }}
         />
+
+        <div className={styles.equalGrid}>
+          {tataRwhProjects.map((project, i) => (
+            <ProjectCard key={i} project={project} size="span1" />
+          ))}
+        </div>
 
         <MasonryGrid images={finalProjects} />
       </div>

@@ -127,6 +127,10 @@
   font-weight: 600;
   line-height: 1.2;
   color: #f6f6f6;
+
+  [data-theme="light"] & {
+    color: var(--foreground);
+  }
 }
 
 .formDesc {
@@ -139,6 +143,10 @@
     color: #f5f5f5;
     text-decoration: underline;
     text-underline-offset: 2px;
+
+    [data-theme="light"] & {
+      color: var(--foreground);
+    }
   }
 }
 

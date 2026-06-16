@@ -1,6 +1,7 @@
 import volvoImg from "@/assets/images/projects/volvo.png";
 import advikImg from "@/assets/images/projects/advik.png";
 import sakataImg from "@/assets/images/projects/sakata.png";
+import pcaImg from "@/assets/images/projects/pca.png";
 import indiaImg from "@/assets/images/projects/india.png";
 import tataImg from "@/assets/images/projects/tata.png";
 import hindustanImg from "@/assets/images/projects/hindustan.png";
@@ -188,7 +189,7 @@ export const projects = [
     slug: "pca",
     title: "PCA",
     location: "BENGALURU · KARNATAKA",
-    heroImage: sakataImg,
+    heroImage: pcaImg,
     galleryLabel: "Gallery No: 07",
     client: "PCA",
     clientLogo: logo6,

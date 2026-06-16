@@ -44,6 +44,10 @@
     color: #9a9a9a;
     margin: 0;
     font-size: 0.85rem;
+
+    [data-theme="light"] & {
+      color: var(--text-secondary);
+    }
   }
 }
 
@@ -120,6 +124,10 @@
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
+
+    [data-theme="light"] & {
+      color: var(--foreground);
+    }
   }
 
   ul {
@@ -159,6 +167,10 @@
     margin-bottom: 0;
     text-transform: uppercase;
     letter-spacing: 1px;
+
+    [data-theme="light"] & {
+      color: var(--foreground);
+    }
   }
 
   ul {
@@ -219,6 +231,10 @@
 
     &:hover {
       color: #fff;
+
+      [data-theme="light"] & {
+        color: var(--foreground);
+      }
     }
   }
 }
@@ -270,5 +286,9 @@
   a {
     color: #999;
     text-decoration: underline;
+
+    [data-theme="light"] & {
+      color: var(--text-secondary);
+    }
   }
 }

@@ -30,35 +30,24 @@ import logo22 from "@/assets/images/trustedPartners/img22.png";
 import logo23 from "@/assets/images/trustedPartners/img23.png";
 
 const Clients = () => {
-    // First set of 12 logos (Row 1)
+    // Row 1: TATA, VOLVO, Faiveley, VOLTAS, TVS, Wabtec
     const row1Logos = [
-        { src: logo1, alt: "Wabtec" },
-        { src: logo2, alt: "Wipro" },
-        { src: logo3, alt: "Scania" },
-        { src: logo4, alt: "SHMZ" },
-        { src: logo5, alt: "CUMI" },
-        { src: logo6, alt: "Triangle" },
-        { src: logo7, alt: "AVTEC" },
-        { src: logo8, alt: "Ashok Leyland" },
-        { src: logo9, alt: "Ashok Leyland" },
-        { src: logo10, alt: "Ashok Leyland" },
-        { src: logo11, alt: "Ashok Leyland" },
-        { src: logo12, alt: "Ashok Leyland" },
+        { src: logo1,  alt: "TATA" },
+        { src: logo11, alt: "VOLVO" },
+        { src: logo15, alt: "Faiveley Transport" },
+        { src: logo13, alt: "VOLTAS" },
+        { src: logo14, alt: "TVS" },
+        { src: logo12, alt: "Wabtec" },
     ];
 
-    // Second set of 11 logos (Row 2)
+    // Row 2: Wipro, Scania, SHMZ, CUMI, Triangle, AVTEC
     const row2Logos = [
-        { src: logo13, alt: "Client" },
-        { src: logo14, alt: "Client" },
-        { src: logo15, alt: "Client" },
-        { src: logo16, alt: "Client" },
-        { src: logo17, alt: "Client" },
-        { src: logo18, alt: "Client" },
-        { src: logo19, alt: "Client" },
-        { src: logo20, alt: "Client" },
-        { src: logo21, alt: "Client" },
-        { src: logo22, alt: "Client" },
-        { src: logo23, alt: "Client" },
+        { src: logo18, alt: "Wipro" },
+        { src: logo19, alt: "Scania" },
+        { src: logo20, alt: "SHMZ" },
+        { src: logo21, alt: "CUMI" },
+        { src: logo22, alt: "Triangle" },
+        { src: logo23, alt: "AVTEC", invert: true },
     ];
 
     return (
@@ -68,42 +57,30 @@ const Clients = () => {
                     smallTitle="CLIENTS"
                     title="We Collaborate With Trusted Brands In Engineering And Technology, Valuing Quality."
                     align="left"
-                    maxWidth="1000px"
+                    maxWidth="1300px"
+                    titleStyle={{ fontSize: 'clamp(28px, 3.6vw, 52px)', lineHeight: 1.05 }}
                 />
 
-                <div className={styles.slidersContainer}>
-                    {/* Row 1 */}
-                    <div className={styles.slider}>
-                        <div className={styles.slideTrack}>
-                            {[...row1Logos, ...row1Logos].map((logo, index) => (
-                                <div key={`row1-${index}`} className={styles.slide}>
-                                    <Image
-                                        src={logo.src}
-                                        alt={logo.alt}
-                                        className={styles.clientLogo}
-                                        width={300}
-                                        height={300}
-                                    />
-                                </div>
-                            ))}
-                        </div>
+                <div className={styles.logosWrapper}>
+                    <div className={styles.logoRow}>
+                        {row1Logos.map((logo, i) => (
+                            <div key={i} className={styles.logoItem}>
+                                <Image src={logo.src} alt={logo.alt} className={styles.clientLogo} width={280} height={144} />
+                            </div>
+                        ))}
                     </div>
-
-                    {/* Row 2 */}
-                    <div className={styles.slider}>
-                        <div className={styles.slideTrack}>
-                            {[...row2Logos, ...row2Logos].map((logo, index) => (
-                                <div key={`row2-${index}`} className={styles.slide}>
-                                    <Image
-                                        src={logo.src}
-                                        alt={logo.alt}
-                                        className={styles.clientLogo}
-                                        width={300}
-                                        height={300}
-                                    />
-                                </div>
-                            ))}
-                        </div>
+                    <div className={styles.logoRow}>
+                        {row2Logos.map((logo, i) => (
+                            <div key={i} className={styles.logoItem}>
+                                <Image
+                                    src={logo.src}
+                                    alt={logo.alt}
+                                    width={280}
+                                    height={144}
+                                    className={`${styles.clientLogo}${logo.invert ? ` ${styles.clientLogoInvert}` : ""}`}
+                                />
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

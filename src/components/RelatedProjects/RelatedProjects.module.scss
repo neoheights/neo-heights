@@ -64,7 +64,8 @@
   overflow: hidden;
   scroll-snap-align: start;
   text-decoration: none;
-  background: #1a1a1a;
+  background: rgba(155, 155, 155, 0.064);
+  backdrop-filter: blur(4px);
 
   &:hover .cardImage {
     transform: scale(1.04);

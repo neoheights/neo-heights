@@ -2,156 +2,72 @@
   background-color: #050505;
   color: #fff;
   padding: 100px 0;
-  overflow: hidden;
 }
 
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 60px;
+
+  @media (max-width: 768px) {
+    padding: 0 24px;
+  }
 }
 
-.slidersContainer {
+.logosWrapper {
   margin-top: 80px;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 56px;
 
   @media (max-width: 768px) {
-    margin-top: 50px;
-    gap: 30px;
+    margin-top: 48px;
+    gap: 36px;
   }
 }
 
-.slider {
-  height: 100px;
-  margin: auto;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
+.logoRow {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  gap: 32px;
 
-  &::before,
-  &::after {
-    background: linear-gradient(to right,
-        rgba(5, 5, 5, 1) 0%,
-        rgba(5, 5, 5, 0) 100%);
-    content: "";
-    height: 100%;
-    position: absolute;
-    width: 150px;
-    z-index: 2;
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
   }
 
-  &::before {
-    left: 0;
-    top: 0;
-  }
-
-  &::after {
-    right: 0;
-    top: 0;
-    transform: rotateZ(180deg);
-  }
-
-  @media (max-width: 768px) {
-    height: 80px;
-
-    &::before,
-    &::after {
-      width: 75px;
-    }
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 }
 
-.slideTrack {
-  display: flex;
-  /* Width and Animation set in specific selectors below */
-}
-
-.slide {
-  width: 200px;
-  height: 100px;
+.logoItem {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-
-  @media (max-width: 768px) {
-    width: 100px;
-    height: 80px;
-  }
+  min-height: 72px;
 }
 
 .clientLogo {
   max-width: 150px;
-  max-height: 80px;
+  max-height: 72px;
   object-fit: contain;
-  transition: transform 0.3s ease;
+  opacity: 0.88;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 
   &:hover {
-    transform: scale(1.1);
+    opacity: 1;
+    transform: scale(1.06);
   }
 
   @media (max-width: 768px) {
-    max-width: 80px;
+    max-width: 100px;
     max-height: 50px;
   }
 }
 
-/* Row 1: 12 logos * 2 sets = 24 items */
-.slider:nth-child(1) .slideTrack {
-  width: calc(200px * 24);
-  animation: scrollRow1 40s linear infinite;
-
-  @media (max-width: 768px) {
-    width: calc(100px * 24);
-    animation: scrollRow1Mobile 40s linear infinite;
-  }
-}
-
-/* Row 2: 11 logos * 2 sets = 22 items */
-.slider:nth-child(2) .slideTrack {
-  width: calc(200px * 22);
-  animation: scrollRow2 40s linear infinite;
-
-  @media (max-width: 768px) {
-    width: calc(100px * 22);
-    animation: scrollRow2Mobile 40s linear infinite;
-  }
-}
-
-@keyframes scrollRow1 {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-200px * 12));
-  }
-}
-
-@keyframes scrollRow2 {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-200px * 11));
-  }
-}
-
-@keyframes scrollRow1Mobile {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-100px * 12));
-  }
-}
-
-@keyframes scrollRow2Mobile {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-100px * 11));
-  }
+.clientLogoInvert {
+  filter: brightness(0) invert(1);
 }
