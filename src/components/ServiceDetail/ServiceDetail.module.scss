@@ -527,7 +527,8 @@
   justify-content: space-between;
   gap: 12px;
   padding: 22px 24px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent 70%);
+  background: rgba(155, 155, 155, 0.064);
+  backdrop-filter: blur(4px);
 
   h3 {
     font-size: 1.1rem;

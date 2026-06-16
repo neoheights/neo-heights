@@ -2,6 +2,7 @@ import volvoImg from "@/assets/images/projects/volvo.png";
 import advikImg from "@/assets/images/projects/advik.png";
 import sakataImg from "@/assets/images/projects/sakata.png";
 import pcaImg from "@/assets/images/projects/pca.png";
+import foxconnProjectImg from "@/assets/images/projects/foxconn.png";
 import indiaImg from "@/assets/images/projects/india.png";
 import tataImg from "@/assets/images/projects/tata.png";
 import hindustanImg from "@/assets/images/projects/hindustan.png";
@@ -30,6 +31,7 @@ import logo6 from "@/assets/images/trustedPartners/img6.png";
 import logo9 from "@/assets/images/trustedPartners/img9.png";
 import logo10 from "@/assets/images/trustedPartners/img10.png";
 import logo12 from "@/assets/images/trustedPartners/img12.png";
+import foxconnLogo from "@/assets/images/trustedPartners/foxconn.png";
 
 export const projects = [
   {
@@ -270,23 +272,21 @@ export const projects = [
   {
     slug: "foxconn-cinda",
     title: "Foxconn-Cinda",
-    location: "CHENNAI · TAMIL NADU",
-    heroImage: volvoImg,
+    location: "BENGALURU REGION · KARNATAKA",
+    heroImage: foxconnProjectImg,
     galleryLabel: "Gallery No: 10",
     client: "Foxconn-Cinda",
-    clientLogo: logo1,
+    clientLogo: foxconnLogo,
     description:
-      "Industrial facility construction for Foxconn-Cinda at Chennai. The scope included civil foundations, PEB structural systems, and MEP services, delivered as a turnkey package for high-volume electronics manufacturing.",
-    tags: ["Civil Construction", "PEB Structures", "MEP Systems", "EPC Contractor"],
-    totalArea: "11,500 m²",
-    projectPeriod: "2022–24",
+      "Multi-storey RCC industrial facility construction for Foxconn-Cinda's Bengaluru campus. The project involved large manufacturing block civil structural works, completed and handed over for operations.",
+    tags: ["EPC Contractor", "Civil Construction"],
+    totalArea: "-",
+    projectPeriod: "Completed",
     scopeOfWork: [
-      "Civil foundation and ground floor slab",
-      "PEB structural erection and cladding",
-      "ESD flooring and clean zone fit-out",
-      "Power distribution and UPS systems",
-      "HVAC and precision cooling systems",
-      "Fire detection and suppression systems",
+      "Multi-storey RCC industrial facility",
+      "Structural civil works — completed",
+      "Large manufacturing block construction",
+      "Foundation and superstructure works",
     ],
     gallery: [volvoImg, advikImg, svc2, svc4, svc8],
   },
