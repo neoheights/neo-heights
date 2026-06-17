@@ -274,6 +274,7 @@ export const projects = [
     title: "Foxconn-Cinda",
     location: "BENGALURU REGION · KARNATAKA",
     heroImage: foxconnProjectImg,
+    heroObjectPosition: "center top",
     galleryLabel: "Gallery No: 10",
     client: "Foxconn-Cinda",
     clientLogo: foxconnLogo,

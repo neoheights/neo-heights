@@ -74,3 +74,12 @@
     flex: 0 0 40%;
   }
 }
+
+/* ── Light mode overrides ── */
+:global([data-theme="light"]) .logosBand {
+  background: #ffffff;
+}
+
+:global([data-theme="light"]) .heading {
+  color: #111111;
+}

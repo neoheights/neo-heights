@@ -142,3 +142,9 @@
     display: none;
   }
 }
+
+// ─── Light mode overrides ───────────────────────────────────────────────────
+:global([data-theme="light"]) .section {
+  background-color: #ffffff;
+  color: #111111;
+}

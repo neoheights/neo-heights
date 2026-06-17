@@ -73,3 +73,22 @@
   font-weight: 600;
   cursor: pointer;
 }
+
+/* ── Light mode overrides ── */
+:global([data-theme="light"]) .journeySection {
+  background-color: #f5f5f5;
+  color: #111111;
+}
+
+:global([data-theme="light"]) .heroCard {
+  background: rgba(0, 0, 0, 0.06);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.10);
+}
+
+:global([data-theme="light"]) .heroTitle {
+  color: #111111;
+}
+
+:global([data-theme="light"]) .heroDesc {
+  color: rgba(0, 0, 0, 0.55);
+}
