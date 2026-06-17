@@ -8,7 +8,6 @@
 
 .heroImage {
   object-fit: cover !important;
-  object-position: center top;
 }
 
 .overlay {
@@ -96,4 +95,22 @@
   .contactLink {
     font-size: 0.9rem;
   }
+}
+
+/* ── Light mode overrides ── */
+:global([data-theme="light"]) .bar {
+  background: rgba(0, 0, 0, 0.04);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+:global([data-theme="light"]) .title {
+  color: #111111;
+}
+
+:global([data-theme="light"]) .location {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+:global([data-theme="light"]) .contactLink {
+  color: #111111;
 }

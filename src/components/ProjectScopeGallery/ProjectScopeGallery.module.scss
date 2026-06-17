@@ -1,5 +1,5 @@
 .section {
-  background: #1f1f1f;
+  background: var(--surface-2);
   padding: 0 0 8px;
 }
 
@@ -18,7 +18,7 @@
 .heading {
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 600;
-  color: #fff;
+  color: var(--foreground);
   font-family: var(--font-fustat);
   margin-bottom: 32px;
 }
@@ -47,9 +47,9 @@
   gap: 14px;
   font-size: 0.83rem;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.75);
-  background: #141414;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  background: var(--surface-1);
+  border: 1px solid var(--glass-border);
   border-radius: 8px;
   padding: 16px 20px;
 }
@@ -111,4 +111,23 @@
 
 .galleryItem:hover .galleryImage {
   transform: scale(1.03);
+}
+
+/* ── Light mode overrides ── */
+:global([data-theme="light"]) .section {
+  background: #ffffff;
+}
+
+:global([data-theme="light"]) .heading {
+  color: #111111;
+}
+
+:global([data-theme="light"]) .scopeItem {
+  color: rgba(0, 0, 0, 0.7);
+  background: #f5f5f5;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+:global([data-theme="light"]) .galleryItem {
+  background: #f0f0f0;
 }

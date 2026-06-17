@@ -172,5 +172,11 @@
   gap: 8px;
   font-size: 0.8rem;
   cursor: pointer;
-  pointer-events: auto; // Re-enable pointer events for the button
+  pointer-events: auto;
+}
+
+/* ── Light mode overrides ── */
+:global([data-theme="light"]) .card {
+  background-color: #2a2a2a;
+  border-color: #444;
 }

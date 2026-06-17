@@ -149,3 +149,38 @@
         }
     }
 }
+
+/* ── Light mode overrides ── */
+:global([data-theme="light"]) .faqSection {
+  background-color: #ffffff;
+  color: #111111;
+}
+
+:global([data-theme="light"]) .faqItem {
+  background: #f0f0f0;
+
+  &:hover {
+    background: #e8e8e8;
+  }
+
+  &.active {
+    border-color: #ccc;
+  }
+}
+
+:global([data-theme="light"]) .answerBody {
+  color: #555555;
+}
+
+:global([data-theme="light"]) .ctaCard {
+  background: #f0f0f0;
+  border-color: #dddddd;
+
+  h3 {
+    color: #111111;
+  }
+
+  p {
+    color: #666666;
+  }
+}

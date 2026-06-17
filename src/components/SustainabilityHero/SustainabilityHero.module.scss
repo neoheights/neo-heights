@@ -89,3 +89,12 @@
     font-size: 0.9rem;
   }
 }
+
+// ─── Light mode overrides ───────────────────────────────────────────────────
+:global([data-theme="light"]) .title {
+  color: #111111;
+}
+
+:global([data-theme="light"]) .description {
+  color: rgba(0, 0, 0, 0.6);
+}

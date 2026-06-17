@@ -11,6 +11,7 @@ export default function ProjectDetailHero({ project }) {
         alt={project.title}
         fill
         className={styles.heroImage}
+        style={{ objectPosition: project.heroObjectPosition || "center center" }}
         sizes="100vw"
         priority
       />

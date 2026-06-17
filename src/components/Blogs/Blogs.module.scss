@@ -145,7 +145,7 @@
     letter-spacing: 1px;
     opacity: 0.9;
     transition: gap 0.3s ease, opacity 0.3s ease;
-    
+
     &:hover {
         gap: 12px;
         opacity: 1;
@@ -154,4 +154,10 @@
     @media (max-width: 768px) {
         display: none;
     }
+}
+
+/* ── Light mode overrides ── */
+:global([data-theme="light"]) .blogsSection {
+  background-color: #ffffff;
+  color: #111111;
 }

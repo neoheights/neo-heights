@@ -662,3 +662,160 @@
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.45);
 }
+
+/* ═══════════════════════════════════════
+   Light mode overrides
+═══════════════════════════════════════ */
+
+:global([data-theme="light"]) .navSection {
+  background: #ffffff;
+}
+
+:global([data-theme="light"]) .navCard {
+  background: #fafafa;
+  border-color: rgba(0, 0, 0, 0.09);
+
+  &.active {
+    background: rgba(246, 129, 33, 0.08);
+    border-color: var(--primary-orange);
+
+    .navLabel {
+      color: #111111;
+    }
+  }
+}
+
+:global([data-theme="light"]) .navIcon {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+:global([data-theme="light"]) .navLabel {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+:global([data-theme="light"]) .heroSection {
+  background: linear-gradient(180deg, #f5f5f5 0%, #fafafa 50%, #ffffff 100%);
+}
+
+:global([data-theme="light"]) .eyebrow {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+:global([data-theme="light"]) .title {
+  color: #111111;
+}
+
+:global([data-theme="light"]) .description {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+:global([data-theme="light"]) .capabilitiesList {
+  li {
+    color: rgba(0, 0, 0, 0.85);
+  }
+}
+
+:global([data-theme="light"]) .processSection {
+  background: #fafafa;
+}
+
+:global([data-theme="light"]) .serviceAreasSection {
+  background: #fafafa;
+}
+
+:global([data-theme="light"]) .serviceAreasTitle {
+  color: #111111;
+}
+
+:global([data-theme="light"]) .serviceAreasDesc {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+:global([data-theme="light"]) .serviceAreaCard {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+:global([data-theme="light"]) .serviceAreaTitle {
+  color: #111111;
+}
+
+:global([data-theme="light"]) .serviceAreaDesc {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+:global([data-theme="light"]) .stepsSection {
+  background: #fafafa;
+}
+
+:global([data-theme="light"]) .stepNumber {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+:global([data-theme="light"]) .stepTitle {
+  color: #111111;
+}
+
+:global([data-theme="light"]) .stepDesc {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+:global([data-theme="light"]) .featuredSection {
+  background: #fafafa;
+}
+
+:global([data-theme="light"]) .featuredTitle {
+  color: #111111;
+}
+
+:global([data-theme="light"]) .scrollBtn {
+  border-color: rgba(0, 0, 0, 0.15);
+  color: rgba(0, 0, 0, 0.8);
+}
+
+:global([data-theme="light"]) .featuredOverlay {
+  background: rgba(0, 0, 0, 0.04);
+
+  h3 {
+    color: #111111;
+  }
+
+  span {
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+:global([data-theme="light"]) .sustainSection {
+  background: #fafafa;
+}
+
+:global([data-theme="light"]) .sustainTitle {
+  color: #111111;
+}
+
+:global([data-theme="light"]) .sustainDesc {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+:global([data-theme="light"]) .certItem {
+  strong {
+    color: #111111;
+  }
+
+  p {
+    color: rgba(0, 0, 0, 0.45);
+  }
+}
+
+:global([data-theme="light"]) .sustainStats {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+:global([data-theme="light"]) .sustainStatNumber {
+  color: #111111;
+}
+
+:global([data-theme="light"]) .sustainStatLabel {
+  color: rgba(0, 0, 0, 0.45);
+}
