@@ -1,15 +1,14 @@
 .hero {
   position: relative;
   width: 100%;
-  aspect-ratio: 1599 / 680;
-  min-height: 480px;
+  height: 500px;
   margin-top: 2.5rem;
   overflow: hidden;
 }
 
 .heroImage {
-  object-fit: fill;
-  object-position: center calc(30% + 2rem);
+  object-fit: cover !important;
+  object-position: center top;
 }
 
 .overlay {
@@ -29,9 +28,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  background: rgba(10, 10, 10, 0.4);
-  backdrop-filter: blur(40px) saturate(160%);
-  -webkit-backdrop-filter: blur(40px) saturate(160%);
+  background: rgba(155, 155, 155, 0.149);
+  backdrop-filter: blur(2px);
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -80,7 +78,7 @@
 
 @media (max-width: 560px) {
   .hero {
-    min-height: 420px;
+    min-height: 300px;
   }
 
   .bar {

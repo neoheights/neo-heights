@@ -5,15 +5,15 @@ import styles from "./ProjectDetailInfo.module.scss";
 export default function ProjectDetailInfo({ project }) {
   return (
     <section className={styles.infoSection}>
-      <div className={styles.container}>
-        <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/" className={styles.breadcrumbLink}>Home</Link>
-          <span className={styles.breadcrumbSep} />
-          <Link href="/projects" className={styles.breadcrumbLink}>Projects</Link>
-          <span className={styles.breadcrumbSep} />
-          <span className={styles.breadcrumbCurrent}>{project.title}</span>
-        </nav>
+      <nav className={styles.breadcrumb} aria-label="Breadcrumb">
+        <Link href="/" className={styles.breadcrumbLink}>Home</Link>
+        <span className={styles.breadcrumbSep} />
+        <Link href="/projects" className={styles.breadcrumbLink}>Projects</Link>
+        <span className={styles.breadcrumbSep} />
+        <span className={styles.breadcrumbCurrent}>{project.title}</span>
+      </nav>
 
+      <div className={styles.container}>
         <div className={styles.rows}>
           {/* Client — 3-column: label | name | logo */}
           <div className={styles.rowClient}>

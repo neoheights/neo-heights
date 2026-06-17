@@ -58,13 +58,14 @@
 /* ── Card ── */
 .card {
   position: relative;
-  flex: 0 0 min(680px, 85vw);
-  aspect-ratio: 3 / 2;
+  flex: 0 0 min(520px, 76vw);
+  aspect-ratio: 16 / 9;
   border-radius: 12px;
   overflow: hidden;
   scroll-snap-align: start;
   text-decoration: none;
-  background: #1a1a1a;
+  background: rgba(155, 155, 155, 0.064);
+  backdrop-filter: blur(4px);
 
   &:hover .cardImage {
     transform: scale(1.04);
@@ -105,6 +106,7 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
     inset 0 -1px 0 rgba(255, 255, 255, 0.04);
 }
+
 .cardTitle {
   font-size: 1.2rem;
   font-weight: 600;

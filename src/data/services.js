@@ -1,6 +1,7 @@
 import indiaImg from "@/assets/images/projects/india.png";
 import pebImg from "@/assets/images/projects/peb.png";
 import epcHero from "@/assets/images/services/epc/epc-hero.webp";
+import epcWorkersDuskImg from "@/assets/images/services/service7.png";
 import civilHero from "@/assets/images/services/civil/civil-hero.jpg";
 import pebHero from "@/assets/images/services/peb/peb-hero.png";
 import mepHero from "@/assets/images/services/mep/mep-hero.png";
@@ -75,7 +76,7 @@ export const services = [
       "Construction & site execution",
       "Testing, commissioning & handover",
     ],
-    image: epcHero,
+    image: epcWorkersDuskImg,
     imageCaption: "EPC Contractor",
     featuredProjects: [
       { title: "Industrial Facility Construction", location: "BENGALURU", image: epcBuildingImg },

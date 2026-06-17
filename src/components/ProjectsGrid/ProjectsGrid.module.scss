@@ -64,6 +64,27 @@
   }
 }
 
+.equalGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  .projectCard {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+
+    .projectCard {
+      aspect-ratio: 4 / 3;
+    }
+  }
+}
+
 .projectCard {
   position: relative;
   display: block;
@@ -104,12 +125,10 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 28px 25px 20px;
+    padding: 18px 15px 20px;
 
-    background: var(--overlay-bg, rgba(63, 63, 63, 0.3));
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: rgba(155, 155, 155, 0.149);
+    backdrop-filter: blur(2px);
 
     display: flex;
     justify-content: space-between;
@@ -149,6 +168,15 @@
       }
     }
   }
+}
+
+.compactCard {
+  height: 300px !important;
+  align-self: start;
+}
+
+.compactCta {
+  height: 300px !important;
 }
 
 .textCard {
@@ -191,6 +219,10 @@
     font-size: 0.85rem;
     font-weight: 500;
     white-space: nowrap;
+
+    [data-theme="light"] & {
+      color: #ededed;
+    }
   }
 
   @media (max-width: 768px) {

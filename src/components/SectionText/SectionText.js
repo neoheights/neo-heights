@@ -4,14 +4,15 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import styles from './SectionText.module.scss';
 
-const SectionText = ({ 
-  smallTitle, 
-  title, 
-  description, 
-  buttonLabel, 
-  onButtonClick, 
+const SectionText = ({
+  smallTitle,
+  title,
+  description,
+  buttonLabel,
+  onButtonClick,
   align = 'center',
   maxWidth,
+  titleStyle,
   customChildren // To insert filters or other elements
 }) => {
   return (
@@ -21,7 +22,7 @@ const SectionText = ({
       <div className={styles.headerGroup}>
         <div className={styles.textGroup}>
             {smallTitle && <h4 className={styles.smallTitle}>{smallTitle}</h4>}
-            {title && <h2 className={styles.title} style={{ maxWidth: maxWidth && maxWidth}}>{title}</h2>}
+            {title && <h2 className={styles.title} style={{ maxWidth: maxWidth && maxWidth, ...titleStyle }}>{title}</h2>}
             {description && <p className={styles.description}>{description}</p>}
         </div> 
         

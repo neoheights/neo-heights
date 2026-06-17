@@ -37,7 +37,7 @@ export default async function ProjectDetailPage({ params }) {
       <Header />
       <ProjectDetailHero project={project} />
       <ProjectDetailInfo project={project} />
-      <ProjectScopeGallery project={project} />
+      <ProjectScopeGallery project={{ ...project, gallery: [] }} />
       <ProjectAwards />
       <RelatedProjects currentSlug={project.slug} />
       <Contact showMap={false} />
