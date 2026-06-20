@@ -159,21 +159,44 @@
   display: block;
 }
 
-@media (max-width: 900px) {
-  .inner {
-    flex-direction: column-reverse;
-  }
-  .left {
-    flex: none;
-    width: 100%;
-  }
-  .right {
-    width: 100%;
-  }
-  .logo {
-    font-size: clamp(28px, 8vw, 46px);
-  }
-  .videoWrap {
-    min-height: 220px;
-  }
+:global([data-theme="light"]) .journey {
+  background: var(--surface-1);
+  color: var(--foreground);
 }
+
+:global([data-theme="light"]) .logoSmall {
+  color: var(--text-secondary);
+}
+
+:global([data-theme="light"]) .logoSmall:before {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+:global([data-theme="light"]) .statBadge {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.08) inset,
+    0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+:global([data-theme="light"]) .statInner {
+  background: #ffffff;
+}
+
+:global([data-theme="light"]) .pointText {
+  color: var(--foreground);
+}
+
+:global([data-theme="light"]) .sub {
+  color: var(--text-secondary);
+}
+
+:global([data-theme="light"]) .videoWrap {
+  background: var(--surface-2);
+}
+
+:global([data-theme="light"]) .cta {
+  color: #111;
+}
+
+

@@ -10,19 +10,19 @@ const FAQ = ({ showBannerOnly = false, hideCta = false }) => {
 
   const faqs = [
     {
-      question: "What services does Neo Heights construction provide?",
+      question: "What services does Neo Heights Construction provide?",
       answer:
-        "Neo Heights provides a comprehensive range of construction services including Civil Engineering, Pre-Engineered Buildings (PEB), Commercial Interiors, and MEP (Mechanical, Electrical, and Plumbing) solutions.",
+        "Neo Heights Construction specializes in residential and commercial construction, including new builds, renovations, structural work, interior finishing, and project management from start to completion.",
     },
     {
       question: "Do you handle both residential and commercial projects?",
       answer:
-        "While our primary focus is on industrial and commercial projects, we also undertake large-scale residential developments.",
+        "Yes, we handle both residential and commercial projects, with dedicated teams and expertise to deliver high-quality results across all sectors.",
     },
     {
-      question: "How do I request a quote for my project?",
+      question: "How do I request a quote or consultation?",
       answer:
-        "You can request a quote by visiting our Contact page and filling out the enquiry form, or by calling our support team directly.",
+        "You can request a quote or consultation by contacting us through our website or by phone. Our team will respond promptly to discuss your project requirements and next steps.",
     },
     {
       question: "Are you licensed and insured?",
@@ -56,17 +56,22 @@ const FAQ = ({ showBannerOnly = false, hideCta = false }) => {
                 >
                   <div className={styles.questionHeader}>
                     <h3>{faq.question}</h3>
-                    {openIndex === index ? (
-                      <ChevronUp size={20} />
-                    ) : (
-                      <ChevronDown size={20} />
-                    )}
+                    <span className={styles.icon}>
+                      {openIndex === index ? "×" : "+"}
+                    </span>
                   </div>
                   <div className={styles.answerBody}>
                     <p>{faq.answer}</p>
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className={styles.helpCenterText}>
+              <p>
+                Still have more questions? Find answers in our{" "}
+                <span className={styles.helpBottom}>help center</span> .
+              </p>
             </div>
           </div>
         )}
@@ -75,13 +80,16 @@ const FAQ = ({ showBannerOnly = false, hideCta = false }) => {
           <div className={styles.bottomCta}>
             <div className={styles.ctaCard}>
               <h3>
-                Your Trusted <br /> Construction Partner
+                Your Trusted <br />
+                Construction Partner
               </h3>
+
               <p>
                 Whether it’s a new build or renovation, we manage your project
-                with <br /> transparency, efficiency, and uncompromising
-                standards.
+                with <br />
+                transparency, efficiency, and uncompromising standards.
               </p>
+
               <button className={styles.ctaBtn}>
                 Start Your Project <ArrowRight size={16} />
               </button>
