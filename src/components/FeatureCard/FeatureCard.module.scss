@@ -57,7 +57,7 @@
 
 .top {
   .stat {
-    font-size: 3.2rem;
+    font-size: 3rem;
     font-weight: 900;
     // margin-bottom: 12px;
     color: var(--foreground);
@@ -153,7 +153,7 @@
 .hoverTitle {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--foreground);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-top: 10px;
@@ -184,4 +184,37 @@
   pointer-events: auto;
 }
 
+.logoWrapper {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.companyLogo {
+  width: auto;
+  max-width: 140px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--border-color);
+  width: 100%;
+  margin: 16px 0;
+}
+
 /* ── Light mode overrides ── */
+:global([data-theme="light"]) .top .description {
+  color: var(--black-color) !important;
+}
+
+:global([data-theme="light"]) .bottom .subItems li {
+  color: var(--black-color) !important;
+}
+
+:global([data-theme="light"]) .bottom .category {
+  color: var(--primary-orange) !important;
+}

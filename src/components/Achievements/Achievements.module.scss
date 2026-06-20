@@ -17,7 +17,7 @@
 .heading {
   font-size: clamp(1.6rem, 3vw, 2.1rem);
   font-weight: 700;
-  color: #fff;
+  color: var(--foreground);
   font-family: var(--font-futura);
 }
 
@@ -61,7 +61,7 @@
 
 .statLabel {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-secondary);
 }
 
 /* ═══════════════════════════════════════
@@ -82,7 +82,7 @@
   margin: 0 auto;
   font-size: 0.92rem;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-secondary);
 }
 
 .certGrid {
@@ -126,7 +126,7 @@
 .certLabel {
   font-size: 0.85rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--foreground);
   line-height: 1.4;
 }
 
