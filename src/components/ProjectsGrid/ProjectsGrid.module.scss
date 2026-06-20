@@ -39,7 +39,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 
-  & + & {
+  &+& {
     margin-top: 20px;
   }
 
@@ -198,6 +198,10 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+
+  p {
+    color: #cccccc;
+  }
 }
 
 .textHeader {
@@ -208,6 +212,7 @@
   h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
+    color: #ffffff;
   }
 
   span {
@@ -215,14 +220,10 @@
     padding: 12px;
     border-radius: 12px;
     background: #494949;
-    color: var(--foreground);
+    color: #ededed;
     font-size: 0.85rem;
     font-weight: 500;
     white-space: nowrap;
-
-    [data-theme="light"] & {
-      color: #ededed;
-    }
   }
 
   @media (max-width: 768px) {
@@ -259,12 +260,8 @@
 .finalCardText {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #ccc;
+  color: #cccccc;
   margin-bottom: 20px;
-}
-
-:global([data-theme="light"]) .finalCardText {
-  color: #111111;
 }
 
 :global([data-theme="light"]) .projectsGridSection {

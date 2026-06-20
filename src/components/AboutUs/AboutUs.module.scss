@@ -82,3 +82,40 @@
     padding: 0 5px;
   }
 }
+
+.sectionTextWrapper {
+  button {
+    background: transparent !important;
+    border: none !important;
+    color: var(--primary-orange) !important;
+    padding: 0 !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-top: 24px !important;
+    font-family: inherit !important;
+    cursor: pointer !important;
+    border-radius: 0 !important;
+
+    &:hover {
+      background: transparent !important;
+      border: none !important;
+      color: var(--primary-orange-hover) !important;
+      transform: none !important;
+    }
+
+    svg {
+      transition: transform 0.2s ease !important;
+      color: var(--primary-orange) !important;
+    }
+
+    &:hover svg {
+      transform: translateX(4px) !important;
+      color: var(--primary-orange-hover) !important;
+    }
+  }
+}

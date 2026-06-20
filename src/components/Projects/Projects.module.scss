@@ -191,7 +191,7 @@
 }
 
 .textCard {
-  background: var(--surface-2);
+  background: #1a1a1a !important;
   border-radius: 12px;
   padding: 30px;
   display: flex;
@@ -200,8 +200,8 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 
   &.darkTextCard {
-    background: var(--surface-2);
-    border: 1px solid var(--border-color);
+    background: #0d0d0d !important;
+    border: 1px solid #333333 !important;
   }
 }
 
@@ -211,11 +211,11 @@
   flex-direction: column;
 
   h3 {
-    color: var(--foreground);
+    color: #ffffff;
   }
 
   p {
-    color: var(--text-secondary);
+    color: #cccccc;
   }
 }
 
@@ -228,15 +228,15 @@
   h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
-    color: var(--foreground);
+    color: #ffffff;
   }
 
   span {
     height: 44px;
     padding: 12px;
     border-radius: 12px;
-    background: var(--surface-3);
-    color: var(--text-secondary);
+    background: #333333;
+    color: #aaaaaa;
 
     font-size: 0.85rem;
     font-weight: 500;
@@ -259,10 +259,10 @@
 }
 
 .viewMoreBtn {
-  margin-top: 40px;
+  margin-top: auto;
   background: transparent;
   border: none;
-  color: var(--primary-orange);
+  color: #f68121 !important;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -280,12 +280,8 @@
 .finalCardText {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: var(--text-secondary);
+  color: #cccccc;
   margin-bottom: 20px;
-}
-
-:global([data-theme="light"]) .finalCardText {
-  color: #111111;
 }
 
 .projectImageCarouselContainer {
@@ -303,6 +299,7 @@
 }
 
 @keyframes carouselScroll {
+
   0%,
   40% {
     transform: translateX(0);

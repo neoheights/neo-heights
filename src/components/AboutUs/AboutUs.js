@@ -66,13 +66,15 @@ const AboutUs = () => {
 
   return (
     <section className={styles.aboutSection} id="aboutUs">
-      <SectionText
-        smallTitle="ABOUT US"
-        title="Building Excellence Beyond Boundaries and Defying Limits"
-        description="At Neo Heights, we are at the forefront of industrial and commercial construction, dedicated to delivering top-notch quality while ensuring cost-efficiency. Our skilled team possesses the expertise to transform your vision into reality, completing projects on schedule and within your budget."
-        buttonLabel="Learn More"
-        onButtonClick={handleLearnMore}
-      />
+      <div className={styles.sectionTextWrapper}>
+        <SectionText
+          smallTitle="ABOUT US"
+          title="Building Excellence Beyond Boundaries and Defying Limits"
+          description="At Neo Heights, we are at the forefront of industrial and commercial construction, dedicated to delivering top-notch quality while ensuring cost-efficiency. Our skilled team possesses the expertise to transform your vision into reality, completing projects on schedule and within your budget."
+          buttonLabel="Learn More"
+          onButtonClick={handleLearnMore}
+        />
+      </div>
 
       <div className={styles.cardsContainer}>
         <div className={styles.cardsScroll}>
