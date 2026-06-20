@@ -20,7 +20,7 @@ const AboutUs = () => {
       stat: "20+",
       title: "Projects Completed",
       description: "Projects completed across commercial, residential, and industrial sectors.",
-      category: "COMMERCIAL BUILDS",
+      category: "COMPLETED PROJECTS",
       subItems: ["Commercial Builds", "Residential Projects"],
       image: require("@/assets/images/aboutUs/residential_prjts.png"),
       backgroundColor: '#E0654F',
@@ -45,10 +45,10 @@ const AboutUs = () => {
     },
     {
       stat: "1000+",
-      title: "Widgets Produced",
+      title: "Skilled Workforce",
       description: "A skilled workforce ensures precision, safety, and timely delivery.",
-      category: "FORTUNE 500 COMPANY",
-      subItems: ["Electrification", "Backend Development"],
+      category: "EXPERT WORKFORCE",
+      subItems: ["Multi-disciplinary Teams", "Nationwide Deployment"],
       image: require("@/assets/images/aboutUs/workforce.jpg"),
       backgroundColor: '#E0654F',
     }
