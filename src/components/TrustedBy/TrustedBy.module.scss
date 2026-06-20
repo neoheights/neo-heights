@@ -4,82 +4,142 @@
 }
 
 .logosBand {
-  background: #000;
-  padding: 28px 0 30px;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.04), transparent 30%),
+    #000;
+  padding: 42px 0 42px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .heading {
+  font-family: "Fustat", sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+  line-height: 1.2;
+  letter-spacing: 0.35em;
   text-align: center;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #fff;
-  letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin: 0 0 20px;
+  color: rgba(255, 255, 255, 0.68);
+  margin-bottom: 32px;
 }
 
 .logosContainer {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1240px;
   margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  min-height: 120px;
+}
+
+.logosTrack {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 46px;
-  padding: 8px 24px;
-  flex-wrap: nowrap;
-  overflow: hidden;
+  width: max-content;
+  animation: scrollLeft 35s linear infinite;
+  animation-play-state: running;
+  touch-action: pan-x;
 }
 
 .logoItem {
-  flex: 0 0 auto;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 18px;
-  background: transparent;
+  min-width: 180px;
+  padding: 0 24px;
   position: relative;
 }
 
 .logoItem:not(:last-child)::after {
   content: "";
   position: absolute;
-  right: -22px;
-  top: 6px;
-  bottom: 6px;
+  right: 0;
+  top: 10px;
+  bottom: 10px;
   width: 1px;
-  background: rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .logo {
   max-width: 120px;
   max-height: 56px;
+  width: auto;
+  height: auto;
   object-fit: contain;
+  transition: transform 0.3s ease;
 }
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Tablet */
 
 @media (max-width: 992px) {
-  .logosContainer {
-    gap: 20px;
-    flex-wrap: wrap;
+  .logosTrack {
+    animation-duration: 25s;
   }
+
   .logoItem {
-    flex: 0 0 30%;
+    min-width: 140px;
+    padding: 0 16px;
+  }
+
+  .logo {
+    max-width: 100px;
+    max-height: 48px;
   }
 }
 
-@media (max-width: 480px) {
-  .logosContainer {
-    gap: 12px;
+/* Mobile */
+
+@media (max-width: 576px) {
+  .logosBand {
+    padding: 20px 0;
   }
+
+  .heading {
+    font-size: 1rem;
+    margin-bottom: 16px;
+  }
+
+  .logosTrack {
+    animation-duration: 20s;
+  }
+
   .logoItem {
-    flex: 0 0 40%;
+    min-width: 110px;
+    padding: 0 12px;
+  }
+
+  .logo {
+    max-width: 80px;
+    max-height: 40px;
   }
 }
 
-/* ── Light mode overrides ── */
+/* Light Theme */
+
 :global([data-theme="light"]) .logosBand {
   background: #ffffff;
 }
 
 :global([data-theme="light"]) .heading {
   color: #111111;
+}
+
+:global([data-theme="light"]) .logoItem:not(:last-child)::after {
+  background: rgba(0, 0, 0, 0.08);
 }

@@ -55,20 +55,21 @@ const TrustedBy = () => {
   return (
     <section className={styles.trustedSection}>
       <div className={styles.logosBand}>
-        <h3 className={styles.heading}>Trusted By Partners</h3>
+        <h3 className={styles.heading}>Trusted By Industry Leaders</h3>
         <div className={styles.logosContainer}>
-          {logos.map((logo, index) => (
-            <div key={index} className={styles.logoItem}>
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                className={styles.logo}
-                width={160}
-                height={80}
-                priority={index < 8}
-              />
-            </div>
-          ))}
+          <div className={styles.logosTrack}>
+            {[...logos, ...logos].map((logo, index) => (
+              <div key={index} className={styles.logoItem}>
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  className={styles.logo}
+                  width={160}
+                  height={80}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
