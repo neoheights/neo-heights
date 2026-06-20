@@ -214,7 +214,11 @@ const Projects = () => {
           onButtonClick={() => {}}
           align="left"
           customChildren={<Filters />}
-          // maxWidth='60%'
+          maxWidth="750px"
+          titleStyle={{
+            fontSize: "clamp(28px, 3.6vw, 40px)",
+            lineHeight: 1.05,
+          }}
         />
 
         <div className={styles.projectsGrid}>

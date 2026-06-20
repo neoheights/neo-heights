@@ -104,21 +104,31 @@ const Contact = ({ showMap = true }) => {
         height={700}
         alt=""
       />
-      <div className={`container ${styles.container}`}>
-        <div className={styles.sectionIntro}>
-          <p className={styles.sectionEyebrow}>HAVE A PROJECT IN MIND</p>
-          <h2 className={styles.sectionTitle}>
-            We Build Spaces That Power Growth And Last For Generations.
-          </h2>
-        </div>
 
+      <div className={`container ${styles.container}`}>
+        <p className={styles.sectionEyebrow}>HAVE A PROJECT IN MIND</p>
         <div className={styles.topPanel}>
+          <div className={styles.contentSide}>
+            <h2 className={styles.sectionTitle}>
+              We Build Spaces That Power Growth And Last For Generations.
+            </h2>
+
+            <p className={styles.sectionDescription}>
+              From civil and PEB works to interiors and MEP solutions, Neo
+              Heights delivers reliable, end-to-end construction services with
+              precision, quality, and long-term value.
+            </p>
+          </div>
+
           <div className={styles.formWrapper}>
             <div className={styles.absoluteBgColor}></div>
+
             <div className={styles.formCard}>
-              <h3 className={styles.formCardTitle}>Let&apos;s connect</h3>
+              <h3 className={styles.formCardTitle}>Lets connect</h3>
+
               <p className={styles.formDesc}>
-                You can reach us anytime via <span>support@neoheights.in</span>
+                You can reach us anytime via{" "}
+                <span>frontdesk@neoheights.com</span>
               </p>
 
               <form className={styles.contactForm} onSubmit={onSubmit}>
@@ -131,6 +141,7 @@ const Contact = ({ showMap = true }) => {
                   onChange={onChange}
                   required
                 />
+
                 <input
                   type="email"
                   name="email"
@@ -140,6 +151,7 @@ const Contact = ({ showMap = true }) => {
                   onChange={onChange}
                   required
                 />
+
                 <input
                   type="tel"
                   name="phone"
@@ -148,6 +160,7 @@ const Contact = ({ showMap = true }) => {
                   value={form.phone}
                   onChange={onChange}
                 />
+
                 <textarea
                   name="message"
                   placeholder="Write your message"
@@ -156,73 +169,30 @@ const Contact = ({ showMap = true }) => {
                   value={form.message}
                   onChange={onChange}
                   required
-                ></textarea>
+                />
 
                 <button
                   type="submit"
                   className={styles.submitBtn}
                   disabled={status.sending}
                 >
-                  {status.sending ? "Sending..." : "Send Enquiry"}{" "}
+                  {status.sending ? "Sending..." : "Send Enquiry"}
                   <ArrowRight size={16} />
                 </button>
               </form>
+
               {status.ok && (
                 <p className={styles.successMsg}>
                   Thanks! We will reach out shortly.
                 </p>
               )}
+
               {status.error && (
                 <p className={styles.errorMsg}>Error: {status.error}</p>
               )}
             </div>
           </div>
-
-          <aside className={styles.contactRail} aria-label="Contact details">
-            {contactMethods.map(({ icon: Icon, label, value }) => (
-              <div className={styles.contactMethod} key={label}>
-                <span className={styles.contactMethodIcon}>
-                  <Icon size={16} />
-                </span>
-                <div>
-                  <p className={styles.contactMethodLabel}>{label}</p>
-                  <p className={styles.contactMethodValue}>{value}</p>
-                </div>
-              </div>
-            ))}
-          </aside>
         </div>
-
-        {showMap && (
-          <div className={styles.mapPanel}>
-            <div className={styles.mapInfo}>
-              <h3 className={styles.mapTitle}>
-                Neo Heights builders and promoters pvt ltd
-              </h3>
-              <div className={styles.mapDetails}>
-                {locationDetails.map(({ icon: Icon, value }) => (
-                  <div className={styles.mapDetailRow} key={value}>
-                    <span className={styles.mapDetailIcon}>
-                      <Icon size={15} />
-                    </span>
-                    <p>{value}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className={styles.mapCard}>
-              <iframe
-                title="Neo Heights office map"
-                src="https://www.google.com/maps?q=Achuth%20Square%20Complex%2C%201018%2F1%2C%201st%20Floor%2C%2024th%20Main%20Rd%2C%2013th%20Cross%20Rd%2C%201st%20Sector%2C%20HSR%20Layout%2C%20Bengaluru%2C%20Karnataka%20560102&output=embed"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-                className={styles.mapIframe}
-              ></iframe>
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );

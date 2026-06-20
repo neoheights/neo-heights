@@ -57,8 +57,8 @@ const Clients = () => {
                     smallTitle="CLIENTS"
                     title="We Collaborate With Trusted Brands In Engineering And Technology, Valuing Quality."
                     align="left"
-                    maxWidth="1300px"
-                    titleStyle={{ fontSize: 'clamp(28px, 3.6vw, 52px)', lineHeight: 1.05 }}
+                    maxWidth="1150px"
+                    titleStyle={{ fontSize: 'clamp(28px, 3.6vw, 40px)', lineHeight: 1.05 }}
                 />
 
                 <div className={styles.logosWrapper}>

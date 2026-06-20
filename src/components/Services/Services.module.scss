@@ -1,7 +1,24 @@
 .servicesSection {
   padding: 80px 0;
-  background-color: #050505;
-  overflow: hidden; // Important for full bleed scroll
+  overflow: hidden;
+  position: relative;
+
+  :global([data-theme="dark"]) & {
+    background-color: #050505;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background-color: #fbede1;
+    opacity: 0.3;
+  }
 
   @media (max-width: 768px) {
     padding: 12% 0;
@@ -26,9 +43,9 @@
   width: max-content;
   gap: 20px;
   // Use reverse to scroll right to left? No, standard keyframes usually do translateX.
-  // User said "scroll from right to left". 
+  // User said "scroll from right to left".
   // Standard animation: starts at 0, moves to -50%. This moves content to the left.
-  animation: scrollHorizontal 40s linear infinite; 
+  animation: scrollHorizontal 40s linear infinite;
 
   &:hover {
     animation-play-state: paused;
@@ -53,7 +70,7 @@
     height: 240px;
 
     border-radius: 2px;
-    border-bottom: 1px solid #FFFFFF;
+    border-bottom: 1px solid #ffffff;
   }
 }
 
@@ -70,30 +87,41 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 24px 20px;
-  background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
-  color: #fff;
+  height: 100px; // give fixed height
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 20px;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.8) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+
   z-index: 2;
-  text-align: right; // Screenshot looks like text is right aligned or center? 
-  // Looking at screenshot "Civil Engineering" is centered. "Commercial Interiors" centered. "MEP" centered.
-  text-align: center; 
-  
+
   span {
+    color: #fff;
     font-size: 1.1rem;
-    font-weight: 600;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    font-weight: 500;
+    text-align: center;
   }
 
   @media (max-width: 768px) {
-    padding: 10px;
+    height: 60px;
 
     span {
-      font-size: 0.7rem;
+      font-size: 0.75rem;
     }
   }
 }
-
 @keyframes scrollHorizontal {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } // Move left by half the track width
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  } // Move left by half the track width
 }

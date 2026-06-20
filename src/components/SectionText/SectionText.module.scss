@@ -75,8 +75,20 @@
   letter-spacing: 2.2px;
   text-transform: uppercase;
   color: var(--text-secondary);
-  margin-bottom: 16px;
+  margin: 0 auto 16px;
   font-weight: 600;
+  display: inline-block;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 1px;
+    margin: 10px auto 0;
+    background: currentColor;
+    opacity: 0.4;
+  }
 
   @media (max-width: 768px) {
     font-size: 0.8rem;
@@ -147,4 +159,3 @@
 .customContent {
   margin-top: 24px;
 }
-
