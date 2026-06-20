@@ -191,9 +191,6 @@
   color: var(--text-secondary);
 }
 
-:global([data-theme="light"]) .videoWrap {
-  background: var(--surface-2);
-}
 
 :global([data-theme="light"]) .cta {
   color: #111;
