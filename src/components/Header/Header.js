@@ -116,6 +116,12 @@ const Header = () => {
     } else if (item.id === "sustainability") {
       setIsMenuOpen(false);
       router.push("/sustainability");
+    } else if (item.id === "team") {
+      setIsMenuOpen(false);
+      router.push("/team");
+    } else if (item.id === "newsroom") {
+      setIsMenuOpen(false);
+      router.push("/blogs");
     } else if (pathname !== "/") {
       // If we're not on the home page, navigate to home and then scroll
       setIsMenuOpen(false);

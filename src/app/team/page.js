@@ -253,8 +253,7 @@ export default function TermsAndConditionsPage() {
         </div>
       </div>
 
-      <Journey />
-      <Footer />
+      <Footer showTopStrip />
     </main>
   );
 }

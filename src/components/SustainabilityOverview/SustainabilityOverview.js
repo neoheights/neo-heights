@@ -1,4 +1,6 @@
 import styles from "./SustainabilityOverview.module.scss";
+import ISO9001 from "@/assets/images/aboutUs/image 987.jpg";
+import Image from "next/image";
 
 const SustainabilityOverview = () => {
   return (
@@ -28,8 +30,7 @@ const SustainabilityOverview = () => {
 
           <div className={styles.certItem}>
             <div className={styles.certBadge}>
-              <span className={styles.certBadgeIso}>ISO</span>
-              <span className={styles.certBadgeNumber}>9001:2015</span>
+              <Image src={ISO9001} alt="ISO 9001" fill style={{ objectFit: "contain", borderRadius: "8px" }} />
             </div>
             <span className={styles.statLabel}>
               Quality, safety &amp; environmental standards
