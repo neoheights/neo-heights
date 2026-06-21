@@ -7,11 +7,14 @@ import styles from "./Blogs.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 
-const Blogs = () => {
+const Blogs = ({ allow }) => {
   const blogs = [
     {
       category: "SUSTAINABLE CONSTRUCTIONS",
       title: "Sustainable Construction Building Smarter and Greener",
+      ...(allow && {
+        image: require("@/assets/images/blogs/sustainable.png"),
+      }),
       slug: "sustainability-in-civil-construction",
     },
     {

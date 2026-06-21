@@ -30,15 +30,16 @@ export default function ServicesGrid() {
               href={`/services/${service.slug}`}
               className={styles.card}
             >
-              <Image
-                src={service.image}
-                alt={service.title}
-                className={styles.cardImage}
-                fill
-                sizes="(max-width: 640px) 100vw, 50vw"
-              />
-              <div className={styles.overlay}>
-                <span className={styles.cardTitle}>{service.title}</span>
+              <div className={styles.cardInner}>
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  className={styles.cardImage}
+                  fill
+                />
+                <div className={styles.overlay}>
+                  <span className={styles.cardTitle}>{service.title}</span>
+                </div>
               </div>
             </Link>
           ))}

@@ -89,7 +89,7 @@ const Header = () => {
     { label: "Home", href: "/", id: "home" },
     { label: "About us", href: "/about", id: "about" },
     { label: "Projects", href: "/projects", hasDropdown: true, id: "projects" },
-    { label: "Services", href: "/services" },
+    { label: "Services", href: "/services", id: "services" },
     {
       label: "Sustainability",
       href: "/sustainability",
@@ -170,9 +170,8 @@ const Header = () => {
             {navItems.map((item) => (
               <li
                 key={item.label}
-                className={`${styles.navItem} ${
-                  pathname === item.href ? styles.activeNavItem : ""
-                }`}
+                className={`${styles.navItem} ${pathname === item.href ? styles.activeNavItem : ""
+                  }`}
                 onClick={() => handleNavClick(item)}
               >
                 <span className={styles.navLabel}>{item.label}</span>
@@ -198,7 +197,7 @@ const Header = () => {
             >
               <Moon size={14} />
             </button>
-            
+
             <button
               type="button"
               className={`${styles.themeOption} ${theme === "light" ? styles.active : ""}`}

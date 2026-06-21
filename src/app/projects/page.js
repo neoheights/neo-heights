@@ -17,7 +17,7 @@ export default function ProjectsPage() {
       <Header />
       <ProjectsHero />
       <ProjectsGrid />
-      <Blogs />
+      <Blogs allow />
       <Journey />
       <Footer showTopStrip />
     </main>
