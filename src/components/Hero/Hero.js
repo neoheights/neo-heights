@@ -55,9 +55,9 @@ const Hero = () => {
                         <span href="/start-project" className={`${styles.btn} ${styles.btnPrimary}`} onClick={() => scrollToSection('contactUs')}>
                             Start Your Project <ArrowRight size={18} />
                         </span>
-                        <span href="/projects" className={`${styles.btn} ${styles.btnSecondary}`} onClick={() => scrollToSection('contactUs')}>
+                        <Link href="/projects" className={`${styles.btn} ${styles.btnSecondary}`}>
                             View Projects
-                        </span>
+                        </Link>
                     </div>
                 </div>
             </div>

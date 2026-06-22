@@ -1,162 +1,240 @@
-.journey {
-  background: #191919;
+.journeySection {
+  padding: 100px 7%;
+  background-color: #121212;
   color: #fff;
-  padding: 64px 24px;
+
+  @media (max-width: 768px) {
+    padding: 8% 6%;
+  }
 }
 
-.inner {
-  max-width: 1200px;
-  margin: 0 auto;
+.container {
   display: flex;
-  gap: 48px;
-  align-items: flex-start;
+  gap: 30px;
+  align-items: center;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+    gap: 40px;
+  }
 }
 
-.left {
-  flex: 0 0 40%;
+.leftPane {
+  flex: 1;
+}
+
+.rightPane {
+  flex: 1.5;
+}
+
+.sinceRow {
   display: flex;
-  flex-direction: column;
-  gap: 22px;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  opacity: 0.8;
 }
 
-.logoWrap {
-  margin-bottom: 6px;
-}
-
-.logoSmall {
-  font-size: 12px;
-  color: #9a9a9a;
-  letter-spacing: 1.6px;
-  margin-bottom: 10px;
-  position: relative;
-}
-
-.logoSmall:before {
-  content: "";
-  position: absolute;
-  left: -30px;
-  top: 50%;
+.sinceDot {
   width: 24px;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.06);
-  transform: translateY(-50%);
+  height: 2px;
+  background: rgba(255, 255, 255, 0.25);
 }
 
-.logo {
+.sinceText {
+  font-size: .9rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--grey-2-color);
+
+  @media (max-width: 768px) {
+    font-size: 0.7rem;
+  }
+}
+
+.mainTitle {
+  margin: 0 0 24px;
+  line-height: 1.05;
   font-weight: 900;
-  font-size: clamp(44px, 8vw, 92px);
-  line-height: 0.9;
-  background: linear-gradient(
-    90deg,
-    #ff7a18 0%,
-    #ffd200 30%,
-    #00bcd4 60%,
-    #2d9cdb 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 6.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 2.4rem;
+    line-height: 0.825;
+    margin: 0 0 28px;
+  }
 }
 
-.points {
+.neoText {
+  background: linear-gradient(120deg, #FF3337, #F8CA53, #009A8F, #FFFFFF00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+.heightsText {
+  background: linear-gradient(120deg, #FF3337, #F8CA53, #009A8F, #FFFFFF00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+.features {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  margin-top: 24px;
 }
 
-.point {
+.featureItem {
   display: flex;
+  align-items: center;
   gap: 16px;
-  align-items: center;
 }
 
-.statBadge {
-  width: 64px;
-  height: 64px;
-  background: rgba(0, 0, 0, 0.45);
+.badgeBox {
+  position: relative;
+  overflow: hidden;
+
+  width: 66px;
+  height: 66px;
   border-radius: 12px;
+  // background: linear-gradient(180deg, #ff8a00, #ff6b00);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow:
-    0 6px 18px rgba(0, 0, 0, 0.6) inset,
-    0 6px 18px rgba(0, 0, 0, 0.6);
-}
 
-.statInner {
-  width: 46px;
-  height: 46px;
-  background: rgba(20, 20, 20, 0.6);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.statNumber {
-  background: linear-gradient(180deg, #ff8a00, #ff6a00);
-  color: #fff;
-  padding: 8px 10px;
-  border-radius: 6px;
+  font-size: 1.7rem;
   font-weight: 800;
+  color: var(--primary-orange);
+
+  background-color: #FFFFFF08;
 }
 
-.buildingIcon {
-  font-size: 18px;
-  color: #ffb366;
+.iconBox {
+  position: relative;
+  overflow: hidden;
+
+  width: 66px;
+  height: 66px;
+  border-radius: 12px;
+  // background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #FFFFFF08;
+
+  svg {
+    color: #ff8a00;
+  }
 }
 
-.pointText {
-  color: #ddd;
+.badgeOverlay {
+  width: 63.375px;
+  height: 26px;
+  border-radius: 50%;
+  filter: blur(6px);
+  opacity: 0.4;
+  
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 0;
+
+  transform: translate(-50%, 50%);
+  background-color: #E08E4B;
 }
 
-.sub {
-  color: #a8a8a8;
-  font-size: 13px;
-  margin-top: 6px;
+.featureContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.cta {
-  margin-top: 18px;
-  background: #ff8a00;
-  color: #111;
+.featureTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #FFFFFF;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
+}
+
+.featureDesc {
+  font-size: 0.85rem;
+  color: #FFFFFF4e;
+
+  @media (max-width: 768px) {
+    font-size: 0.7rem;
+    line-height: 1.1;
+  }
+}
+
+.ctaRow {
+  display: none; // Hide for all view ( as of now )
+  margin-top: 24px;
+}
+
+.downloadBtn {
+  background-color: var(--primary-orange);
+  color: #fff;
   border: none;
-  padding: 12px 20px;
   border-radius: 10px;
+  padding: 14px 24px;
   font-weight: 700;
-  cursor: pointer;
-  width: max-content;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
 }
 
-.downloadIcon {
-  font-size: 14px;
-}
-
-.right {
-  flex: 1 1 60%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-}
-
-.videoWrap {
-  width: 100%;
-  background: #000;
-  border-radius: 12px;
+.videoShell {
+  position: relative;
+  border-radius: 16px;
   overflow: hidden;
-  min-height: 420px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: #1a1a1a;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 768px) {
+    border-radius: 4px;
+  }
 }
 
 .video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   display: block;
+  background: #000;
+
+  object-fit: cover;
+}
+
+.videoOverlayTitle {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
 }
 
 :global([data-theme="light"]) .journey {
@@ -195,5 +273,4 @@
 :global([data-theme="light"]) .cta {
   color: #111;
 }
-
 

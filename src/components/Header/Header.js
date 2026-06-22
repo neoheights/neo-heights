@@ -80,8 +80,20 @@ function ProjectsMegaMenu({ projectList, closeProjectsMenu, scrollToSection }) {
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showProjectsMenu, setShowProjectsMenu] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
+
+  const projectList = [
+    { title: 'Schaeffler India Limited.', location: 'SHOOLAGIRI' },
+    { title: 'SHIMZU - SAKATA', location: 'HOSUR' },
+    { title: 'FAIVELEY - CS Building', location: 'HOSUR' },
+    { title: 'SAKATA - WAREHOUSE', location: 'BENGALURU' },
+    { title: 'Toyato Design Build canteen', location: 'BIDADI, KA' },
+    { title: 'TATA Electronic', location: 'HOSUR' },
+  ];
+
+  const closeProjectsMenu = () => setShowProjectsMenu(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -96,7 +108,7 @@ const Header = () => {
       id: "sustainability",
     },
     { label: "Newsroom", href: "/blogs", id: "newsroom" },
-    { label: "Team", href: "/team", id: "team" },
+    { label: "Team", href: "/", id: "team" },
     { label: "Contact", href: "/contact", id: "contactUs" },
   ];
 
@@ -116,9 +128,6 @@ const Header = () => {
     } else if (item.id === "sustainability") {
       setIsMenuOpen(false);
       router.push("/sustainability");
-    } else if (item.id === "team") {
-      setIsMenuOpen(false);
-      router.push("/team");
     } else if (item.id === "newsroom") {
       setIsMenuOpen(false);
       router.push("/blogs");
@@ -176,13 +185,17 @@ const Header = () => {
             {navItems.map((item) => (
               <li
                 key={item.label}
-                className={`${styles.navItem} ${pathname === item.href ? styles.activeNavItem : ""
-                  }`}
-                onClick={() => handleNavClick(item)}
+                className={`${styles.navItem} ${pathname === item.href ? styles.activeNavItem : ""}`}
               >
-                <span className={styles.navLabel}>{item.label}</span>
+                <span className={styles.navLabel} onClick={() => handleNavClick(item)}>
+                  {item.label}
+                </span>
                 {item.hasDropdown && (
-                  <ChevronDown className={styles.dropdownIcon} size={13} />
+                  <ChevronDown
+                    className={styles.dropdownIcon}
+                    size={13}
+                    onClick={(e) => { e.stopPropagation(); setShowProjectsMenu((p) => !p); }}
+                  />
                 )}
               </li>
             ))}
@@ -222,6 +235,17 @@ const Header = () => {
           </button>
         </div>
       </div>
+
+      {showProjectsMenu && (
+        <>
+          <div className={styles.backdrop} onClick={closeProjectsMenu} />
+          <ProjectsMegaMenu
+            projectList={projectList}
+            closeProjectsMenu={closeProjectsMenu}
+            scrollToSection={scrollToSection}
+          />
+        </>
+      )}
     </header>
   );
 };

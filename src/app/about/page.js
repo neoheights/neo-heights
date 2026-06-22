@@ -57,9 +57,9 @@ export default function AboutPage() {
               construction and sustainable development.
             </p>
 
-            <button className={styles.contactBtn}>
+            <Link href="/contact" className={styles.contactBtn}>
               Contact Us <ArrowRight size={16} />
-            </button>
+            </Link>
           </div>
         </div>
 

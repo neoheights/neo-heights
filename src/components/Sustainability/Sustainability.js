@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import styles from './Sustainability.module.scss';
 
@@ -105,12 +106,12 @@ const Sustainability = () => {
                         Building sustainably for a <br /> better tomorrow.
                     </h2>
 
-                    <button
-                        className={`${styles.ctaButton} ${animate ? styles.fadeUpDelay1 : styles.hidden
-                            }`}
+                    <Link
+                        href="/projects"
+                        className={`${styles.ctaButton} ${animate ? styles.fadeUpDelay1 : styles.hidden}`}
                     >
                         Explore Our Projects<ArrowRight size={18} />
-                    </button>
+                    </Link>
                 </div>
 
                 <div className={styles.stats}>

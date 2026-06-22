@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { ArrowRight, Quote } from 'lucide-react';
 import Image from 'next/image';
 import styles from './Legacy.module.scss';
@@ -64,9 +65,9 @@ const Legacy = () => {
                         </div>
                     </div>
 
-                    <a href="#" className={styles.learnMoreLink}>
+                    <Link href="/about" className={styles.learnMoreLink}>
                         Learn More <ArrowRight size={16} />
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>

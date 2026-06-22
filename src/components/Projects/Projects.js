@@ -1,12 +1,15 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import SectionText from "../SectionText/SectionText";
 import { ArrowRight } from "lucide-react";
 import styles from "./Projects.module.scss";
 import Image from "next/image";
 
 const Projects = () => {
+  const router = useRouter();
   const [activeStatus, setActiveStatus] = useState("Completed");
   const [activeCategory, setActiveCategory] = useState("All");
 
@@ -211,7 +214,7 @@ const Projects = () => {
           smallTitle="PROJECTS"
           title="Innovative Projects That Push Boundaries and Surpass Goals"
           buttonLabel="Explore All Projects"
-          onButtonClick={() => {}}
+          onButtonClick={() => router.push('/projects')}
           align="left"
           customChildren={<Filters />}
           maxWidth="750px"
@@ -234,9 +237,9 @@ const Projects = () => {
                 <span className={styles.statusBadge}>Area - 14,500 sq. m</span>
               </div>
               <p>{projects[2].description}</p>
-              <button className={styles.viewMoreBtn}>
+              <Link href="/projects" className={styles.viewMoreBtn}>
                 View More <ArrowRight size={14} />
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -255,9 +258,9 @@ const Projects = () => {
               and future-ready industrial space tailored to client
               requirements.{" "}
             </p>
-            <button className={styles.viewMoreBtn}>
+            <Link href="/projects" className={styles.viewMoreBtn}>
               Learn More <ArrowRight size={14} />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

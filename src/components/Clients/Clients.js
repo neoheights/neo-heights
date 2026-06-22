@@ -30,7 +30,6 @@ import logo22 from "@/assets/images/trustedPartners/img22.png";
 import logo23 from "@/assets/images/trustedPartners/img23.png";
 
 const Clients = () => {
-    // Row 1: TATA, VOLVO, Faiveley, VOLTAS, TVS, Wabtec
     const row1Logos = [
         { src: logo1,  alt: "TATA" },
         { src: logo11, alt: "VOLVO" },
@@ -38,9 +37,14 @@ const Clients = () => {
         { src: logo13, alt: "VOLTAS" },
         { src: logo14, alt: "TVS" },
         { src: logo12, alt: "Wabtec" },
+        { src: logo2,  alt: "Partner" },
+        { src: logo3,  alt: "Partner" },
+        { src: logo4,  alt: "Partner" },
+        { src: logo5,  alt: "Partner" },
+        { src: logo6,  alt: "Partner" },
+        { src: logo7,  alt: "Partner" },
     ];
 
-    // Row 2: Wipro, Scania, SHMZ, CUMI, Triangle, AVTEC
     const row2Logos = [
         { src: logo18, alt: "Wipro" },
         { src: logo19, alt: "Scania" },
@@ -48,6 +52,11 @@ const Clients = () => {
         { src: logo21, alt: "CUMI" },
         { src: logo22, alt: "Triangle" },
         { src: logo23, alt: "AVTEC", invert: true },
+        { src: logo8,  alt: "Partner" },
+        { src: logo9,  alt: "Partner" },
+        { src: logo10, alt: "Partner" },
+        { src: logo16, alt: "Partner" },
+        { src: logo17, alt: "Partner" },
     ];
 
     return (
@@ -60,24 +69,37 @@ const Clients = () => {
                     maxWidth="1150px"
                     titleStyle={{ fontSize: 'clamp(28px, 3.6vw, 40px)', lineHeight: 1.05 }}
                 />
+            </div>
 
-                <div className={styles.logosWrapper}>
-                    <div className={styles.logoRow}>
-                        {row1Logos.map((logo, i) => (
+            <div className={styles.carouselWrapper}>
+                {/* Row 1 — scrolls left */}
+                <div className={styles.track}>
+                    <div className={styles.slide}>
+                        {[...row1Logos, ...row1Logos].map((logo, i) => (
                             <div key={i} className={styles.logoItem}>
-                                <Image src={logo.src} alt={logo.alt} className={styles.clientLogo} width={280} height={144} />
+                                <Image
+                                    src={logo.src}
+                                    alt={logo.alt}
+                                    className={styles.clientLogo}
+                                    width={280}
+                                    height={144}
+                                />
                             </div>
                         ))}
                     </div>
-                    <div className={styles.logoRow}>
-                        {row2Logos.map((logo, i) => (
+                </div>
+
+                {/* Row 2 — scrolls right */}
+                <div className={`${styles.track} ${styles.trackReverse}`}>
+                    <div className={styles.slide}>
+                        {[...row2Logos, ...row2Logos].map((logo, i) => (
                             <div key={i} className={styles.logoItem}>
                                 <Image
                                     src={logo.src}
                                     alt={logo.alt}
                                     width={280}
                                     height={144}
-                                    className={`${styles.clientLogo}${logo.invert ? ` ${styles.clientLogoInvert}` : ""}`}
+                                    className={`${styles.clientLogo}${logo.invert ? ` ${styles.clientLogoInvert}` : ''}`}
                                 />
                             </div>
                         ))}
