@@ -105,7 +105,7 @@ const Team = () => {
 
                 <div className={styles.bottomCta}>
                     <span className={styles.ctaLabel}>Meet the team</span>
-                    <button className={styles.ctaButton}>
+                    <button className={styles.ctaButton} onClick={() => document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' })}>
                         Our Team <ArrowRight size={18} />
                     </button>
                 </div>

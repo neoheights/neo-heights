@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import styles from "./Journey.module.scss";
 
@@ -18,9 +19,9 @@ const Journey = () => {
               project with transparency, efficiency, and uncompromising
               standards.
             </p>
-            <button className={styles.heroButton} type="button">
+            <Link href="/contact" className={styles.heroButton}>
               Start your project <ArrowRight size={16} />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -2,6 +2,10 @@
   background-color: #050505;
   color: #fff;
   padding: 100px 0;
+
+  @media (max-width: 768px) {
+    padding: 64px 0;
+  }
 }
 
 .container {
@@ -14,60 +18,126 @@
   }
 }
 
-.logosWrapper {
+/* ─── Carousel ─────────────────────────────────────── */
+
+.carouselWrapper {
   margin-top: 80px;
   display: flex;
   flex-direction: column;
-  gap: 56px;
+  gap: 48px;
+  position: relative;
+  overflow: hidden;
+
+  /* Edge fades */
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 180px;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(to right, #050505 20%, transparent);
+  }
+
+  &::after {
+    right: 0;
+    background: linear-gradient(to left, #050505 20%, transparent);
+  }
+
+  /* Pause both rows on hover */
+  &:hover .slide {
+    animation-play-state: paused;
+  }
 
   @media (max-width: 768px) {
     margin-top: 48px;
-    gap: 36px;
+    gap: 32px;
+
+    &::before,
+    &::after {
+      width: 60px;
+    }
   }
 }
 
-.logoRow {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+.track {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slide {
+  display: flex;
   align-items: center;
-  gap: 32px;
+  width: max-content;
+  animation: scrollLeft 35s linear infinite;
+}
 
-  @media (max-width: 992px) {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-  }
-
-  @media (max-width: 480px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
+.trackReverse .slide {
+  animation-name: scrollRight;
+  animation-duration: 40s;
 }
 
 .logoItem {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 72px;
+  padding: 0 36px;
+  min-width: 200px;
+  position: relative;
+
+  &:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 20%;
+    bottom: 20%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+    min-width: 140px;
+  }
 }
 
 .clientLogo {
-  max-width: 150px;
-  max-height: 72px;
+  max-width: 140px;
+  max-height: 68px;
   object-fit: contain;
-  opacity: 0.88;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  opacity: 0.75;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 
   &:hover {
     opacity: 1;
-    transform: scale(1.06);
+    transform: scale(1.07);
   }
 
   @media (max-width: 768px) {
     max-width: 100px;
-    max-height: 50px;
+    max-height: 48px;
   }
 }
 
 .clientLogoInvert {
   filter: brightness(0) invert(1);
+}
+
+/* ─── Keyframes ─────────────────────────────────────── */
+
+@keyframes scrollLeft {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollRight {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }

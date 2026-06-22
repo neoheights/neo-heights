@@ -40,7 +40,7 @@ const Footer = ({ showTopStrip = false }) => {
             <h4>Have a project in mind?</h4>
             <p>Let's build it together.</p>
           </div>
-          <button className={styles.ctaButton}>Contact Us</button>
+          <Link href="/contact" className={styles.ctaButton}>Contact Us</Link>
         </div>
 
         <div className={styles.bottomSection}>

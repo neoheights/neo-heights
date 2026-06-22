@@ -1,11 +1,13 @@
 "use client";
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import SectionText from '../SectionText/SectionText';
 import styles from './Services.module.scss';
 import Image from 'next/image';
 
 const Services = () => {
+    const router = useRouter();
     // Extended list of services for the infinite scroll
     const services = [
         {
@@ -68,7 +70,7 @@ const Services = () => {
                     smallTitle="OUR SERVICES"
                     title="Exceptional Services That Break Barriers and Exceed Expectations"
                     buttonLabel="Explore All"
-                    onButtonClick={() => {}}
+                    onButtonClick={() => router.push('/services')}
                     align="center"
                 />
             </div>

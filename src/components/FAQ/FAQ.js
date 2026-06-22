@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import SectionText from "../SectionText/SectionText";
 import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
 import styles from "./FAQ.module.scss";
@@ -90,9 +91,9 @@ const FAQ = ({ showBannerOnly = false, hideCta = false }) => {
                 transparency, efficiency, and uncompromising standards.
               </p>
 
-              <button className={styles.ctaBtn}>
+              <Link href="/contact" className={styles.ctaBtn}>
                 Start Your Project <ArrowRight size={16} />
-              </button>
+              </Link>
             </div>
           </div>
         )}

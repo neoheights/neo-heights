@@ -146,7 +146,8 @@
     width: 100%;
     padding: 28px 25px 20px;
 
-    background: var(--overlay-bg, rgba(63, 63, 63, 0.3));
+    background: #3F3F3F4D;
+    backdrop-filter: blur(2px);
     /* color tint is computed in JS and set via --overlay-bg */
     border: 1px solid rgba(255, 255, 255, 0.1);
 
@@ -262,7 +263,7 @@
   margin-top: auto;
   background: transparent;
   border: none;
-  color: #f68121 !important;
+  color: var(--primary-orange);
   display: flex;
   align-items: center;
   gap: 6px;

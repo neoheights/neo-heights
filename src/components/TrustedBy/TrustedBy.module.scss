@@ -132,14 +132,14 @@
 
 /* Light Theme */
 
-:global([data-theme="light"]) .logosBand {
-  background: #ffffff;
-}
+// :global([data-theme="light"]) .logosBand {
+//   background: #ffffff;
+// }
 
-:global([data-theme="light"]) .heading {
-  color: #111111;
-}
+// :global([data-theme="light"]) .heading {
+//   color: #111111;
+// }
 
-:global([data-theme="light"]) .logoItem:not(:last-child)::after {
-  background: rgba(0, 0, 0, 0.08);
-}
+// :global([data-theme="light"]) .logoItem:not(:last-child)::after {
+//   background: rgba(0, 0, 0, 0.08);
+// }

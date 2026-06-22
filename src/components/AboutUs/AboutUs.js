@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useRouter } from "next/navigation";
 import SectionText from "../SectionText/SectionText";
 import FeatureCard from "../FeatureCard/FeatureCard";
 import styles from "./AboutUs.module.scss";
@@ -11,7 +12,7 @@ const AboutUs = () => {
       stat: "14+",
       title: "Years of Experience",
       description:
-        "Delivering trusted engineering and construction solutions with a proven track record of quality and reliability.",
+        "Years of experience delivering high-quality engineering solutions.",
       category: "ENGINEERING & CONSTRUCTION",
       subItems: ["Structural Design", "Project Execution"],
       image: require("@/assets/images/aboutUs/structural_design.jpg"),
@@ -21,7 +22,7 @@ const AboutUs = () => {
       stat: "20+",
       title: "Projects Completed",
       description:
-        "Successfully completed projects across commercial, industrial, and infrastructure sectors.",
+        "Projects completed across commercial, residential, and industrial sectors.",
       category: "VOLVO",
       volvo: require("@/assets/images/volvo.png"),
       subItems: ["Commercial Builds", "Industrial Projects"],
@@ -32,17 +33,17 @@ const AboutUs = () => {
       stat: "100%",
       title: "Latest Equipment",
       description:
-        "Equipped with advanced machinery and modern technologies for precision-driven execution.",
+        "Deployment of cutting-edge tools and equipment for precision work.",
       category: "LATEST EQUIPMENT",
       subItems: ["Advanced Machinery", "Modern Technology"],
       image: require("@/assets/images/aboutUs/modern_tech.jpg"),
       backgroundColor: "#F57F2A",
     },
     {
-      stat: "5M+ sq.ft",
+      stat: "3M+ sq.ft",
       title: "Project Scale",
       description:
-        "Extensive construction footprint delivered through engineering excellence and innovation.",
+        "Construction footprint delivered with engineering excellence.",
       category: "PROJECT SCALE",
       subItems: ["Large-Scale Projects", "Infrastructure Delivery"],
       image: require("@/assets/images/aboutUs/infra_delivery.jpg"),
@@ -51,8 +52,7 @@ const AboutUs = () => {
     {
       stat: "1000+",
       title: "Expert Workforce",
-      description:
-        "A dedicated team of skilled professionals ensuring safety, quality, and timely project delivery.",
+      description: "A skilled workforce ensures precision, safety, and timely delivery.",
       category: "EXPERT WORKFORCE",
       subItems: ["Multi-disciplinary Teams", "Nationwide Deployment"],
       image: require("@/assets/images/aboutUs/workforce.jpg"),
@@ -60,9 +60,8 @@ const AboutUs = () => {
     },
   ];
 
-  const handleLearnMore = () => {
-    console.log("Learn More Clicked");
-  };
+  const router = useRouter();
+  const handleLearnMore = () => router.push("/about");
 
   return (
     <section className={styles.aboutSection} id="aboutUs">
