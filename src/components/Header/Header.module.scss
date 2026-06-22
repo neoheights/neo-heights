@@ -3,7 +3,7 @@
   inset: 0 0 auto 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(20, 20, 20, 0.98);
+  background: var(--nav-bg);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(14px);
@@ -88,10 +88,10 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  transition: color 0.2s;
+  transition: all 0.3s ease;
 
   &:hover {
-    color: #ffffff;
+    color: var(--primary-orange);
   }
 }
 
@@ -105,29 +105,42 @@
   opacity: 0.78;
 }
 
-// .navLink {
-//   font-size: 18px;
-//   font-family: var(--font-futura);
-//   font-weight: 600;
-//   display: flex;
-//   align-items: center;
-//   gap: 4px;
-//   transition: color 0.2s;
+/* ===========================
+   ACTIVE MENU ITEM
+=========================== */
 
-//   &:hover {
-//     color: var(--primary-orange);
-//   }
+.activeNavItem {
+  position: relative;
+  color: var(--primary-orange) !important;
+  font-weight: 600;
 
-//   .dropdownIcon {
-//     opacity: 0.7;
-//   }
-// }
+  .navLabel,
+  .dropdownIcon {
+    color: var(--primary-orange) !important;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 2px;
+    border-radius: 999px;
+    background-color: var(--primary-orange);
+    transition: all 0.3s ease;
+  }
+}
+/* ===========================
+   ACTIONS
+=========================== */
 
 .actions {
   display: flex;
   align-items: center;
   gap: 10px;
-  z-index: 1001; // Above mobile menu
+  z-index: 1001;
   flex: 0 0 auto;
 }
 
@@ -161,6 +174,10 @@
   }
 }
 
+/* ===========================
+   LIGHT THEME
+=========================== */
+
 :global([data-theme="light"]) .header {
   background: rgba(255, 255, 255, 0.96);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -171,24 +188,58 @@
   color: rgba(0, 0, 0, 0.75);
 
   &:hover {
-    color: #111111;
+    color: var(--primary-orange);
+  }
+}
+
+:global([data-theme="light"]) .activeNavItem {
+  color: var(--primary-orange) !important;
+
+  .navLabel {
+    color: var(--primary-orange);
+  }
+
+  &::after {
+    background: var(--primary-orange);
+    box-shadow: none;
   }
 }
 
 :global([data-theme="light"]) .themeToggle {
   border-color: rgba(0, 0, 0, 0.12);
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.04);
 }
 
 :global([data-theme="light"]) .themeOption {
   color: rgba(0, 0, 0, 0.65);
 
   &.active {
-    background: #111111;
+    background: var(--primary-orange);
     color: #ffffff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 12px rgba(246, 129, 33, 0.24);
   }
 }
+
+/* ===========================
+   DARK THEME
+=========================== */
+
+:global([data-theme="dark"]) .activeNavItem {
+  color: var(--primary-orange) !important;
+
+  .navLabel {
+    color: var(--primary-orange);
+  }
+
+  &::after {
+    background: var(--primary-orange);
+    box-shadow: 0 0 10px rgba(247, 147, 30, 0.8);
+  }
+}
+
+/* ===========================
+   MOBILE MENU
+=========================== */
 
 .mobileMenuToggle {
   display: none;
@@ -201,4 +252,3 @@
     display: block;
   }
 }
-

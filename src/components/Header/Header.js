@@ -89,14 +89,14 @@ const Header = () => {
     { label: "Home", href: "/", id: "home" },
     { label: "About us", href: "/about", id: "about" },
     { label: "Projects", href: "/projects", hasDropdown: true, id: "projects" },
-    { label: "Services", href: "/services", hasDropdown: true, id: "services" },
+    { label: "Services", href: "/services", id: "services" },
     {
       label: "Sustainability",
       href: "/sustainability",
       id: "sustainability",
     },
     { label: "Newsroom", href: "/blogs", id: "newsroom" },
-    { label: "Team", href: "/", id: "team" },
+    { label: "Team", href: "/team", id: "team" },
     { label: "Contact", href: "/contact", id: "contactUs" },
   ];
 
@@ -116,6 +116,12 @@ const Header = () => {
     } else if (item.id === "sustainability") {
       setIsMenuOpen(false);
       router.push("/sustainability");
+    } else if (item.id === "team") {
+      setIsMenuOpen(false);
+      router.push("/team");
+    } else if (item.id === "newsroom") {
+      setIsMenuOpen(false);
+      router.push("/blogs");
     } else if (pathname !== "/") {
       // If we're not on the home page, navigate to home and then scroll
       setIsMenuOpen(false);
@@ -170,7 +176,8 @@ const Header = () => {
             {navItems.map((item) => (
               <li
                 key={item.label}
-                className={styles.navItem}
+                className={`${styles.navItem} ${pathname === item.href ? styles.activeNavItem : ""
+                  }`}
                 onClick={() => handleNavClick(item)}
               >
                 <span className={styles.navLabel}>{item.label}</span>
@@ -196,6 +203,7 @@ const Header = () => {
             >
               <Moon size={14} />
             </button>
+
             <button
               type="button"
               className={`${styles.themeOption} ${theme === "light" ? styles.active : ""}`}

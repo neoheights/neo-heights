@@ -28,7 +28,7 @@
     max-width: 620px;
     font-size: clamp(32px, 5.5vw, 64px);
     line-height: 1.02;
-    color: #ffffff;
+    color: var(--foreground);
     font-weight: 800;
     margin-bottom: 8px;
   }
@@ -75,8 +75,10 @@
   letter-spacing: 2.2px;
   text-transform: uppercase;
   color: var(--text-secondary);
-  margin-bottom: 16px;
+  margin: 0 auto 16px;
   font-weight: 600;
+  display: inline-block;
+  position: relative;
 
   @media (max-width: 768px) {
     font-size: 0.8rem;
@@ -147,4 +149,3 @@
 .customContent {
   margin-top: 24px;
 }
-

@@ -22,7 +22,7 @@
 }
 
 [data-theme="dark"] {
-  --background: #0a0a0a;
+  --background: #1d1d1d;
   --foreground: #ededed;
   --text-secondary: #a3a3a3;
   --border-color: #262626;
@@ -99,7 +99,6 @@ body {
 [data-theme="light"] [class*="ctaCard"],
 [data-theme="light"] [class*="formCard"],
 [data-theme="light"] [class*="projectItem"],
-[data-theme="light"] [class*="textCard"],
 [data-theme="light"] [class*="serviceCard"],
 [data-theme="light"] [class*="quoteCard"],
 [data-theme="light"] [class*="mapPanel"],

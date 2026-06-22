@@ -1,9 +1,18 @@
-import React from 'react';
-import styles from './FeatureCard.module.scss';
-import { ArrowRight } from 'lucide-react';
-import Image from 'next/image';
+import React from "react";
+import styles from "./FeatureCard.module.scss";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
-const FeatureCard = ({ stat, title, description, category, subItems, image, backgroundColor }) => {
+const FeatureCard = ({
+  stat,
+  title,
+  description,
+  category,
+  subItems,
+  image,
+  backgroundColor,
+  volvo,
+}) => {
   return (
     <div className={styles.card}>
       <div className={styles.content}>
@@ -13,11 +22,23 @@ const FeatureCard = ({ stat, title, description, category, subItems, image, back
             <h3 className={styles.stat}>{stat}</h3>
             <p className={styles.description}>{description}</p>
           </div>
-
-
           <div className={styles.bottom}>
-            <h5 className={styles.category}>{category}</h5>
+            {volvo ? (
+              <div className={styles.logoWrapper}>
+                <Image
+                  src={volvo}
+                  alt="Volvo"
+                  width={120}
+                  height={30}
+                  className={styles.companyLogo}
+                />
+              </div>
+            ) : (
+              <h5 className={styles.category}>{category}</h5>
+            )}
+
             <div className={styles.divider}></div>
+
             {subItems && (
               <ul className={styles.subItems}>
                 {subItems.map((item, i) => (
@@ -32,7 +53,7 @@ const FeatureCard = ({ stat, title, description, category, subItems, image, back
         <div className={styles.hoverContent}>
           <span className={styles.hoverTitle}>{title}</span>
           <Image
-            src={image}
+            src={image?.default || image}
             alt="bg-image"
             width={1000}
             height={1000}
@@ -42,7 +63,10 @@ const FeatureCard = ({ stat, title, description, category, subItems, image, back
             Know More
             {/* <ArrowRight size={16} /> */}
           </button>
-          <div className={styles?.absoluteColorWhenHover} style={{ backgroundColor }} />
+          <div
+            className={styles?.absoluteColorWhenHover}
+            style={{ backgroundColor }}
+          />
         </div>
       </div>
     </div>

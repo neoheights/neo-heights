@@ -11,8 +11,9 @@ import Team from "@/components/Team/Team";
 import Blogs from "@/components/Blogs/Blogs";
 import Contact from "@/components/Contact/Contact";
 import Achievements from "@/components/Achievements/Achievements";
-import Journey from "@/components/Journey/Journey";
 import Footer from "@/components/Footer/Footer";
+import FAQ from "@/components/FAQ/FAQ";
+import JourneySection from "@/components/JourneySection/JourneySection";
 
 export default function Home() {
   return (
@@ -29,9 +30,9 @@ export default function Home() {
       <Team />
       <Blogs />
       <Contact />
-      <Achievements />
-      <Journey />
-      <Footer />
+      <JourneySection />
+      <FAQ />
+      <Footer showTopStrip />
     </main>
   );
 }

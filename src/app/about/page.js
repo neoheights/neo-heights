@@ -7,7 +7,7 @@ import SectionText from "@/components/SectionText/SectionText";
 import styles from "./page.module.scss";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import buildingImage from "@/assets/images/aboutUs/infra_delivery.jpg";
+import buildingImage from "@/assets/images/aboutUs/about-pages.png";
 import FAQ from "@/components/FAQ/FAQ";
 import Contact from "@/components/Contact/Contact";
 import Legacy from "@/components/Legacy/Legacy";
@@ -18,6 +18,7 @@ import Journey from "@/components/Journey/Journey";
 import AboutValueProp from "@/components/AboutValueProp/AboutValueProp";
 import AboutCertifications from "@/components/AboutCertifications/AboutCertifications";
 import AboutProcess from "@/components/AboutProcess/AboutProcess";
+import Blogs from "@/components/Blogs/Blogs";
 
 export default function AboutPage() {
   return (
@@ -71,8 +72,6 @@ export default function AboutPage() {
           src={buildingImage}
           alt="building"
           className={styles.buildingImage}
-          width={1600}
-          height={620}
           priority
         />
       </section>
@@ -88,7 +87,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className={styles.statItem}>
-              <div className={styles.statNumber}>100+</div>
+              <div className={styles.statNumber}>150+</div>
               <div className={styles.statLabel}>
                 Completed &amp; Ongoing Projects
               </div>
@@ -100,13 +99,17 @@ export default function AboutPage() {
               </div>
             </div>
             <div className={styles.statItem}>
+              <div className={styles.statNumber}>25M+ Sq.Ft</div>
+              <div className={styles.statLabel}>Constructed</div>
+            </div>
+            <div className={styles.statItem}>
               <div className={styles.statNumber}>100%</div>
               <div className={styles.statLabel}>Latest Equipments</div>
             </div>
           </div>
 
           <div className={styles.storyText}>
-            <h3>The Neo Heights Story</h3>
+            <h3>TheNeoHeights Story</h3>
             <p>
               Founded in 2011 under the strong industrial legacy of Arul Group,
               Neo Heights was established with a vision to redefine modern
@@ -115,7 +118,16 @@ export default function AboutPage() {
             </p>
 
             <p>
-              Today, our portfolio spans industrial facilities, transportation,
+              What began as a focused civil construction company has evolved
+              into a diversified infrastructure and engineering brand delivering
+              large-scale projects across South India. Backed by decades of
+              manufacturing and industrial expertise since 1978, Neo Heights
+              combines technical strength, operational efficiency, and modern
+              project execution capabilities.
+            </p>
+
+            <p>
+              Today, our portfolio spans industrial facilities, warehouses,
               commercial spaces, residential developments, infrastructure works,
               PEB projects, MEP engineering, and interior solutions — serving
               some of the world&apos;s leading brands and industries.
@@ -136,30 +148,13 @@ export default function AboutPage() {
       {/* ── Process timeline + Quality policy ── */}
       <AboutProcess />
 
-      {/* ── Legacy / Arul Group ── */}
       <Legacy />
-
-      {/* ── Team ── */}
       <Team />
-
-      <ContactPopup />
-
-      {/* ── Contact ── */}
-      <Contact showMap={false} />
-
-      {/* ── Legacy / Arul Group journey ── */}
+      <Blogs />
+      <Contact />
       <JourneySection />
-
-      {/* ── FAQ ── */}
       <FAQ />
-
-      {/* ── CTA banner ── */}
-      <Journey />
-
-      {/* ── Trusted partners logos ── */}
-      <TrustedBy />
-
-      <Footer />
+      <Footer showTopStrip />
     </main>
   );
 }

@@ -1,186 +1,380 @@
 .faqSection {
-    background-color: #1a1a1a;
-    color: #fff;
-    padding: 80px 0;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 80px 0;
 
-    @media (max-width: 768px) {
-        padding: 10% 6%;
-    }
+  @media (max-width: 768px) {
+    padding: 10% 6%;
+  }
 }
 
 .faqList {
-    max-width: 800px;
-    margin: 40px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  max-width: 800px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 
-    @media (max-width: 768px) {
-        margin: 0;
-    }
+  @media (max-width: 768px) {
+    margin: 0;
+  }
+}
+
+.faqSection {
+  padding: 100px 0;
+  position: relative;
+
+  :global([data-theme="light"]) & {
+    background: #f8f8f8;
+    color: #111;
+  }
+
+  :global([data-theme="dark"]) & {
+    background: #0b0b0b;
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    padding: 80px 6%;
+  }
+}
+
+.faqList {
+  max-width: 760px;
+  margin: 50px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faqSection {
+  padding: 100px 0;
+  position: relative;
+
+  :global([data-theme="light"]) & {
+    background: #f8f8f8;
+    color: #111;
+  }
+
+  :global([data-theme="dark"]) & {
+    background: #0b0b0b;
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    padding: 80px 6%;
+  }
+}
+
+.faqList {
+  max-width: 760px;
+  margin: 50px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  @media (max-width: 768px) {
+    margin: 30px 0 0;
+  }
 }
 
 .faqItem {
-    background: #222;
-    border-radius: 8px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: background 0.2s;
-    border: 1px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
 
-    &:hover {
-        background: #2a2a2a;
-    }
+  :global([data-theme="light"]) & {
+    background: #ffffff;
+    border: 1px solid #ececec;
+    box-shadow: 0 6px 24px rgba(12, 12, 12, 0.06);
+  }
 
-    &.active {
-        border-color: #444;
-
-        .answerBody {
-            max-height: 200px; // Approximate max height
-            padding-bottom: 20px;
-            opacity: 1;
-        }
-
-        .questionHeader {
-            color: var(--primary-orange);
-        }
-    }
-}
-
-.questionHeader {
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 500;
-    font-size: 1.1rem;
-
-    h3 {
-        font-size: 1rem;
-        margin: 0;
-    }
-
-    @media (max-width: 768px) {
-        h3 {
-            font-size: 0.9rem;
-        }
-    }
-}
-
-.answerBody {
-    padding: 0 20px;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    opacity: 0;
-    color: #aaa;
-    line-height: 1.6;
-    font-size: 0.95rem;
-
-    @media (max-width: 768px) {
-        font-size: 0.8rem;
-        line-height: 1.2rem;
-    }
-}
-
-.bottomCta {
-    margin-top: 60px;
-    display: flex;
-    justify-content: center;
-}
-
-.ctaCard {
-    background: #222;
-    padding: 40px;
-    border-radius: 12px;
-    text-align: center;
-    max-width: 750px;
-    width: 100%;
-    border: 1px solid #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-    h3 {
-        font-size: 46px;
-        margin-bottom: 12px;
-        font-weight: 500;
-        line-height: 1.1;
-        font-family: var(--font-fustat);
-    }
-
-    p {
-        color: #888;
-        margin-bottom: 24px;
-        font-size: 16px;
-        font-family: var(--font-fustat);
-    }
-
-    .ctaBtn {
-        background-color: var(--primary-orange);
-        color: #fff;
-        border: none;
-        padding: 10px 24px;
-        border-radius: 6px;
-        font-weight: 500;
-        font-family: var(--font-fustat);
-        // line-height: 24px;
-        font-size: 16px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 4px;
-
-        &:hover {
-            background-color: darken(#ff6b00, 5%);
-        }
-    }
-
-    @media (max-width: 768px) {
-        h3 {
-            font-size: 1.2rem;
-            margin-bottom: 9px;
-        }
-
-        p {
-            color: #888;
-            margin-bottom: 24px;
-        }
-    }
-}
-
-/* ── Light mode overrides ── */
-:global([data-theme="light"]) .faqSection {
-  background-color: #ffffff;
-  color: #111111;
-}
-
-:global([data-theme="light"]) .faqItem {
-  background: #f0f0f0;
-
-  &:hover {
-    background: #e8e8e8;
+  :global([data-theme="dark"]) & {
+    background: #161616;
+    border: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   &.active {
-    border-color: #ccc;
+    .answerBody {
+      max-height: 300px;
+      opacity: 1;
+      padding: 0 24px 24px;
+    }
   }
 }
 
-:global([data-theme="light"]) .answerBody {
-  color: #555555;
+.questionHeader {
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+
+    :global([data-theme="light"]) & {
+      color: #1a1a1a;
+    }
+
+    :global([data-theme="dark"]) & {
+      color: #ffffff;
+    }
+  }
 }
 
+.icon {
+  flex-shrink: 0;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1;
+
+  :global([data-theme="light"]) & {
+    color: #111;
+  }
+
+  :global([data-theme="dark"]) & {
+    color: #fff;
+  }
+}
+
+.answerBody {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 24px;
+
+  transition:
+    max-height 0.35s ease,
+    opacity 0.35s ease,
+    padding 0.35s ease;
+
+  p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.8;
+
+    :global([data-theme="light"]) & {
+      color: #666666;
+    }
+
+    :global([data-theme="dark"]) & {
+      color: rgba(255, 255, 255, 0.65);
+    }
+  }
+}
+
+.helpCenterText {
+  margin: 20px auto 0;
+  text-align: center;
+
+  p {
+    margin: 0;
+    font-size: 13px;
+
+    :global([data-theme="light"]) & {
+      color: #666;
+    }
+
+    :global([data-theme="dark"]) & {
+      color: rgba(255, 255, 255, 0.65);
+    }
+  }
+}
+
+.helpBottom {
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+
+  :global([data-theme="light"]) & {
+    color: #111;
+  }
+
+  :global([data-theme="dark"]) & {
+    color: #fff;
+  }
+}
+
+.helpCenterText {
+  margin: 24px auto 0;
+  max-width: 800px;
+  text-align: center;
+
+  p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+.helpBottom {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.bottomCta {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.ctaCard {
+  position: relative;
+  overflow: hidden;
+  max-width: 750px;
+  width: 100%;
+  padding: 56px 40px;
+  border-radius: 20px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: #242424;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  h3 {
+    position: relative;
+    z-index: 2;
+    font-size: 46px;
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    font-family: var(--font-fustat);
+    color: #ffffff;
+  }
+
+  p {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 28px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #a1a1aa;
+    font-family: var(--font-fustat);
+  }
+
+  .ctaBtn {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+
+    background: var(--primary-orange);
+    color: #fff;
+
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--font-fustat);
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 40px 24px;
+
+    h3 {
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.6;
+
+      br {
+        display: none;
+      }
+    }
+
+    .ctaBtn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
+
+/* ===================== */
+/* LIGHT THEME CTA CARD  */
+/* ===================== */
+
 :global([data-theme="light"]) .ctaCard {
-  background: #f0f0f0;
-  border-color: #dddddd;
+  background: #f8f7f6;
+  border: 1px solid #ececec;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -90px;
+    left: -90px;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: #f57f2a;
+    filter: blur(90px);
+    z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -90px;
+    right: -90px;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: #f57f2a;
+    filter: blur(90px);
+    z-index: 1;
+  }
 
   h3 {
     color: #111111;
   }
 
   p {
-    color: #666666;
+    color: #6b7280;
+  }
+}
+
+/* ==================== */
+/* DARK THEME CTA CARD  */
+/* ==================== */
+
+:global([data-theme="dark"]) .ctaCard {
+  background: #242424;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  h3 {
+    color: #ffffff;
+  }
+
+  p {
+    color: #a1a1aa;
   }
 }
