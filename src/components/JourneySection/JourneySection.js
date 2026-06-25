@@ -26,8 +26,8 @@ const Journey = () => {
                   <path d="M-1.42306e-06 0.000287831H11.644V28.9463H5.371V5.61729H-1.42306e-06V0.000287831ZM35.1982 0.000287831V17.7533H38.8062V23.0013H35.1982V28.9463H29.6222V23.0013H17.4042V17.4663L29.8682 0.000287831H35.1982ZM26.8342 12.4233L23.1442 17.8353H29.7042C29.7042 15.7033 29.7042 13.6123 29.7452 11.4803C29.7862 10.4963 29.8272 9.47129 29.9502 8.48729C29.9912 7.87229 30.1142 7.21629 30.2372 6.60129C29.7452 7.58529 29.2122 8.56929 28.6382 9.51229C28.0642 10.4963 27.4492 11.4393 26.8342 12.4233Z" fill="url(#paint0_linear_687_19854)" />
                   <defs>
                     <linearGradient id="paint0_linear_687_19854" x1="18.392" y1="-5.05371" x2="18.392" y2="35.9463" gradientUnits="userSpaceOnUse">
-                      <stop stop-color="#FF7300" />
-                      <stop offset="1" stop-color="#FFA500" />
+                      <stop stopColor="#FF7300" />
+                      <stop offset="1" stopColor="#FFA500" />
                     </linearGradient>
                   </defs>
                 </svg>
@@ -63,7 +63,15 @@ const Journey = () => {
           </div>
 
           <div className={styles.ctaRow}>
-            <button className={styles.downloadBtn}>
+            <button
+              className={styles.downloadBtn}
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/pdf/Neo-Heights-Brochure.pdf';
+                link.download = 'Neo-Heights-Brochure.pdf';
+                link.click();
+              }}
+            >
               Download E‑Brochure <Download size={18} />
             </button>
           </div>
