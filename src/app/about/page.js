@@ -20,6 +20,9 @@ import AboutCertifications from "@/components/AboutCertifications/AboutCertifica
 import AboutProcess from "@/components/AboutProcess/AboutProcess";
 import Blogs from "@/components/Blogs/Blogs";
 
+import Link from "next/link";
+
+
 export default function AboutPage() {
   return (
     <main>
