@@ -108,7 +108,7 @@ const Header = () => {
       id: "sustainability",
     },
     { label: "Newsroom", href: "/blogs", id: "newsroom" },
-    { label: "Team", href: "/", id: "team" },
+    { label: "Team", href: "/#team", id: "team" },
     { label: "Contact", href: "/contact", id: "contactUs" },
   ];
 
