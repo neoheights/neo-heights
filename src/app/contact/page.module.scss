@@ -1,178 +1,84 @@
 .officeSection {
   position: relative;
-  background:
-    radial-gradient(
-      circle at top left,
-      rgba(255, 255, 255, 0.72),
-      transparent 38%
-    ),
-    #f7f6f2;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+  overflow: hidden;
+  background: #f7f6f2;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(135deg,
+        transparent 0,
+        transparent 96%,
+        rgba(0, 0, 0, 0.02) 96%,
+        rgba(0, 0, 0, 0.02) 100%);
+    background-size:
+      18px 18px,
+      100% 100%;
+    opacity: 0.5;
+    pointer-events: none;
+  }
 }
 
 .officeInner {
-  display: grid;
-  grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.82fr);
-  gap: 48px;
-  align-items: start;
-  padding: 20px 64px 18px;
+  position: relative;
+  z-index: 1;
 
-  @media (max-width: 900px) {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  align-items: center;
+  gap: 70px;
+
+  padding: 48px 60px;
+
+  @media (max-width: 992px) {
     grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 18px 18px 16px;
+    gap: 32px;
+    padding: 32px 20px;
   }
 }
 
 .officeInfo {
-  max-width: 760px;
+  max-width: 650px;
 }
 
 .officeTitle {
-  margin: 0 0 12px;
-  color: #111;
-  font-family: var(--font-fustat);
-  font-size: clamp(1.3rem, 2vw, 2rem);
-  font-weight: 600;
-  line-height: 1.08;
+  margin: 0 0 24px;
+
+  color: #1b1b1b;
+  font-family: var(--font-fustat), sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.4;
 }
 
 .officeDetails {
-  display: grid;
-  gap: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
 }
 
 .officeRow {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-
-  p {
-    margin: 0;
-    color: #222;
-    font-size: 0.87rem;
-    line-height: 1.6;
-  }
 }
 
 .officeIcon {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  flex: 0 0 auto;
-  width: 17px;
-  height: 17px;
-  margin-top: 2px;
-  color: #202020;
+  flex-shrink: 0;
 
-  svg {
-    width: 17px;
-    height: 17px;
-  }
-}
-
-.officeMapWrap {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-}
-
-.officeMap {
-  width: 100%;
-  max-width: 420px;
-  height: 160px;
-  border: 0;
-  background: #fff;
-  box-shadow: none;
-  border-radius: 0;
-
-  @media (max-width: 900px) {
-    max-width: 100%;
-  }
-}
-.contactIntroSection {
-  position: relative;
-  overflow: hidden;
-  background: #f7f6f2;
-  border-bottom: 3px solid #1e6fb7;
-}
-
-.contactIntroPattern {
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-    linear-gradient(
-      135deg,
-      transparent 0,
-      transparent 96%,
-      rgba(0, 0, 0, 0.02) 96%,
-      rgba(0, 0, 0, 0.02) 100%
-    );
-  background-size:
-    18px 18px,
-    100% 100%;
-  opacity: 0.7;
-  pointer-events: none;
-}
-
-.contactIntroInner {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
-  gap: 40px;
-  align-items: center;
-  padding: 32px 56px 28px;
-
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr;
-    padding: 28px 20px 24px;
-  }
-}
-
-.contactInfoCol {
-  max-width: 720px;
-}
-
-.contactTitle {
-  margin: 0 0 18px;
-  color: #1b1b1b;
-  font-family: var(--font-fustat);
-  font-size: clamp(1.5rem, 2vw, 2rem);
-  font-weight: 600;
-  line-height: 1.15;
-}
-
-.contactDetails {
-  display: grid;
-  gap: 18px;
-}
-
-.contactRow {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-
-  p {
-    margin: 0;
-    max-width: 560px;
-    color: #333;
-    font-size: 0.95rem;
-    line-height: 1.55;
-  }
-}
-
-.contactIcon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-  margin-top: 2px;
   width: 18px;
   height: 18px;
-  color: #161616;
+  margin-top: 3px;
+
+  color: #2b2b2b;
 
   svg {
     width: 18px;
@@ -180,27 +86,382 @@
   }
 }
 
-.mapCol {
+.officeAddress {
+  margin: 0;
+
+  max-width: 520px;
+
+  color: #3a3a3a;
+  font-family: var(--font-fustat), sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.officePhone,
+.officeEmail {
+  margin: 0;
+
+  color: #3a3a3a;
+  font-family: var(--font-fustat), sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.officeMapWrap {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+
+  @media (max-width: 992px) {
+    justify-content: center;
+  }
 }
 
-.mapCard {
+.officeMap {
   width: 100%;
-  max-width: 430px;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-  background: #fff;
-}
+  max-width: 460px;
+  height: 220px;
 
-.mapIframe {
-  width: 100%;
-  height: 190px;
   border: none;
+  border-radius: 0;
   display: block;
+  background: #fff;
 
-  @media (min-width: 1200px) {
+  @media (max-width: 992px) {
+    max-width: 100%;
+    height: 240px;
+  }
+
+  @media (max-width: 576px) {
     height: 220px;
   }
+}
+
+.contactIntroSection {
+  background-color: black;
+  height: 3px;
+  width: 100%;
+}
+
+.contactPageSection {
+  position: relative;
+  overflow: hidden;
+  background: #050505;
+  color: #fff;
+  padding: 160px 0 80px;
+
+  @media (max-width: 768px) {
+    padding: 110px 0 50px;
+  }
+}
+
+.contactPageBg {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 650px;
+  height: auto;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contactPageContainer {
+  position: relative;
+  z-index: 2;
+  padding: 0 7% 0px;
+
+  @media (max-width: 768px) {
+    padding: 0 6% 0px;
+  }
+}
+
+.eyebrow {
+  margin-bottom: 16px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  font-family: var(--font-fustat), sans-serif;
+}
+
+.title {
+  max-width: 820px;
+  font-family: var(--font-fustat), sans-serif;
+  font-size: clamp(2.2rem, 4vw, 2.8rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-bottom: 50px;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+}
+
+.gridContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 80px;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+    min-height: auto;
+  }
+}
+
+.formWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  flex-shrink: 0;
+}
+
+.absoluteBgColor {
+  position: absolute;
+  top: 0px;
+  left: 0%;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: rgba(255, 132, 14, 0.4);
+  filter: blur(110px);
+  pointer-events: none;
+}
+
+.formCard {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 22px;
+  border-radius: 10px;
+  background: rgba(18, 18, 18, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.formCardTitle {
+  margin-bottom: 8px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+  font-family: var(--font-fustat), sans-serif;
+}
+
+.formDesc {
+  margin-bottom: 18px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: var(--font-fustat), sans-serif;
+
+  span {
+    color: #ffffff;
+  }
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 20px 16px;
+  border-radius: 8px;
+  background: #1f1f1f;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-size: 14px;
+  font-family: var(--font-fustat), sans-serif;
+  transition: all 0.25s ease;
+
+  &:focus {
+    outline: none;
+    border-color: #ff8c00;
+    box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.15);
+  }
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+  }
+}
+
+.textarea {
+  resize: none;
+  min-height: 130px;
+}
+
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: fit-content;
+  margin-top: 8px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #ffb347 0%, #ff8c00 100%);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-fustat), sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(255, 140, 0, 0.25);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: wait;
+  }
+}
+
+.successMsg {
+  margin-top: 12px;
+  color: #66d17e;
+  font-size: 14px;
+  font-family: var(--font-fustat), sans-serif;
+}
+
+.errorMsg {
+  margin-top: 12px;
+  color: #ff8080;
+  font-size: 14px;
+  font-family: var(--font-fustat), sans-serif;
+}
+
+// Right column: contact methods
+.methodsList {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 10px;
+  flex: 1;
+
+  @media (max-width: 992px) {
+    margin-top: 0;
+    max-width: 100%;
+  }
+}
+
+.methodItem {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.iconCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.methodText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.methodLabel {
+  font-family: var(--font-fustat), sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.methodValue {
+  font-family: var(--font-fustat), sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+// Light theme overrides for the new section
+:global([data-theme="light"]) .contactPageSection {
+  background: #fafafa;
+  color: #111;
+}
+
+:global([data-theme="light"]) .eyebrow {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+:global([data-theme="light"]) .title {
+  color: #111;
+}
+
+:global([data-theme="light"]) .formCard {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+:global([data-theme="light"]) .formCardTitle {
+  color: #111;
+}
+
+:global([data-theme="light"]) .formDesc {
+  color: rgba(0, 0, 0, 0.6);
+
+  span {
+    color: #111;
+  }
+}
+
+:global([data-theme="light"]) .input,
+:global([data-theme="light"]) .textarea {
+  background: #f8f8f8;
+  border-color: rgba(0, 0, 0, 0.08);
+  color: #111;
+}
+
+:global([data-theme="light"]) .input::placeholder,
+:global([data-theme="light"]) .textarea::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+:global([data-theme="light"]) .iconCircle {
+  border-color: rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.04);
+  color: #111;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+:global([data-theme="light"]) .methodLabel {
+  color: #111;
+}
+
+:global([data-theme="light"]) .methodValue {
+  color: rgba(0, 0, 0, 0.65);
 }

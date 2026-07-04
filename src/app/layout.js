@@ -19,13 +19,13 @@ import ContactPopup from "@/components/ContactPopup/ContactPopup";
 
   const fustat = localFont({
   src: [
-    { path: "../assets/fonts/Fustat/Fustat-Bold.ttf", weight: "800" },
-    { path: "../assets/fonts/Fustat/Fustat-ExtraBold.ttf", weight: "900" },
-    { path: "../assets/fonts/Fustat/Fustat-ExtraLight.ttf", weight: "300" },
-    { path: "../assets/fonts/Fustat/Fustat-Light.ttf", weight: "400" },
+    { path: "../assets/fonts/Fustat/Fustat-ExtraLight.ttf", weight: "200" },
+    { path: "../assets/fonts/Fustat/Fustat-Light.ttf", weight: "300" },
+    { path: "../assets/fonts/Fustat/Fustat-Regular.ttf", weight: "400" },
     { path: "../assets/fonts/Fustat/Fustat-Medium.ttf", weight: "500" },
-    { path: "../assets/fonts/Fustat/Fustat-Regular.ttf", weight: "600" },
-    { path: "../assets/fonts/Fustat/Fustat-SemiBold.ttf", weight: "700" },
+    { path: "../assets/fonts/Fustat/Fustat-SemiBold.ttf", weight: "600" },
+    { path: "../assets/fonts/Fustat/Fustat-Bold.ttf", weight: "700" },
+    { path: "../assets/fonts/Fustat/Fustat-ExtraBold.ttf", weight: "800" },
   ],
   variable: "--font-fustat",
   display: "swap"
