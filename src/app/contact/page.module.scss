@@ -185,6 +185,7 @@
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.45);
+  font-family: var(--font-fustat), sans-serif;
 }
 
 .title {
@@ -253,6 +254,7 @@
   font-size: 1.15rem;
   font-weight: 600;
   color: #ffffff;
+  font-family: var(--font-fustat), sans-serif;
 }
 
 .formDesc {
@@ -260,6 +262,7 @@
   font-size: 12px;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.55);
+  font-family: var(--font-fustat), sans-serif;
 
   span {
     color: #ffffff;
@@ -281,6 +284,7 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
   color: #ffffff;
   font-size: 14px;
+  font-family: var(--font-fustat), sans-serif;
   transition: all 0.25s ease;
 
   &:focus {
@@ -313,6 +317,7 @@
   color: #fff;
   font-size: 12px;
   font-weight: 600;
+  font-family: var(--font-fustat), sans-serif;
   cursor: pointer;
   transition: all 0.3s ease;
 
@@ -331,12 +336,14 @@
   margin-top: 12px;
   color: #66d17e;
   font-size: 14px;
+  font-family: var(--font-fustat), sans-serif;
 }
 
 .errorMsg {
   margin-top: 12px;
   color: #ff8080;
   font-size: 14px;
+  font-family: var(--font-fustat), sans-serif;
 }
 
 // Right column: contact methods

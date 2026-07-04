@@ -64,7 +64,8 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-fustat);
+  --font-futura: var(--font-fustat) !important;
+  font-family: var(--font-fustat), sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition:
@@ -124,10 +125,17 @@ body {
   color: var(--text-secondary) !important;
 }
 
-* {
+*,
+*::before,
+*::after,
+input,
+button,
+select,
+textarea {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: var(--font-fustat), sans-serif !important;
 }
 
 a {
