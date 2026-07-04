@@ -73,7 +73,7 @@ const Hero = () => {
                             src={NeoLogo}
                             alt=""
                             width={1000}
-                            heigth={1000}
+                            height={1000}
                             className={styles.verticalItemImage}
                         />
                     </div>
@@ -82,7 +82,7 @@ const Hero = () => {
                             src={ApLogo}
                             alt=""
                             width={1000}
-                            heigth={1000}
+                            height={1000}
                             className={styles.verticalItemImage}
                         />
                     </div>
@@ -91,7 +91,7 @@ const Hero = () => {
                             src={ARLogo}
                             alt=""
                             width={1000}
-                            heigth={1000}
+                            height={1000}
                             className={styles.verticalItemImage}
                         />
                     </div>
@@ -100,8 +100,7 @@ const Hero = () => {
                             src={ArulGroupLogo}
                             alt=""
                             width={1000}
-                            heigth={1000}
-                            style={{background:"#fff"}}
+                            height={1000}
                             className={styles.verticalItemImage}
                         />
                     </div>

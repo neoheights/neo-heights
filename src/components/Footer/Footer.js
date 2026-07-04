@@ -64,47 +64,50 @@ const Footer = ({ showTopStrip = false }) => {
             <h4>QUICK LINKS</h4>
             <ul>
               <li>
-                <a href="#">About Us</a>
+                <Link href="/about">About Us</Link>
               </li>
               <li>
-                <a href="#">Services</a>
+                <Link href="/services">Services</Link>
               </li>
               <li>
-                <a href="#">Projects</a>
+                <Link href="/projects">Projects</Link>
               </li>
               <li>
-                <a href="#">Sustainability</a>
+                <Link href="/sustainability">Sustainability</Link>
               </li>
               <li>
-                <a href="#">Contact</a>
+                <Link href="/#legacy">Legacy</Link>
+              </li>
+              <li>
+                <Link href="/contact">Contact Us</Link>
               </li>
             </ul>
           </div>
 
           <div className={styles.linksCol}>
-            <h4>Services</h4>
+            <h4>SERVICES</h4>
             <ul>
               <li>
-                <a href="#">Civil Construction</a>
+                <Link href="/services">Civil Construction</Link>
               </li>
               <li>
-                <a href="#">PEB Structures</a>
+                <Link href="/services">PEB Structures</Link>
               </li>
               <li>
-                <a href="#">Interior Fit-outs</a>
+                <Link href="/services">Interior Fit-outs</Link>
               </li>
               <li>
-                <a href="#">MEP Works</a>
+                <Link href="/services">MEP Works</Link>
               </li>
               <li>
-                <a href="#">Sustainable Construction</a>
+                <Link href="/services">Sustainable Construction</Link>
               </li>
             </ul>
           </div>
 
           <div className={styles.contactCol}>
             <div className={styles.contactHead}>
-              <h4>Contact</h4>
+              <h4>CONTACT</h4>
               <div className={styles.socialIcons}>
                 <a href="#">
                   <Facebook size={18} />
