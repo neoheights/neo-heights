@@ -9,6 +9,7 @@ import IME from "@/assets/images/aboutUs/ime.jpg";
 import IndiaSme from "@/assets/images/aboutUs/india-sme.png";
 import TopDomestic from "@/assets/images/aboutUs/top-domenstic.jpg";
 
+
 const AboutCertifications = () => {
   return (
     <section className={styles.section}>
