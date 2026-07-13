@@ -1,6 +1,6 @@
 "use client"
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, X } from 'lucide-react';
 import styles from './Hero.module.scss';
@@ -9,9 +9,12 @@ import NeoLogo from '@/assets/images/verticals/neo_studio.png'
 import ApLogo from '@/assets/images/verticals/AP_logo.png'
 import ARLogo from '@/assets/images/verticals/AR_logo.png'
 import ArulGroupLogo from '@/assets/images/verticals/ArulGroup_logo.png'
+import VLogo from '@/assets/images/verticals/V-image.png'
+
 import Image from 'next/image';
 
 const Hero = () => {
+    const [showVerticals, setShowVerticals] = useState(true);
 
     const scrollToSection = (id) => {
         const element = document.getElementById(id);
@@ -34,7 +37,7 @@ const Hero = () => {
             <div className={styles.overlayContainer}></div>
             <div className={styles.overlay}>
                 <video
-                    src="/videos/intro.mkv"
+                    src="/videos/neo_heights.mp4"
                     autoPlay
                     muted
                     loop
@@ -62,66 +65,63 @@ const Hero = () => {
                 </div>
             </div>
 
-            <div className={styles.verticalsWidget}>
-                <div className={styles.widgetHeader}>
-                    <span>Our Other Verticals</span>
-                    <X size={14} className={styles.closeIcon} />
-                </div>
-                <div className={styles.verticalsList}>
-                    <div className={styles.verticalItem}>
-                        <Image
-                            src={NeoLogo}
-                            alt=""
-                            width={1000}
-                            height={1000}
-                            className={styles.verticalItemImage}
-                        />
+            {showVerticals && (
+                <div className={styles.verticalsWidget}>
+                    <div className={styles.widgetHeader}>
+                        <span>Our Other Verticals</span>
+                        <X size={14} className={styles.closeIcon} onClick={() => setShowVerticals(false)} />
                     </div>
-                    <div className={styles.verticalItem}>
-                        <Image
-                            src={ApLogo}
-                            alt=""
-                            width={1000}
-                            height={1000}
-                            className={styles.verticalItemImage}
-                        />
-                    </div>
-                    <div className={styles.verticalItem}>
-                        <Image
-                            src={ARLogo}
-                            alt=""
-                            width={1000}
-                            height={1000}
-                            className={styles.verticalItemImage}
-                        />
-                    </div>
-                    <div className={styles.verticalItem}>
-                        <Image
-                            src={ArulGroupLogo}
-                            alt=""
-                            width={1000}
-                            height={1000}
-                            className={styles.verticalItemImage}
-                        />
-                    </div>
-                    {/* <div className={styles.verticalItem}>
-                        <Image
-                            src={NeoLogo}
-                            alt=""
-                            width={300}
-                            heigth={300}
-                            className={styles.verticalItemImage}
-                        />
-                    </div> */}
-                </div>
-            </div>
+                    <div className={styles.verticalsList}>
+                        <div className={styles.verticalItem}>
+                            <Image
+                                src={ArulGroupLogo}
+                                alt="Arul Group"
+                                width={1000}
+                                height={1000}
+                                className={styles.verticalItemImage}
+                            />
+                        </div>
 
-            {/* Theme toggle hint tooltip mockup */}
-            {/* <div className={styles.themeHint}>
-                    <span className={styles.infoIcon}>i</span>
-                    Toggle to switch between dark or light mode.
-                    <X size={12} className={styles.closeHint} />
-                </div> */}
+                        <div className={styles.verticalItem}>
+                            <Image
+                                src={ApLogo}
+                                alt="Arul Polymers"
+                                width={1000}
+                                height={1000}
+                                className={styles.verticalItemImage}
+                            />
+                        </div>
+                        <div className={styles.verticalItem}>
+                            <Image
+                                src={ARLogo}
+                                alt="Arul Rubbers"
+                                width={1000}
+                                height={1000}
+                                className={styles.verticalItemImage}
+                            />
+                        </div>
+                        <div className={styles.verticalItem}>
+                            <Image
+                                src={NeoLogo}
+                                alt="Neo Studio"
+                                width={1000}
+                                height={1000}
+                                className={styles.verticalItemImage}
+                            />
+                        </div>
+                        <div className={styles.verticalItem}>
+                            <Image
+                                src={VLogo}
+                                alt="Neo Studio"
+                                width={1000}
+                                height={1000}
+                                className={styles.verticalItemImage}
+                            />
+                        </div>
+                    </div>
+                </div>
+            )}
+
         </section>
     );
 };

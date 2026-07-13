@@ -30,15 +30,15 @@
   flex: 0 0 auto;
 
   .logoIcon {
-    width: 78px;
+    width: 140px;
     height: 44px;
     object-fit: contain;
   }
 
   @media (max-width: 500px) {
     .logoIcon {
-      width: 68px;
-      height: 36px;
+      width: 110px;
+      height: 35px;
     }
   }
 }
@@ -67,7 +67,7 @@
 .navList {
   display: flex;
   list-style: none;
-  gap: 36px;
+  gap: 28px;
   align-items: center;
 
   @media (max-width: 992px) {
@@ -81,10 +81,10 @@
   position: relative;
   cursor: pointer;
   color: rgba(255, 255, 255, 0.92);
-  font-size: 13px;
+  font-size: 12px;
   font-family: var(--font-futura);
   font-weight: 500;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -142,6 +142,7 @@
   gap: 10px;
   z-index: 1001;
   flex: 0 0 auto;
+  position: relative;
 }
 
 .themeToggle {
@@ -152,6 +153,7 @@
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.06);
+  position: relative;
 }
 
 .themeOption {
@@ -484,5 +486,111 @@
 
   .rotateIcon {
     transform: rotate(-90deg); // Arrow right
+  }
+}
+
+.themeHint {
+  position: absolute;
+  top: 42px;
+  right: -10px;
+  background: #ffffff;
+  color: #2D3748;
+  padding: 0;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: var(--font-futura), sans-serif;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
+  z-index: 1005;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  animation: tooltipFadeIn 0.3s ease forwards;
+
+  .infoIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 12px;
+    font-size: 13px;
+    color: #4A5568;
+  }
+
+  .hintText {
+    padding: 10px 12px;
+    display: inline-block;
+  }
+
+  .closeHint {
+    background: none;
+    border: none;
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    color: #718096;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 12px;
+    align-self: stretch;
+    transition: all 0.2s ease;
+    border-top-right-radius: 11px;
+    border-bottom-right-radius: 11px;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.04);
+      color: #1A202C;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: 40px;
+    border-width: 0 6px 6px;
+    border-style: solid;
+    border-color: #ffffff transparent;
+    display: block;
+    width: 0;
+  }
+
+  :global([data-theme="dark"]) & {
+    background: #1f1f1f;
+    color: #e2e8f0;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+
+    .infoIcon {
+      color: #cbd5e0;
+      img {
+        filter: invert(1) brightness(2);
+      }
+    }
+
+    .closeHint {
+      border-left-color: rgba(255, 255, 255, 0.1);
+      color: #a0aec0;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.04);
+        color: #ffffff;
+      }
+    }
+
+    &::after {
+      border-color: #1f1f1f transparent;
+    }
+  }
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

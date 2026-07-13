@@ -8,6 +8,8 @@ import { useTheme } from "../ThemeProvider";
 import styles from "./Header.module.scss";
 import Image from "next/image";
 import logoImg from "@/assets/images/neo_logo.png";
+import logoLightImg from "@/assets/images/neo_logo_light.png";
+import InfoIcon from "@/assets/images/icon/info-icon.svg";
 
 function ProjectsMegaMenu({ projectList, closeProjectsMenu, scrollToSection }) {
   return (
@@ -81,6 +83,7 @@ const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showProjectsMenu, setShowProjectsMenu] = useState(false);
+  const [showThemeHint, setShowThemeHint] = useState(true);
   const pathname = usePathname();
   const router = useRouter();
 
@@ -172,14 +175,14 @@ const Header = () => {
       <div className={`container ${styles.container}`}>
         <Link href="/" className={styles.logo}>
           <Image
-            src={logoImg}
+            src={theme === "light" ? logoLightImg : logoImg}
             width={300}
             height={300}
             className={styles.logoIcon}
             alt="neo"
+            priority
           />
         </Link>
-
         <nav className={`${styles.nav} ${isMenuOpen ? styles.mobileOpen : ""}`}>
           <ul className={styles.navList}>
             {navItems.map((item) => (
@@ -225,6 +228,24 @@ const Header = () => {
             >
               <Sun size={14} />
             </button>
+
+            {showThemeHint && (
+              <div className={styles.themeHint}>
+                <span className={styles.infoIcon}><Image src={InfoIcon} alt="Info" width={16} height={16} /></span>
+                <span className={styles.hintText}>Toggle to switch between dark or light mode.</span>
+                <button
+                  type="button"
+                  className={styles.closeHint}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setShowThemeHint(false);
+                  }}
+                  aria-label="Close hint"
+                >
+                  <X size={12} />
+                </button>
+              </div>
+            )}
           </div>
           <button
             className={styles.mobileMenuToggle}

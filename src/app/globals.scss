@@ -1,4 +1,104 @@
+@font-face {
+  font-family: "Futura Cyrillic";
+  src: url("../assets/fonts/FuturaCyrillicLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura Cyrillic";
+  src: url("../assets/fonts/FuturaCyrillicBook.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura Cyrillic";
+  src: url("../assets/fonts/FuturaCyrillicMedium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura Cyrillic";
+  src: url("../assets/fonts/FuturaCyrillicDemi.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura Cyrillic";
+  src: url("../assets/fonts/FuturaCyrillicBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura Cyrillic";
+  src: url("../assets/fonts/FuturaCyrillicHeavy.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura Cyrillic";
+  src: url("../assets/fonts/FuturaCyrillicExtraBold.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fustat";
+  src: url("../assets/fonts/Fustat/Fustat-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fustat";
+  src: url("../assets/fonts/Fustat/Fustat-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fustat";
+  src: url("../assets/fonts/Fustat/Fustat-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fustat";
+  src: url("../assets/fonts/Fustat/Fustat-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fustat";
+  src: url("../assets/fonts/Fustat/Fustat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fustat";
+  src: url("../assets/fonts/Fustat/Fustat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fustat";
+  src: url("../assets/fonts/Fustat/Fustat-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
 :root {
+  --font-futura: "Futura Cyrillic", sans-serif;
+  --font-fustat: "Fustat", sans-serif;
   --background: #1d1d1d;
   --foreground: #ffffff;
   --primary-orange: #f68121;
@@ -64,8 +164,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  --font-futura: var(--font-fustat) !important;
-  font-family: var(--font-fustat), sans-serif !important;
+  font-family: var(--font-fustat), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition:
@@ -135,7 +234,13 @@ textarea {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: var(--font-fustat), sans-serif !important;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
 }
 
 a {
