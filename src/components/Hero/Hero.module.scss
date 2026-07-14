@@ -74,53 +74,55 @@
 
 .content {
   max-width: 800px;
-  margin-top: 60px; // Offset for fixed header
-
+  margin-top: 20px;
+  transform: translateY(-30px);
   position: relative;
   z-index: 3;
 }
 
 .title {
-  font-size: 72px;
-  font-family: var(--font-fustat);
-  font-weight: 800;
+  font-family: var(--font-futura);
+  font-weight: 600;
+  font-size: 4rem;
   line-height: 1.15;
-  margin-bottom: 24px;
-  letter-spacing: -0.02em;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  letter-spacing: -0.015em;
+  margin-bottom: 20px;
+  max-width: 680px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 
   @media (max-width: 768px) {
-    font-size: 2.4rem;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-
-    margin-bottom: 16px;
+    font-size: 2.2rem;
+    line-height: 1.25;
+    margin-bottom: 14px;
   }
 }
 
 .description {
+  font-family: var(--font-futura), sans-serif;
+  font-weight: 500;
+  font-style: Medium;
   font-size: 1.25rem;
-  font-family: var(--font-fustat);
-  line-height: 1.5;
-  margin-bottom: 48px;
-  max-width: 650px;
-  color: rgba(255, 255, 255, 0.8) !important;
+  line-height: 25px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  margin-bottom: 32px;
+  max-width: 520px;
+  color: rgba(255, 255, 255, 0.85) !important;
 
   :global([data-theme="light"]) .hero & {
-    color: rgba(255, 255, 255, 0.8) !important;
+    color: rgba(255, 255, 255, 0.85) !important;
   }
 
   @media (max-width: 768px) {
-    font-size: 1rem;
-    line-height: 1.4;
-
-    margin-bottom: 32px;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 24px;
   }
 }
 
 .ctaGroup {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   flex-wrap: wrap;
 
   @media (max-width: 768px) {
@@ -129,26 +131,25 @@
 }
 
 .btn {
-  margin: 25px 0 0;
+  margin: 0;
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 12px 24px;
-  border-radius: 12px;
-  font-weight: 700;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-
+  gap: 6px;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-family: var(--font-futura);
+  font-weight: 500;
+  transition: all 0.25s ease;
+  font-size: 12px;
   cursor: pointer;
 
   @media (max-width: 768px) {
     margin: 0;
-
-    font-size: 0.85rem;
-    padding: 10px 20px;
-    border-radius: 8px;
+    font-size: 11px;
+    padding: 8px 18px;
+    border-radius: 20px;
   }
 }
 
@@ -160,36 +161,43 @@
   &:hover {
     background: var(--primary-orange-hover);
     border-color: var(--primary-orange-hover);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(246, 129, 33, 0.3);
   }
 }
 
 .btnSecondary {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.1);
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
 
   &:hover {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.4);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
   }
 }
 
 .verticalsWidget {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
-  z-index: 2;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 16px;
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  min-width: 250px;
+  bottom: 32px;
+  right: 32px;
+  z-index: 10;
+  background: rgba(10, 10, 10, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px 18px;
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+  min-width: 240px;
 
   @media (max-width: 768px) {
+    bottom: 20px;
+    right: 20px;
     min-width: 200px;
+    padding: 12px 14px;
   }
 }
 
@@ -198,44 +206,49 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 12px;
-  font-size: 0.9rem;
-  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--font-futura);
 
   .closeIcon {
     cursor: pointer;
     opacity: 0.7;
+    transition: all 0.2s ease;
+    color: #ffffff;
 
     &:hover {
       opacity: 1;
+      transform: scale(1.1);
     }
   }
 }
 
 .verticalsList {
   display: flex;
-  gap: 10px;
+  gap: 12px;
 
   @media (max-width: 768px) {
-    gap: 0px;
+    gap: 8px;
   }
 }
 
 .verticalItem {
-  width: 35px;
-  height: 35px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   overflow: hidden;
-
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.6rem;
-  font-weight: bold;
   cursor: pointer;
-  transition: transform 0.2s;
-  border: 1.38px solid var(--color-grey-40, #666666);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   background: #ffffff;
-  padding: 3px;
+  padding: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 
   .verticalItemImage {
     width: 100%;
@@ -244,63 +257,14 @@
   }
 
   &:hover {
-    transform: scale(1.1);
+    transform: translateY(-3px) scale(1.05);
+    border-color: var(--primary-orange);
+    box-shadow: 0 4px 12px rgba(246, 129, 33, 0.3);
   }
 
   @media (max-width: 768px) {
-    margin-left: -10px;
-
-    &:first-child {
-      margin-left: 0;
-    }
-  }
-}
-
-.themeHint {
-  position: absolute;
-  top: 100px;
-  right: 20px;
-  background: rgba(50, 50, 50, 0.9);
-  color: #fff;
-  padding: 10px 16px;
-  border-radius: 8px;
-  font-size: 0.8rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  animation: fadeIn 0.5s ease;
-
-  .infoIcon {
-    border: 1px solid #fff;
-    border-radius: 50%;
-    width: 16px;
-    height: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-  }
-
-  .closeHint {
-    cursor: pointer;
-    opacity: 0.7;
-    margin-left: 8px;
-  }
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
+    width: 32px;
+    height: 32px;
+    padding: 3px;
   }
 }
