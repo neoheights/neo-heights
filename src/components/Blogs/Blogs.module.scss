@@ -85,9 +85,6 @@
         rgba(0, 0, 0, 0.8) 100%
     );
     padding: 30px;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-between;
 }
 
 .topContent {
@@ -118,7 +115,7 @@
     font-weight: 500;
     color: #fff;
     margin-top: 25px;
-    margin-bottom: 40px; // Space for link
+    margin-bottom: 15px;
     display: -webkit-box;
     -webkit-line-clamp: 4; // Limit text lines
     -webkit-box-orient: vertical;
@@ -132,7 +129,7 @@
 
 .knowMoreLink {
     position: absolute;
-    bottom: 30px;
+    bottom: 35%; /* Center/middle of the card vertically */
     left: 30px;
     display: flex;
     align-items: center;

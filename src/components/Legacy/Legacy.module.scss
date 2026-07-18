@@ -62,15 +62,20 @@
   bottom: 45px;
   left: 50px;
   right: 50px;
-  background: rgba(0, 0, 0, 0.45); // Dark translucent glass effect
-  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.3);
   padding: 25px;
   border-radius: 20px;
   color: #fff;
   display: flex;
   gap: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(40px);
+
+  :global([data-theme="light"]) & {
+    background: rgba(0, 0, 0, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+  }
 
   @media (max-width: 768px) {
     padding: 15px;
@@ -184,7 +189,9 @@
 }
 
 .subLogoItem {
-  background-color: var(--surface-2); // Gray background, matches correct tone in light/dark mode
+  background-color: var(
+    --surface-2
+  ); // Gray background, matches correct tone in light/dark mode
   border-radius: 12px;
   padding: 10px 20px;
   display: flex;
@@ -231,5 +238,3 @@
     font-weight: 0.75rem;
   }
 }
-
-
