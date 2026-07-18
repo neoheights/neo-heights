@@ -37,7 +37,7 @@ const Hero = () => {
             <div className={styles.overlayContainer}></div>
             <div className={styles.overlay}>
                 <video
-                    src="/videos/neo_heights.mp4"
+                    src="/videos/neo_123.mp4"
                     autoPlay
                     muted
                     loop
