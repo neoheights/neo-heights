@@ -25,7 +25,7 @@ export default function Home() {
       <Services />
       <Projects />
       <Clients />
-      <Sustainability />
+      <Sustainability hideTitle={true} />
       <Legacy />
       <Team />
       <Blogs />

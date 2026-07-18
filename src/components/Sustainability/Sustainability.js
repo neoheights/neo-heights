@@ -74,7 +74,7 @@ const StatItem = ({ end, suffix }) => {
     );
 };
 
-const Sustainability = () => {
+const Sustainability = ({ hideTitle = false }) => {
     const sectionRef = useRef(null);
     const [animate, setAnimate] = useState(false);
 
@@ -99,12 +99,14 @@ const Sustainability = () => {
 
             <div className={`container ${styles.container}`}>
                 <div className={styles.content}>
-                    <h2
-                        className={`${styles.title} ${animate ? styles.fadeUp : styles.hidden
-                            }`}
-                    >
-                        Building sustainably for a <br /> better tomorrow.
-                    </h2>
+                    {!hideTitle && (
+                        <h2
+                            className={`${styles.title} ${animate ? styles.fadeUp : styles.hidden
+                                }`}
+                        >
+                            Building sustainably for a <br /> better tomorrow.
+                        </h2>
+                    )}
 
                     <Link
                         href="/projects"
