@@ -70,6 +70,7 @@ export default function ContactPopup() {
 
             <form className={styles.contactForm} onSubmit={onSubmit}>
               <input
+                suppressHydrationWarning
                 type="text"
                 name="name"
                 placeholder="Your full Name"
@@ -79,6 +80,7 @@ export default function ContactPopup() {
                 required
               />
               <input
+                suppressHydrationWarning
                 type="email"
                 name="email"
                 placeholder="Email Address"
@@ -88,6 +90,7 @@ export default function ContactPopup() {
                 required
               />
               <input
+                suppressHydrationWarning
                 type="tel"
                 name="phone"
                 placeholder="Phone Number"
@@ -96,6 +99,7 @@ export default function ContactPopup() {
                 onChange={onChange}
               />
               <textarea
+                suppressHydrationWarning
                 name="message"
                 placeholder="Write Your message"
                 rows="4"
@@ -106,7 +110,7 @@ export default function ContactPopup() {
                 required
               ></textarea>
 
-              <button type="submit" className={styles.submitBtn} disabled={status.sending}>
+              <button suppressHydrationWarning type="submit" className={styles.submitBtn} disabled={status.sending}>
                 {status.sending ? 'Sending...' : 'Send Enquiry'} <ArrowRight size={16} />
               </button>
             </form>

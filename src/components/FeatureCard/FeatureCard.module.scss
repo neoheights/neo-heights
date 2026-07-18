@@ -12,6 +12,10 @@
   flex-shrink: 0;
   cursor: pointer;
 
+  :global([data-theme="light"]) & {
+    border-color: var(--surface-2);
+  }
+
   &:hover {
     border-color: var(--primary-orange);
 
@@ -216,5 +220,5 @@
 }
 
 :global([data-theme="light"]) .bottom .category {
-  color: var(--primary-orange) !important;
+  color: var(--black-color) !important;
 }

@@ -86,6 +86,7 @@ const ServicesHero = () => {
 
             <form className={styles.form} onSubmit={onSubmit}>
               <input
+                suppressHydrationWarning
                 type="text"
                 name="name"
                 placeholder="First & Last name"
@@ -95,6 +96,7 @@ const ServicesHero = () => {
                 required
               />
               <input
+                suppressHydrationWarning
                 type="email"
                 name="email"
                 placeholder="Email address"
@@ -104,6 +106,7 @@ const ServicesHero = () => {
                 required
               />
               <input
+                suppressHydrationWarning
                 type="tel"
                 name="phone"
                 placeholder="Phone number"
@@ -112,6 +115,7 @@ const ServicesHero = () => {
                 onChange={onChange}
               />
               <textarea
+                suppressHydrationWarning
                 name="message"
                 placeholder="Write your message"
                 rows="5"
@@ -122,6 +126,7 @@ const ServicesHero = () => {
               />
 
               <button
+                suppressHydrationWarning
                 type="submit"
                 className={styles.submitBtn}
                 disabled={status.sending}

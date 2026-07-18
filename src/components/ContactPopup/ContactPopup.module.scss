@@ -152,23 +152,25 @@
 
 .submitBtn {
     width: max-content;
-    padding: 12px 24px;
+    padding: 16px 24px;
 
     background-color: var(--primary-orange);
     color: #fff;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     font-weight: 500;
+    font-size: 0.9rem;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.2s;
     margin-top: 10px;
 
     &:hover {
-        background-color: darken(#ff6b00, 5%); // Assuming orange is somewhat like this
+        background-color: var(--primary-orange-hover);
+        transform: translateY(-2px);
     }
 }
 

@@ -30,7 +30,9 @@
   margin: 0 auto;
   overflow: hidden;
   position: relative;
-  min-height: 120px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
 }
 
 .logosTrack {
@@ -47,24 +49,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 180px;
-  padding: 0 24px;
+  height: 60px;
+  padding: 0 36px; // Standard spacing
   position: relative;
 }
 
-.logoItem:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 10px;
-  bottom: 10px;
-  width: 1px;
-  background: rgba(255, 255, 255, 0.12);
-}
-
 .logo {
-  max-width: 120px;
-  max-height: 56px;
+  max-width: 143px;
+  max-height: 38px; // Consistent height sizing
   width: auto;
   height: auto;
   object-fit: contain;
@@ -93,13 +85,13 @@
   }
 
   .logoItem {
-    min-width: 140px;
-    padding: 0 16px;
+    height: 50px;
+    padding: 0 24px;
   }
 
   .logo {
     max-width: 100px;
-    max-height: 48px;
+    max-height: 30px;
   }
 }
 
@@ -120,13 +112,13 @@
   }
 
   .logoItem {
-    min-width: 110px;
-    padding: 0 12px;
+    height: 40px;
+    padding: 0 16px;
   }
 
   .logo {
     max-width: 80px;
-    max-height: 40px;
+    max-height: 24px;
   }
 }
 

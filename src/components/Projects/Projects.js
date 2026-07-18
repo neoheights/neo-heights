@@ -96,96 +96,9 @@ const Projects = () => {
     </div>
   );
 
-  // Helper component to auto-set overlay color based on image luminance
   const ProjectCard = ({ project, className, styleProps }) => {
-    const cardRef = useRef(null);
-
-    useEffect(() => {
-      const imgSrc =
-        project?.image?.src ||
-        project?.image?.default ||
-        project?.image ||
-        project?.image2?.src ||
-        project?.image2;
-      if (!imgSrc) return;
-
-      const img = new window.Image();
-      img.crossOrigin = "Anonymous";
-      img.src = imgSrc;
-
-      const handleLoad = () => {
-        try {
-          const canvas = document.createElement("canvas");
-          const w = Math.min(img.width, 200);
-          const h = Math.min(img.height, 200);
-          canvas.width = w;
-          canvas.height = h;
-          const ctx = canvas.getContext("2d");
-          ctx.drawImage(img, 0, 0, w, h);
-          const data = ctx.getImageData(0, 0, w, h).data;
-          let r = 0,
-            g = 0,
-            b = 0,
-            count = 0;
-          const step = 4; // sample every few pixels
-          for (let i = 0; i < data.length; i += 4 * step) {
-            r += data[i];
-            g += data[i + 1];
-            b += data[i + 2];
-            count++;
-          }
-          r = r / count;
-          g = g / count;
-          b = b / count;
-          const luminance = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
-          // If image is light, use a dark overlay; otherwise use a light overlay
-          let overlay, textColor, textSecondary, textShadow;
-          if (luminance > 0.6) {
-            overlay = "rgba(0,0,0,0.6)";
-            textColor = "rgba(255,255,255,0.95)";
-            textSecondary = "rgba(255,255,255,0.85)";
-            textShadow = "0 1px 2px rgba(0,0,0,0.35)";
-          } else {
-            overlay = "rgba(255,255,255,0.18)";
-            textColor = "rgba(0,0,0,0.92)";
-            textSecondary = "rgba(0,0,0,0.65)";
-            textShadow = "none";
-          }
-
-          if (cardRef.current) {
-            cardRef.current.style.setProperty("--overlay-bg", overlay);
-            cardRef.current.style.setProperty(
-              "--overlay-text-color",
-              textColor,
-            );
-            cardRef.current.style.setProperty(
-              "--overlay-text-secondary",
-              textSecondary,
-            );
-            cardRef.current.style.setProperty(
-              "--overlay-text-shadow",
-              textShadow,
-            );
-          }
-        } catch (err) {
-          // fallback
-          if (cardRef.current)
-            cardRef.current.style.setProperty(
-              "--overlay-bg",
-              "rgba(0,0,0,0.45)",
-            );
-        }
-      };
-
-      if (img.complete) handleLoad();
-      else img.addEventListener("load", handleLoad);
-
-      return () => img.removeEventListener("load", handleLoad);
-    }, [project]);
-
     return (
       <div
-        ref={cardRef}
         className={`${styles.projectCard} ${className || ""}`}
         style={styleProps}
       >
