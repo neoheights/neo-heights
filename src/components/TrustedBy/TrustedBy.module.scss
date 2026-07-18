@@ -54,10 +54,9 @@
 }
 
 .logo {
-  max-width: 143px;
-  max-height: 90px; // Consistent height sizing
+  max-width: 140px;
+  height: 40px; // Consistent height baseline
   width: auto;
-  height: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
