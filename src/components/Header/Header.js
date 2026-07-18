@@ -3,13 +3,14 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { ChevronDown, Moon, Sun, Menu, X } from "lucide-react";
+import { ChevronDown, Moon, Menu, X } from "lucide-react";
 import { useTheme } from "../ThemeProvider";
 import styles from "./Header.module.scss";
 import Image from "next/image";
 import logoImg from "@/assets/images/neo_logo.png";
 import logoLightImg from "@/assets/images/neo_logo_light.png";
 import InfoIcon from "@/assets/images/icon/info-icon.svg";
+import SunIcon from '@/assets/images/icon/moon-icon.svg';
 
 function ProjectsMegaMenu({ projectList, closeProjectsMenu, scrollToSection }) {
   return (
@@ -217,7 +218,7 @@ const Header = () => {
               onClick={theme === "light" ? toggleTheme : undefined}
               aria-label="Switch to dark mode"
             >
-              <Moon size={14} />
+              <Moon size={16} />
             </button>
 
             <button
@@ -226,7 +227,7 @@ const Header = () => {
               onClick={theme === "dark" ? toggleTheme : undefined}
               aria-label="Switch to light mode"
             >
-              <Sun size={14} />
+              <Image src={SunIcon} alt="sun" width={16} height={16} />
             </button>
 
             {showThemeHint && (

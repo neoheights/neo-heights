@@ -145,12 +145,10 @@
     left: 0;
     width: 100%;
     padding: 28px 25px 20px;
-
-    background: rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(8px);
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-
-    display: flex;
+    background: #3F3F3F4D;
+    border: 1px solid #FFFFFF1A;
+    backdrop-filter: blur(8.600000381469727px);
+     display: flex;
     justify-content: space-between;
 
     h3 {
@@ -165,6 +163,12 @@
       font-size: 0.8rem;
       color: rgba(255, 255, 255, 0.8) !important;
       text-transform: uppercase;
+
+      font-style: Regular;
+      line-height: 10.83px;
+      letter-spacing: 0.9px;
+      vertical-align: middle;
+
     }
   }
 
@@ -255,7 +259,6 @@
   border-radius: 4px;
   font-size: 0.7rem;
   color: var(--text-secondary);
-  text-transform: uppercase;
 }
 
 .viewMoreBtn {
@@ -314,4 +317,3 @@
     transform: translateX(-50%);
   }
 }
-
