@@ -49,14 +49,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60px;
   padding: 0 36px; // Standard spacing
   position: relative;
 }
 
 .logo {
   max-width: 143px;
-  max-height: 38px; // Consistent height sizing
+  max-height: 90px; // Consistent height sizing
   width: auto;
   height: auto;
   object-fit: contain;
