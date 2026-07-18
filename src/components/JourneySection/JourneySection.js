@@ -64,6 +64,7 @@ const Journey = () => {
 
           <div className={styles.ctaRow}>
             <button
+              suppressHydrationWarning
               className={styles.downloadBtn}
               onClick={() => {
                 const link = document.createElement('a');

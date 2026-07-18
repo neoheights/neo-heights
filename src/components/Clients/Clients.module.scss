@@ -11,7 +11,7 @@
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 60px;
+  padding: 0 120px;
 
   @media (max-width: 768px) {
     padding: 0 24px;
@@ -28,28 +28,6 @@
   position: relative;
   overflow: hidden;
 
-  /* Edge fades */
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 180px;
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  &::before {
-    left: 0;
-    background: linear-gradient(to right, #050505 20%, transparent);
-  }
-
-  &::after {
-    right: 0;
-    background: linear-gradient(to left, #050505 20%, transparent);
-  }
-
   /* Pause both rows on hover */
   &:hover .slide {
     animation-play-state: paused;
@@ -58,11 +36,6 @@
   @media (max-width: 768px) {
     margin-top: 48px;
     gap: 32px;
-
-    &::before,
-    &::after {
-      width: 60px;
-    }
   }
 }
 
@@ -128,6 +101,21 @@
 
 .clientLogoInvert {
   filter: brightness(0) invert(1);
+}
+
+.blendLogo {
+  filter: invert(1); // Default dark theme: invert white background to black
+
+  :global([data-theme="light"]) & {
+    filter: none !important;
+    mix-blend-mode: multiply; // Light theme: multiply blends white with light gray background
+  }
+}
+
+.enlargedLogo {
+  max-width: 142px !important;
+  max-height: 70px !important;
+  transform: scale(1.03) !important;
 }
 
 /* ─── Keyframes ─────────────────────────────────────── */

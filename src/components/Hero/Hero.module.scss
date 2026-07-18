@@ -106,7 +106,7 @@
   letter-spacing: 0px;
   vertical-align: middle;
   margin-bottom: 32px;
-  max-width: 520px;
+  max-width: 760px;
   color: rgba(255, 255, 255, 0.85) !important;
 
   :global([data-theme="light"]) .hero & {
@@ -136,20 +136,20 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 10px 22px;
-  border-radius: 30px;
+  gap: 8px;
+  padding: 16px 24px;
+  border-radius: 12px;
   font-family: var(--font-futura);
   font-weight: 500;
   transition: all 0.25s ease;
-  font-size: 12px;
+  font-size: 0.9rem;
   cursor: pointer;
 
   @media (max-width: 768px) {
     margin: 0;
-    font-size: 11px;
-    padding: 8px 18px;
-    border-radius: 20px;
+    font-size: 0.8rem;
+    padding: 12px 20px;
+    border-radius: 10px;
   }
 }
 
@@ -161,7 +161,7 @@
   &:hover {
     background: var(--primary-orange-hover);
     border-color: var(--primary-orange-hover);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(246, 129, 33, 0.3);
   }
 }
@@ -175,7 +175,7 @@
   &:hover {
     background: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.4);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
   }
 }

@@ -179,7 +179,6 @@ body {
 [data-theme="light"] [class*="aboutSection"],
 [data-theme="light"] [class*="servicesSection"],
 [data-theme="light"] [class*="projectsSection"],
-[data-theme="light"] [class*="clientsSection"],
 [data-theme="light"] [class*="sustainabilitySection"],
 [data-theme="light"] [class*="legacySection"],
 [data-theme="light"] [class*="teamSection"],
@@ -202,7 +201,8 @@ body {
 [data-theme="light"] [class*="serviceCard"],
 [data-theme="light"] [class*="quoteCard"],
 [data-theme="light"] [class*="mapPanel"],
-[data-theme="light"] [class*="mapCard"] {
+[data-theme="light"] [class*="mapCard"],
+[data-theme="light"] [class*="clientsSection"] {
   background: var(--surface-2) !important;
   border-color: var(--border-color) !important;
   color: var(--foreground);

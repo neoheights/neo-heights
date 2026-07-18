@@ -69,8 +69,8 @@
 
 .cardsScroll {
   display: flex;
-  gap: 20px;
-  padding: 0 40px; // Side padding
+  gap: 14px;
+  padding: 0 120px; // Side padding
   width: max-content; // Allow content to stretch
 
   // Center if content is smaller than viewport
@@ -79,11 +79,17 @@
   }
 
   @media (max-width: 768px) {
-    padding: 0 5px;
+    padding: 0 20px;
   }
 }
 
 .sectionTextWrapper {
+  padding: 0 120px;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+
   button {
     background: transparent !important;
     border: none !important;

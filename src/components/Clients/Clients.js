@@ -31,7 +31,7 @@ import logo23 from "@/assets/images/trustedPartners/img23.png";
 
 const Clients = () => {
     const row1Logos = [
-        { src: logo1,  alt: "TATA" },
+        { src: logo1,  alt: "TATA", blend: true },
         { src: logo11, alt: "VOLVO" },
         { src: logo15, alt: "Faiveley Transport" },
         { src: logo13, alt: "VOLTAS" },
@@ -50,7 +50,7 @@ const Clients = () => {
         { src: logo19, alt: "Scania" },
         { src: logo20, alt: "SHMZ" },
         { src: logo21, alt: "CUMI" },
-        { src: logo22, alt: "Triangle" },
+        { src: logo22, alt: "Triangle", enlarge: true, blend: true },
         { src: logo23, alt: "AVTEC", invert: true },
         { src: logo8,  alt: "Partner" },
         { src: logo9,  alt: "Partner" },
@@ -80,7 +80,7 @@ const Clients = () => {
                                 <Image
                                     src={logo.src}
                                     alt={logo.alt}
-                                    className={styles.clientLogo}
+                                    className={`${styles.clientLogo}${logo.blend ? ` ${styles.blendLogo}` : ''}`}
                                     width={280}
                                     height={144}
                                 />
@@ -99,7 +99,7 @@ const Clients = () => {
                                     alt={logo.alt}
                                     width={280}
                                     height={144}
-                                    className={`${styles.clientLogo}${logo.invert ? ` ${styles.clientLogoInvert}` : ''}`}
+                                    className={`${styles.clientLogo}${logo.invert ? ` ${styles.clientLogoInvert}` : ''}${logo.enlarge ? ` ${styles.enlargedLogo}` : ''}${logo.blend ? ` ${styles.blendLogo}` : ''}`}
                                 />
                             </div>
                         ))}

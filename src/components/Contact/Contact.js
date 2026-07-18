@@ -133,6 +133,7 @@ const Contact = ({ showMap = true }) => {
 
               <form className={styles.contactForm} onSubmit={onSubmit}>
                 <input
+                  suppressHydrationWarning
                   type="text"
                   name="name"
                   placeholder="First & Last name"
@@ -143,6 +144,7 @@ const Contact = ({ showMap = true }) => {
                 />
 
                 <input
+                  suppressHydrationWarning
                   type="email"
                   name="email"
                   placeholder="Email address"
@@ -153,6 +155,7 @@ const Contact = ({ showMap = true }) => {
                 />
 
                 <input
+                  suppressHydrationWarning
                   type="tel"
                   name="phone"
                   placeholder="Phone number"
@@ -162,6 +165,7 @@ const Contact = ({ showMap = true }) => {
                 />
 
                 <textarea
+                  suppressHydrationWarning
                   name="message"
                   placeholder="Write your message"
                   rows="5"
@@ -172,6 +176,7 @@ const Contact = ({ showMap = true }) => {
                 />
 
                 <button
+                  suppressHydrationWarning
                   type="submit"
                   className={styles.submitBtn}
                   disabled={status.sending}

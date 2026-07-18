@@ -1,5 +1,5 @@
 .projectsSection {
-  padding: 80px 5%;
+  padding: 80px 120px;
   background-color: var(--background);
   color: var(--foreground);
 
@@ -146,10 +146,9 @@
     width: 100%;
     padding: 28px 25px 20px;
 
-    background: #3F3F3F4D;
-    backdrop-filter: blur(2px);
-    /* color tint is computed in JS and set via --overlay-bg */
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
 
     display: flex;
     justify-content: space-between;
@@ -158,13 +157,13 @@
       font-size: 1.1rem;
       margin-bottom: 4px;
       font-weight: 600;
-      color: var(--overlay-text-color, var(--foreground));
-      text-shadow: var(--overlay-text-shadow, none);
+      color: #ffffff !important;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     }
 
     span {
       font-size: 0.8rem;
-      color: var(--overlay-text-secondary, rgba(255, 255, 255, 0.85));
+      color: rgba(255, 255, 255, 0.8) !important;
       text-transform: uppercase;
     }
   }
@@ -260,7 +259,7 @@
 }
 
 .viewMoreBtn {
-  margin-top: auto;
+  margin-top: 16px; // Moved up as per design, removed margin-top: auto
   background: transparent;
   border: none;
   color: var(--primary-orange);
@@ -315,21 +314,4 @@
     transform: translateX(-50%);
   }
 }
-
-/* Light-theme override: ensure proper overlay contrast */
-:global([data-theme="light"]) {
-  .projectCard .overlay h3 {
-    color: var(--black-color) !important;
-    text-shadow: none !important;
-  }
-
-  .projectCard .overlay span {
-    color: var(--black-color) !important;
-    opacity: 0.9 !important;
-  }
-
-  .projectCard .overlay {
-    border-color: rgba(0, 0, 0, 0.06) !important;
-    background: rgba(255, 255, 255, 0.18) !important;
-  }
-}
+

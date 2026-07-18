@@ -28,8 +28,12 @@
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 120px;
   margin-bottom: 50px; // Space between header and cards
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
 }
 
 .scrollContainer {
